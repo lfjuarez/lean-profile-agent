@@ -327,8 +327,8 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--margin); }
 @media (max-width: 900px) {
   .cv-two { grid-template-columns: minmax(0, 1fr); }
 }
-@media (max-width: 760px) {
-  body { font-size: 17px; }
+/* The section menu collapses into one button below laptop width (tablets included). */
+@media (max-width: 1024px) {
   .bar { position: sticky; gap: 10px; }
   .bar-name { margin-right: auto; }
   .nav-toggle { display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 12px 0 14px; border: 0; border-radius: 999px; background: var(--step); color: var(--ink); font: 600 14px var(--text); }
@@ -339,6 +339,9 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--margin); }
   .bar-nav > a { min-height: 46px; display: flex; align-items: center; padding: 0 6px; font-size: 17px; }
   .bar-nav > a.active { color: var(--blue-hi); }
   .bar-nav > a.active::after { display: none; }
+}
+@media (max-width: 760px) {
+  body { font-size: 17px; }
   .ask-fab { right: 16px; bottom: 16px; min-height: 46px; padding: 0 18px; }
   .hero { grid-template-columns: 112px minmax(0, 1fr); gap: 18px 18px; padding-top: 20px; }
   .heat { width: 70vw; top: -10px; bottom: auto; height: 60vw; grid-template-columns: repeat(10, 1fr); gap: 5px; }

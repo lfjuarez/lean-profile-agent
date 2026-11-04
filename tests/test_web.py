@@ -116,6 +116,9 @@ def test_cv_download_and_404(client: TestClient) -> None:
     r = client.get("/cv/Leandro_Juarez_CV_EN.pdf")
     assert r.status_code == 200
     assert r.headers["content-type"] == "application/pdf"
+    assert r.headers["content-disposition"].startswith("attachment")
+    inline = client.get("/cv/Leandro_Juarez_CV_EN.pdf?view=1").headers["content-disposition"]
+    assert inline.startswith("inline")
     assert client.get("/cv/other.pdf").status_code == 404
     assert client.get("/cv/../pyproject.toml").status_code in (404, 400)
 
@@ -179,14 +182,15 @@ def test_daily_cap_returns_503(backend: FakeBackend) -> None:
         assert c.post("/api/chat", json=payload).status_code == 503
 
 
-def test_decline_path_never_calls_backend(client: TestClient, backend: FakeBackend) -> None:
+def test_offtopic_path_sends_no_sections(client: TestClient, backend: FakeBackend) -> None:
     r = client.post(
         "/api/chat",
         json={"messages": [{"role": "user", "content": "best pizza in Rome?"}], "lang": "en"},
     )
     events = dict(parse_sse(r.text))
     assert events["done"]["grounded"] is False
-    assert backend.calls == []
+    assert events["sources"] == []
+    assert all("<source" not in c["messages"][-1]["content"] for c in backend.calls)
 
 
 @pytest.fixture(scope="module")

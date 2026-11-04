@@ -78,24 +78,41 @@ def test_uncited_source_numbers_are_dropped(indexes) -> None:
     assert [s["n"] for s in sources] == [1]
 
 
-def test_declines_without_calling_model_when_nothing_matches(indexes) -> None:
-    backend = FakeBackend()
+def test_offtopic_gets_a_short_source_free_turn_that_steers_back(indexes) -> None:
+    backend = FakeBackend("Pizza is outside my documents, but detections are not [1]. Ask me!")
     chat = ProfileChat(indexes, backend=backend)
     events = collect(chat, "What is your favourite pizza topping?", lang="en")
-    assert backend.calls == []
+    assert len(backend.calls) == 1
+    call = backend.calls[0]
+    # nothing to cite, nothing to invent from
+    assert "<source" not in call["messages"][-1]["content"]
+    assert "state no fact about me" in call["system"]
     text = "".join(e.data for e in events if e.type == "text")
-    assert "documented experience" in text
-    assert "my " in text  # first-person voice
+    assert "[1]" not in text and text.startswith("Pizza")
     assert events[-1].data["grounded"] is False
     followups = next(e for e in events if e.type == "followups").data
     assert any("contact" in f.lower() for f in followups)
+    assert next(e for e in events if e.type == "sources").data == []
+
+
+def test_offtopic_falls_back_to_the_fixed_text(indexes) -> None:
+    class Broken(FakeBackend):
+        def stream(self, system, messages):
+            raise RuntimeError("down")
+            yield ""  # pragma: no cover
+
+    chat = ProfileChat(indexes, backend=Broken())
+    events = collect(chat, "What is your favourite pizza?", lang="en")
+    text = "".join(e.data for e in events if e.type == "text")
+    assert "documented experience" in text and "my " in text
 
 
 def test_declines_in_spanish(indexes) -> None:
-    chat = ProfileChat(indexes, backend=FakeBackend())
-    events = collect(chat, "¿Cuál es tu pizza favorita?")
+    backend = FakeBackend("La pala la dejo para otro día. ¿Querés saber de mis proyectos?")
+    events = collect(ProfileChat(indexes, backend=backend), "¿Cuál es tu pizza favorita?")
+    assert "Rioplatense Spanish" in backend.calls[0]["system"]
     text = "".join(e.data for e in events if e.type == "text")
-    assert "experiencia documentada" in text
+    assert text.startswith("La pala")
     assert events[-1].data["lang"] == "es"
 
 
@@ -214,7 +231,8 @@ def test_unknown_followup_does_not_borrow_the_previous_topic(indexes) -> None:
         {"role": "assistant", "content": "Sí [1]."},
     ]
     events = collect(chat, "¿Cuál es tu signo del zodíaco?", lang="es", history=history)
-    assert backend.calls == []
+    # only the short off-topic turn, without the earlier conversation or any section
+    assert len(backend.calls) == 1 and len(backend.calls[0]["messages"]) == 1
     assert events[-1].data["grounded"] is False
 
 

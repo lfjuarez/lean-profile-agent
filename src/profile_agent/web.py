@@ -265,14 +265,18 @@ def create_app(
         return HTMLResponse(page, headers={"Cache-Control": "no-cache"})
 
     @app.get("/cv/{name}")
-    async def cv(name: str) -> FileResponse:
+    async def cv(name: str, view: str | None = None) -> FileResponse:
         allowed = {Path(p).name for p in CV_PATHS.values()}
         if name not in allowed:
             raise HTTPException(status_code=404)
         path = cv_root / name
         if not path.is_file():
             raise HTTPException(status_code=404, detail="CV not available on this server")
-        return FileResponse(path, media_type="application/pdf", filename=name)
+        # ?view=1 opens it in the browser (to read or print on a phone); default is a download
+        disposition = "inline" if view in ("1", "true") else "attachment"
+        return FileResponse(
+            path, media_type="application/pdf", filename=name, content_disposition_type=disposition
+        )
 
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
     app.mount("/", mcp_app)  # serves exactly /mcp; everything else unmatched is a 404

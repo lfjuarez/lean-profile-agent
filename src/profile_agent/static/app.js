@@ -572,11 +572,12 @@
   }
 
   function placeContact() {
-    // On phones the question box comes first; the contact card follows the answer.
-    const reach = $(".reach"), hero = $(".hero"), answer = $("#answer");
+    // On phones the question box, its answer and the suggested questions come first; the contact
+    // card closes the ask zone.
+    const reach = $(".reach"), hero = $(".hero"), after = $(".topics-wrap");
     const narrow = matchMedia("(max-width: 760px)");
     const place = () => {
-      if (narrow.matches) { if (reach.previousElementSibling !== answer) answer.after(reach); }
+      if (narrow.matches) { if (reach.previousElementSibling !== after) after.after(reach); }
       else if (reach.parentElement !== hero) hero.appendChild(reach);
     };
     place();

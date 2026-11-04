@@ -226,7 +226,7 @@ def render_cv(kb: KnowledgeBase, lang: str, photo: bool) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/static/cv.css?v=5" />
+<link rel="stylesheet" href="/static/cv.css?v=6" />
 </head>
 <body>
 <nav class="tools" aria-label="CV">
@@ -290,7 +290,11 @@ def render_cv(kb: KnowledgeBase, lang: str, photo: bool) -> str:
 </main>
 <script>
 (() => {{
-  document.getElementById("print").addEventListener("click", () => window.print());
+  // Phones paginate web pages poorly when printing; they print the ready-made PDF instead.
+  const phone = matchMedia("(max-width: 820px), (pointer: coarse)").matches;
+  document.getElementById("print").addEventListener("click", () => {{
+    if (phone) location.href = "{pdf}?view=1"; else window.print();
+  }});
   const share = document.getElementById("share");
   share.addEventListener("click", async () => {{
     const url = location.origin + "/cv?lang={lang}";

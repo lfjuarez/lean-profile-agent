@@ -60,7 +60,7 @@ h2 { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: u
 .projects a { white-space: nowrap; }
 .note { margin-top: 28px; font-size: 12px; color: var(--ink-3); }
 
-@media (max-width: 720px) {
+@media screen and (max-width: 720px) {
   .paper { margin: 0; padding: 28px 20px 32px; border-radius: 0; }
   .head { grid-template-columns: auto minmax(0, 1fr); }
   .contact { grid-column: 1 / -1; text-align: left; }
@@ -109,7 +109,7 @@ body { background: #0e1829; }
 .head .role-line { color: #7fb0ec; }
 .head .sub, .head .contact, .head .contact a { color: #c3cfe0; }
 .head .photo { outline: 2px solid #3b5f96; }
-@media (max-width: 720px) { .head { margin: -28px -20px 0; padding: 24px 20px 22px; } }
+@media screen and (max-width: 720px) { .head { margin: -28px -20px 0; padding: 24px 20px 22px; } }
 @media print {
   body { background: #fff; }
   .head { margin: 0 0 4pt; padding: 12pt 14pt; border-radius: 6pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
