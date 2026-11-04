@@ -9,7 +9,7 @@ __pycache__/
 .taste-skill/
 .impeccable/
 .env
-tests/
-docs/
-eval/
+/tests/
+/docs/
+/eval/
 deploy/huggingface/
