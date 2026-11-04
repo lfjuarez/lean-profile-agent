@@ -12,8 +12,8 @@
       "creds.master": "Master's in Data Science", "creds.cloud": "Cloud: AWS, Azure and Google Cloud",
       "hero.cv": "Download CV", "hero.cvAlt": "CV en español",
       "contact.email": "Email", "contact.copy": "Copy", "contact.copied": "Copied", "contact.where": "Based in", "contact.whereV": "Buenos Aires, Argentina · remote",
-      "aud.title": "Who this site is for",
-      "aud.tech": "I'm technical", "aud.biz": "I'm in sales", "aud.people": "I'm in People",
+      "aud.title": "Pick your role so the answers fit you",
+      "aud.tech": "Technical", "aud.biz": "Sales", "aud.people": "HR and People",
       "aud.techText": "Ask about SIEM architectures, MITRE ATT&CK detections, SOAR or AI applied to security. Every answer cites the exact section of my documents, and you can connect this same CV to your Claude or ChatGPT through MCP.",
       "aud.bizText": "If you are evaluating a consultant for a SIEM, detection or Splunk training project, ask about services, rates, availability and case studies. Answers come from my documents and the CV downloads in one click.",
       "aud.peopleText": "If you are screening candidates or preparing an interview, ask about my track record, how I work, team leadership and project references. I answer in the first person, with the source next to it.",
@@ -70,7 +70,14 @@
       "proj.title": "Projects",
       "proj.aiT": "Agentic AI for cybersecurity",
       "proj.ai": "In my current role: Python pipelines with AI agents that migrated 2,000+ detection rules between SIEMs, with quality control and MITRE ATT&CK mapping; a tool that measures ATT&CK and ATLAS coverage, and assistants connected to Splunk, Elastic and Jira through MCP.",
-      "proj.aiAlt": "Detection coverage heat map by MITRE ATT&CK technique",
+      "proj.aiAlt": "Detection rules in Elastic Security",
+      "proj.cov": "Open source: it turns detection coverage into a measurement. It reads rules from Splunk ES, Elastic Security, Wazuh, Sentinel or Sigma, scores every MITRE ATT&CK and ATLAS technique, lists dead rules and suggests public rules (SigmaHQ) for the gaps. A web app with matrices, a panel per technique, history and export to PDF, Excel and Navigator. MIT, with tests and CI.",
+      "proj.covAlt": "The mitre-coverage-kit ATT&CK matrix with the coverage traffic light",
+      "proj.mcp": "Open source: a standalone, read-only MCP server to query Splunk from Claude or any MCP client with nothing but a token. Seven tools behind an SPL guard (blocked commands, row caps, index allow-list) and an audit log of every call. 83 tests, MIT.",
+      "proj.mcpAlt": "The seven read-only tools of splunk-mcp-readonly and its SPL guard",
+      "proj.archT": "Multi-site Splunk architecture",
+      "proj.arch": "Reference design for a two-site Splunk Enterprise platform with high availability and disaster recovery, drawn to Splunk Validated Architectures: multi-site indexer and search head clusters, a dedicated Enterprise Security cluster, SmartStore with cross-region replication and a drilled failover runbook.",
+      "proj.archAlt": "Diagram of the multi-site Splunk reference architecture",
       "proj.presu": "My own product, built for the pleasure of building: a web SaaS in beta, not yet officially launched, for creating and sending professional quotes. Next.js, PostgreSQL, Google Cloud Run and the ARCA API.",
       "proj.presuAlt": "Presu, the PresupuestAR mascot, in a frame of the showreel",
       "proj.siteT": "This CV",
@@ -102,8 +109,8 @@
       "creds.master": "Magíster en Ciencia de Datos", "creds.cloud": "Cloud: AWS, Azure y Google Cloud",
       "hero.cv": "Descargar CV", "hero.cvAlt": "CV in English",
       "contact.email": "Email", "contact.copy": "Copiar", "contact.copied": "Copiado", "contact.where": "Ubicación", "contact.whereV": "Buenos Aires, Argentina · remoto",
-      "aud.title": "Para quién es este sitio",
-      "aud.tech": "Soy técnico", "aud.biz": "Soy comercial", "aud.people": "Soy de People",
+      "aud.title": "Elegí tu perfil para que te responda mejor",
+      "aud.tech": "Técnico", "aud.biz": "Comercial", "aud.people": "RR. HH. y People",
       "aud.techText": "Preguntá por arquitecturas de SIEM, detecciones MITRE ATT&CK, SOAR o IA aplicada a seguridad. Cada respuesta cita la sección exacta de mis documentos, y podés conectar este mismo CV a tu Claude o ChatGPT por MCP.",
       "aud.bizText": "Si evaluás un consultor para un proyecto de SIEM, detección o formación Splunk, preguntá por servicios, tarifas, disponibilidad y casos de estudio. Las respuestas salen de mis documentos y el CV se descarga en un clic.",
       "aud.peopleText": "Si estás evaluando candidatos o preparando una entrevista, preguntá por trayectoria, forma de trabajar, liderazgo de equipo y referencias de proyectos. Respondo en primera persona, con la fuente al lado.",
@@ -549,6 +556,11 @@
     if (reduced || document.hidden || !("IntersectionObserver" in window)) return;
     document.documentElement.classList.add("motion");
     $$(".in").forEach((el, i) => el.style.setProperty("--d", `${i * 60}ms`));
+    // Safety net: whatever happens to the entrance animations, everything is at rest after 2.5s.
+    setTimeout(() => {
+      document.documentElement.classList.add("settled");
+      $$(".reveal").forEach((el) => { if (el.getBoundingClientRect().top < innerHeight) el.classList.add("seen"); });
+    }, 2500);
     const groups = [".cv-head", ".exp-item", ".cv-col", ".projects h2", ".proj", ".map-head", ".topics-sub", ".topics", ".mcp-band", ".facts-band h2", ".facts div", ".how h2", ".how-grid > div", ".foot-name"];
     const els = [];
     groups.forEach((sel) => $$(sel).forEach((el, i) => { el.classList.add("reveal"); el.style.setProperty("--d", `${Math.min(i, 5) * 70}ms`); els.push(el); }));

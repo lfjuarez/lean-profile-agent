@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/styles.css?v=0.6.1" />
+  <link rel="stylesheet" href="/static/styles.css?v=0.6.3" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e1829'/%3E%3Crect x='7' y='9' width='8' height='6' rx='1.5' fill='%232b4a7a'/%3E%3Crect x='17' y='9' width='8' height='6' rx='1.5' fill='%237fb0ec'/%3E%3Crect x='7' y='17' width='8' height='6' rx='1.5' fill='%237fb0ec'/%3E%3Crect x='17' y='17' width='8' height='6' rx='1.5' fill='%232b4a7a'/%3E%3C/svg%3E" />
 </head>
 <body>
@@ -68,11 +68,11 @@
     </section>
 
     <section class="audience in" aria-labelledby="audience-title">
-      <h2 id="audience-title" class="sr-only" data-i18n="aud.title">Para quién es este sitio</h2>
-      <div class="aud-tabs" role="tablist" aria-label="Para quién es este sitio">
-        <button type="button" role="tab" aria-selected="true" data-aud="tech" data-i18n="aud.tech">Soy técnico</button>
-        <button type="button" role="tab" aria-selected="false" data-aud="biz" data-i18n="aud.biz">Soy comercial</button>
-        <button type="button" role="tab" aria-selected="false" data-aud="people" data-i18n="aud.people">Soy de People</button>
+      <h2 id="audience-title" class="aud-label" data-i18n="aud.title">Elegí tu perfil para que te responda mejor</h2>
+      <div class="aud-tabs" role="tablist" aria-label="Tu perfil">
+        <button type="button" role="tab" aria-selected="true" data-aud="tech" data-i18n="aud.tech">Técnico</button>
+        <button type="button" role="tab" aria-selected="false" data-aud="biz" data-i18n="aud.biz">Comercial</button>
+        <button type="button" role="tab" aria-selected="false" data-aud="people" data-i18n="aud.people">RR. HH. y People</button>
       </div>
       <p class="aud-text" id="aud-text" role="tabpanel">Preguntá por arquitecturas de SIEM, detecciones MITRE ATT&amp;CK, SOAR o IA aplicada a seguridad. Cada respuesta cita la sección exacta de mis documentos, y podés conectar este mismo CV a tu Claude o ChatGPT por MCP.</p>
       <p class="aud-note" data-i18n="aud.note">Respondo en primera persona, pero quien contesta es un asistente de IA que usa solo mis documentos y cita la fuente. Si algo no está documentado, lo dice.</p>
@@ -206,10 +206,26 @@
       <h2 id="projects-title" data-i18n="proj.title">Proyectos</h2>
       <div class="proj-grid">
         <article class="proj">
-          <div class="proj-img"><img src="/static/img/proj-ai.jpg" width="1200" height="675" loading="lazy" alt="Mapa de calor de cobertura de detección por técnica MITRE ATT&amp;CK" data-i18n-alt="proj.aiAlt" /></div>
+          <div class="proj-img"><img src="/static/img/proj-ai.jpg" width="1200" height="675" loading="lazy" alt="Reglas de detección en Elastic Security" data-i18n-alt="proj.aiAlt" /></div>
           <h3 data-i18n="proj.aiT">IA agéntica para ciberseguridad</h3>
           <p data-i18n="proj.ai">En mi rol actual: pipelines en Python con agentes de IA que migraron más de 2.000 reglas de detección entre SIEM, con control de calidad y mapeo a MITRE ATT&amp;CK; una herramienta que mide cobertura ATT&amp;CK y ATLAS, y asistentes conectados a Splunk, Elastic y Jira por MCP.</p>
-          <p class="proj-links"><a href="https://github.com/lfjuarez/mitre-coverage-kit" target="_blank" rel="noopener">mitre-coverage-kit</a> · <a href="https://github.com/lfjuarez/splunk-mcp-readonly" target="_blank" rel="noopener">splunk-mcp-readonly</a></p>
+        </article>
+        <article class="proj">
+          <div class="proj-img"><img src="/static/img/proj-coverage.jpg" width="1200" height="675" loading="lazy" alt="Matriz MITRE ATT&amp;CK de mitre-coverage-kit con el semáforo de cobertura" data-i18n-alt="proj.covAlt" /></div>
+          <h3>mitre-coverage-kit</h3>
+          <p data-i18n="proj.cov">Código abierto: convierte la cobertura de detección en una medición. Lee las reglas de Splunk ES, Elastic Security, Wazuh, Sentinel o Sigma, puntúa cada técnica de MITRE ATT&amp;CK y ATLAS, lista las reglas muertas y sugiere reglas públicas (SigmaHQ) para los huecos. Aplicación web con matrices, panel por técnica, historial y exportación a PDF, Excel y Navigator. MIT, con tests y CI.</p>
+          <p class="proj-links"><a href="https://github.com/lfjuarez/mitre-coverage-kit" target="_blank" rel="noopener">github.com/lfjuarez/mitre-coverage-kit</a></p>
+        </article>
+        <article class="proj">
+          <div class="proj-img"><img src="/static/img/proj-mcp.jpg" width="1200" height="675" loading="lazy" alt="Las siete herramientas de solo lectura de splunk-mcp-readonly y su guarda de SPL" data-i18n-alt="proj.mcpAlt" /></div>
+          <h3>splunk-mcp-readonly</h3>
+          <p data-i18n="proj.mcp">Código abierto: servidor MCP independiente y de solo lectura para consultar Splunk desde Claude o cualquier cliente MCP con solo un token. Siete herramientas detrás de una guarda de SPL (comandos bloqueados, tope de filas, índices permitidos) y un registro de auditoría de cada llamada. 83 tests, MIT.</p>
+          <p class="proj-links"><a href="https://github.com/lfjuarez/splunk-mcp-readonly" target="_blank" rel="noopener">github.com/lfjuarez/splunk-mcp-readonly</a></p>
+        </article>
+        <article class="proj">
+          <div class="proj-img"><img src="/static/img/proj-arch.jpg" width="1200" height="675" loading="lazy" alt="Diagrama de la arquitectura Splunk multi-site de referencia" data-i18n-alt="proj.archAlt" /></div>
+          <h3 data-i18n="proj.archT">Arquitectura Splunk multi-site</h3>
+          <p data-i18n="proj.arch">Diseño de referencia para una plataforma Splunk Enterprise de dos sitios con alta disponibilidad y recuperación ante desastres, según Splunk Validated Architectures: clusters de indexers y search heads multi-site, Enterprise Security dedicado, SmartStore con réplica entre regiones y un runbook de failover ensayado.</p>
         </article>
         <article class="proj">
           <div class="proj-img"><img src="/static/img/proj-presupuestar.jpg" width="1200" height="675" loading="lazy" alt="Presu, la mascota de PresupuestAR, en un fotograma del showreel" data-i18n-alt="proj.presuAlt" /></div>
@@ -296,6 +312,6 @@
     <p class="foot-line"><a href="mailto:l.federico.juarez@gmail.com">l.federico.juarez@gmail.com</a> · <a href="https://www.linkedin.com/in/leandrofjuarez" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/lfjuarez" rel="me noopener" target="_blank">GitHub</a> · <span data-i18n="foot.synthetic">Las cifras de los casos de estudio son sintéticas; el método y los entregables son reales.</span></p>
   </footer>
 
-  <script src="/static/app.js?v=0.6.1" defer></script>
+  <script src="/static/app.js?v=0.6.3" defer></script>
 </body>
 </html>

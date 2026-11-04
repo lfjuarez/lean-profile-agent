@@ -117,6 +117,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--margin); }
 
 /* audience */
 .audience { background: var(--raised); border-radius: var(--r); padding: 18px 22px 16px; margin: 4px 0 28px; }
+.aud-label { margin: 0 0 10px; font: 500 15px/1.4 var(--head); letter-spacing: -.01em; color: var(--ink-2); }
 .aud-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
 .aud-tabs button { border: 0; border-radius: 999px; background: var(--step); color: var(--ink-2); font: 600 15px var(--text); padding: 8px 16px; min-height: 40px; transition: background .2s, color .2s; }
 .aud-tabs button:hover { background: var(--step-2); color: var(--ink); }
@@ -308,7 +309,8 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--margin); }
 @keyframes blink { 50% { opacity: 0; } }
 @keyframes pop { 0% { transform: scale(1); } 35% { transform: scale(1.06); } 100% { transform: scale(1); } }
 .motion .in { animation: rise .8s var(--ease) both; animation-delay: var(--d, 0ms); }
-.motion .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: var(--d, 0ms); }
+.motion.settled .in { animation-fill-mode: none; }
+.motion .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: var(--d, 0ms); }
 .motion .reveal.seen { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
