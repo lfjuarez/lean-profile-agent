@@ -71,7 +71,7 @@
       "proj.aiT": "Agentic AI for cybersecurity",
       "proj.ai": "In my current role: Python pipelines with AI agents that migrated 2,000+ detection rules between SIEMs, with quality control and MITRE ATT&CK mapping; a tool that measures ATT&CK and ATLAS coverage, and assistants connected to Splunk, Elastic and Jira through MCP.",
       "proj.aiAlt": "Detection rules in Elastic Security",
-      "proj.cov": "Open source: it turns detection coverage into a measurement. It reads rules from Splunk ES, Elastic Security, Wazuh, Sentinel or Sigma, scores every MITRE ATT&CK and ATLAS technique, lists dead rules and suggests public rules (SigmaHQ) for the gaps. A web app with matrices, a panel per technique, history and export to PDF, Excel and Navigator. MIT, with tests and CI.",
+      "proj.cov": "Open source: it turns detection coverage into a measurement. It reads rules from Splunk ES, Elastic Security, Wazuh, Sentinel or Sigma, scores every MITRE ATT&CK and ATLAS technique, lists dead rules and suggests public rules (SigmaHQ) for the gaps. A web app with matrices, a panel per technique, history and export to PDF, Excel and Navigator. Something similar, at massive scale, I implemented at very large companies with SIEMs from different vendors and environments. MIT, with tests and CI.",
       "proj.covAlt": "The mitre-coverage-kit ATT&CK matrix with the coverage traffic light",
       "proj.mcp": "Open source: a standalone, read-only MCP server to query Splunk from Claude or any MCP client with nothing but a token. Seven tools behind an SPL guard (blocked commands, row caps, index allow-list) and an audit log of every call. 83 tests, MIT.",
       "proj.mcpAlt": "The seven read-only tools of splunk-mcp-readonly and its SPL guard",
