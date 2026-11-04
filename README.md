@@ -83,7 +83,7 @@ order, no certification claims that do not exist, and a few names that must neve
 ## Deploy to Cloud Run
 
 `deploy/cloud-run.sh` holds the recipe (Secret Manager for the API key, `gcloud run deploy
---source .`, region `southamerica-east1`, scale to zero). It does not run by itself; read it,
+--source .`, region `us-east1` (Cloud Run domain mappings are not available in southamerica-east1), scale to zero). It does not run by itself; read it,
 set `PROJECT` (and `PROVIDER=gemini` or `anthropic`, default `gemini`), and run it when you are ready. The Dockerfile copies `knowledge/` and `cv/` into
 the image; the CV PDFs are git-ignored on purpose.
 

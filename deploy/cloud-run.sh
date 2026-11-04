@@ -18,7 +18,7 @@
 set -euo pipefail
 
 PROJECT="${PROJECT:?set PROJECT to the GCP project id}"
-REGION="${REGION:-southamerica-east1}"
+REGION="${REGION:-us-east1}"  # custom domains are not allowed in southamerica-east1
 SERVICE="${SERVICE:-lean-profile-agent}"
 PROVIDER="${PROVIDER:-gemini}"
 
