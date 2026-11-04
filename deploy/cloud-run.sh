@@ -48,4 +48,4 @@ gcloud run deploy "$SERVICE" \
 URL="$(gcloud run services describe "$SERVICE" --project "$PROJECT" --region "$REGION" --format='value(status.url)')"
 echo "Deployed: $URL"
 echo "MCP endpoint: $URL/mcp"
-curl -fsS "$URL/healthz" && echo
+curl -fsS "$URL/health" && echo

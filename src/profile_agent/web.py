@@ -146,6 +146,7 @@ def create_app(
     app.state.kbs = kbs
 
     @app.get("/healthz")
+    @app.get("/health")  # Cloud Run's front end reserves paths ending in "z"
     async def healthz() -> dict[str, str]:
         return {"status": "ok"}
 

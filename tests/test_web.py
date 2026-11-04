@@ -66,6 +66,7 @@ def test_home_page_is_bilingual_and_honest(client: TestClient) -> None:
 
 def test_healthz(client: TestClient) -> None:
     assert client.get("/healthz").json() == {"status": "ok"}
+    assert client.get("/health").json() == {"status": "ok"}
 
 
 def test_cv_download_and_404(client: TestClient) -> None:

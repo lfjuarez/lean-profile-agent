@@ -1,0 +1,15 @@
+# Cloud Run source upload. Unlike .gitignore, the CV PDFs in cv/ ARE included.
+.git/
+.gitignore
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.taste-skill/
+.impeccable/
+.env
+tests/
+docs/
+eval/
+deploy/huggingface/
