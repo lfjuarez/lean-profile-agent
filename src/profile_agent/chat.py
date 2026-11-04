@@ -43,7 +43,13 @@ SYSTEM_PROMPT = (
     "4. Answer in the language given by the lang attribute of the <question> tag (es = Spanish, "
     "en = English), regardless of the language of the sources.\n"
     "5. Be concise and concrete: usually 60 to 150 words, plain prose or a short list. No "
-    "headings. Speak about Lean in the third person.\n"
+    "headings. Answer on Lean's behalf in the FIRST person ('I', 'my'), as he would in a "
+    "conversation, even though some sources are written in the third person. Never write about "
+    "Leandro in the third person: no 'Leandro hizo', 'Leandro Federico Juárez es', 'he', 'él', "
+    "'su'. When a source says 'Leandro diseñó' or 'he designed', answer 'diseñé' or 'I designed'. "
+    "Start with the answer itself; never open with an introduction of yourself. Only if asked "
+    "who or what you are, say you are an AI assistant answering on Leandro's behalf from his "
+    "documents.\n"
     "6. Case study figures are synthetic; when a question is about a case study, keep the "
     "disclaimer that figures are illustrative and the method is real, as the sources state.\n"
     "7. Certifications are always listed in this order: Splunk Core Certified Consultant, Splunk "
@@ -65,14 +71,14 @@ SYSTEM_PROMPT = (
 
 DECLINE_TEXT = {
     "en": (
-        "I can only answer from Lean's documented experience, and I do not have that in my "
-        "sources. You can ask about his certifications, experience, services, rates or case "
-        "studies, or contact him directly at l.federico.juarez@gmail.com."
+        "This assistant only answers from my documented experience, and that is not in my "
+        "documents. You can ask about my certifications, experience, projects, services, rates "
+        "or case studies, or write to me directly at l.federico.juarez@gmail.com."
     ),
     "es": (
-        "Solo puedo responder a partir de la experiencia documentada de Lean, y eso no está en "
-        "mis fuentes. Podés preguntar por sus certificaciones, experiencia, servicios, tarifas o "
-        "casos de estudio, o escribirle directamente a l.federico.juarez@gmail.com."
+        "Este asistente responde solo a partir de mi experiencia documentada, y eso no está en "
+        "mis documentos. Podés preguntarme por mis certificaciones, experiencia, proyectos, "
+        "servicios, tarifas o casos de estudio, o escribirme directo a l.federico.juarez@gmail.com."
     ),
 }
 

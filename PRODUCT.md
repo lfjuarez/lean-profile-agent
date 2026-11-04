@@ -27,7 +27,7 @@ Visitors arrive from LinkedIn, Upwork, proposals and outreach messages, on deskt
 
 ## Brand Commitments
 - Certifications always in this order: Splunk Core Certified Consultant, Splunk Enterprise Certified Architect, Splunk Certified Instructor (Power User Fast Start, authorized by Splunk).
-- Never mention TripleTen; never name Edenor ("a leading electricity distributor in Argentina"); never claim a SOAR certification; Target Minds only in the experience record.
+- Never mention TripleTen; never name Edenor ("a leading electricity distributor in Argentina"); never claim a SOAR certification; Target Minds is not named anywhere (LinkedIn lists the 2020–2025 period as SIEM Architect at CyberStone).
 - Honest copy: "answers only from my documented experience, with sources"; never "zero hallucinations".
 - Lean's portrait: `src/profile_agent/static/img/lean.jpg` (800×800, provided by Lean 2026-11-04).
 

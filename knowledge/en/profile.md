@@ -12,7 +12,7 @@ questions:
 
 ## Summary
 
-Leandro Federico Juárez is a Splunk Core Certified Consultant, Splunk Enterprise Certified Architect and Splunk Certified Instructor (authorized by Splunk for the Power User Fast Start track), with more than 12 years in IT and 6 years dedicated to SIEM, threat detection and security operations. He designs, implements and optimizes distributed and clustered Splunk and Elastic platforms (Cloud, on-premise and hybrid) for banking, insurance and energy; builds detections in Splunk Enterprise Security mapped to MITRE ATT&CK, SOAR playbooks and UEBA use cases; and automates detection engineering with AI agents (more than 2,000 detection rules migrated and validated). He holds a Master's degree in Data Science. He works remotely from Argentina on Latin America and Spain hours, with overlap with the United States and Europe.
+I help security teams get real value from their SIEM: platforms that scale, detections that fire on real threats, and people who know how to use them. I am a Splunk Core Certified Consultant, Splunk Enterprise Certified Architect and Splunk Certified Instructor (authorized by Splunk for the Power User Fast Start track), with more than 12 years in IT and 6 years dedicated to SIEM, threat detection and security operations. I design, implement and optimize distributed and clustered Splunk and Elastic platforms (Cloud, on-premise and hybrid) for banking, insurance and energy; build detections in Splunk Enterprise Security mapped to MITRE ATT&CK, SOAR playbooks and UEBA use cases; and automate detection engineering with AI agents (more than 2,000 detection rules migrated and validated). I hold a Master's degree in Data Science. I work remotely from Argentina on Latin America and Spain hours, with overlap with the United States and Europe.
 
 ## What I do
 
@@ -38,10 +38,11 @@ Clear written reports, defined deliverables and no surprises. Every engagement e
 
 ## Education
 
-- Master's degree in Data Science, Universidad CAECE (graduated, grade average 9/10), 2020–2021.
-- Bachelor's degree in Information Technology, Universidad de Palermo (graduated), 2014–2019.
-- Applied Artificial Intelligence, Universidad del CEMA, 2023.
-- Higher Technician in Telecommunications, Instituto Universitario de la Policía Federal Argentina (IUPFA), 2011–2013.
+- Master's degree in Data Science and Business Innovation, Universidad CAECE, 2020–2024 (degree conferred March 2025), grade average 9.15/10; accredited by CONEAU (Res. 493/2018). Coursework in machine learning, data mining, big data, business intelligence and analytics, intelligent systems, IoT and emerging technologies. Thesis: "The science behind musical success on streaming platforms": can a song's success be predicted before release? A dataset built from the Spotify and Musixmatch APIs, a custom success score, lyrics processed with NLP, and linear regression, decision trees, random forests and neural networks (MLP) trained under cross-validation; random forests and MLP classified songs into success tiers reliably.
+- Bachelor's degree in Information Technology, Universidad de Palermo, Faculty of Engineering, 2018–2019 (degree conferred June 2020), nationally recognised degree (Ministerial Resolution 1399/2015). Final integration project: a SaaS platform for real-time tele-diagnosis of diabetic retinopathy for Hospital El Cruce's "Oftalmología en Red" telemedicine network, using machine learning and pattern recognition to support early detection.
+- Advanced Technician in Systems Analysis, Estudios Superiores de Buenos Aires (ESBA), 2015–2017: programming, databases, data structures, operating systems, teleinformatics, systems analysis and design, systems auditing and security, operations research and statistics.
+- Advanced Technician in Telecommunications, Instituto Universitario de la Policía Federal Argentina (IUPFA), 2011–2013, grade average 8.66/10, combined with police officer training.
+- Applied Artificial Intelligence course, Universidad del CEMA, 2023 (model training in Python).
 
 ## Languages and location
 

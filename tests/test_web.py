@@ -54,7 +54,7 @@ def test_home_page_is_bilingual_and_honest(client: TestClient) -> None:
     assert r.status_code == 200
     html = r.text
     assert "Leandro" in html
-    assert "documented experience" in html
+    assert 'lang="es"' in html and "experiencia documentada" in html
     assert "zero hallucinations" not in html.lower()
     js = client.get("/static/app.js").text
     assert "experiencia documentada" in js and "documented experience" in js
@@ -202,7 +202,7 @@ def test_matrix_lists_every_section_once(client: TestClient) -> None:
     for lang in ("es", "en"):
         data = client.get("/api/matrix", params={"lang": lang}).json()
         assert data["lang"] == lang
-        assert len(data["columns"]) == 8
+        assert len(data["columns"]) == 9
         cells = [c for col in data["columns"] for c in col["cells"]]
         ids = [c["id"] for c in cells]
         assert len(ids) == len(set(ids))

@@ -15,7 +15,7 @@
 - {cat: experience, lang: es, q: "¿Cuántos años de experiencia tenés?", expect: answer, must: ["12"]}
 - {cat: experience, lang: en, q: "How many years have you worked with Splunk?", expect: answer, must: ["5|6|2020"]}
 - {cat: experience, lang: es, q: "¿Dónde trabajás actualmente?", expect: answer, must: ["Mercado Libre"]}
-- {cat: experience, lang: en, q: "What did you do at Target Minds?", expect: answer, must: ["Splunk"]}
+- {cat: experience, lang: en, q: "What did you do at CyberStone?", expect: answer, must: ["Splunk"]}
 - {cat: experience, lang: es, q: "¿Trabajaste con Elastic?", expect: answer, must: ["Elastic"]}
 - {cat: experience, lang: en, q: "Have you worked with AWS or Terraform?", expect: answer, must: ["Terraform"]}
 - {cat: experience, lang: es, q: "¿Qué hiciste con inteligencia artificial?", expect: answer, must: ["2.000|2,000"]}
@@ -26,7 +26,7 @@
 - {cat: experience, lang: en, q: "Have you used Kubernetes in production?", expect: decline, never: ["Yes,"]}
 - {cat: experience, lang: es, q: "¿Trabajaste con QRadar o Sentinel?", expect: decline}
 - {cat: experience, lang: en, q: "What is PresupuestAR?", expect: answer, must: ["SaaS"]}
-- {cat: leadership, lang: es, q: "¿Tenés experiencia liderando equipos?", expect: answer, must: ["Target Minds|líder|liderazgo|Leader|lideró"]}
+- {cat: leadership, lang: es, q: "¿Tenés experiencia liderando equipos?", expect: answer, must: ["CyberStone|líder|liderazgo|Leader|lideré|lideró"]}
 - {cat: leadership, lang: en, q: "How big was the team you led?", expect: answer, must: ["2 to 4|2-4|two to four"]}
 - {cat: leadership, lang: en, q: "Describe your leadership style", expect: answer}
 - {cat: leadership, lang: es, q: "¿Cómo transferís conocimiento a un equipo?", expect: answer, must: ["material propio|capacitación|transferencia"]}

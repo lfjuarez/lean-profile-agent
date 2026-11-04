@@ -24,7 +24,7 @@ STOPWORDS_EN = frozenset(
     why can could would should will shall have has had having about tell please any some there
     as at by from up out if than then so not no yes also into like much many per one ones
     want know get give got more most other such own same just only very s t re ve ll d
-    the""".split()
+    the best""".split()
 )
 STOPWORDS_ES = frozenset(
     """de la el los las un una unos unas y o u que en con por para es sos son soy tu tus su

@@ -3,19 +3,81 @@
 
   const I18N = {
     en: {
-      "nav.skip": "Skip to the question box", "nav.map": "Source map", "nav.mcp": "MCP", "nav.how": "How it works",
+      "nav.skip": "Skip to the question box", "nav.exp": "Experience", "nav.projects": "Projects", "nav.mcp": "MCP",
       "hero.alt": "Portrait of Leandro F. Juárez",
-      "hero.statement": "SIEM, SOAR and detection engineering consultant, and Splunk instructor. This CV answers your questions, with sources.",
+      "hero.role": "Cybersecurity engineer and SIEM architect",
+      "hero.roleSub": "Detection engineering · AI for security operations · Elastic and Splunk · Consulting and training",
+      "hero.statement": "I help security teams get real value from their SIEM: platforms that scale, detections that fire on real threats, and people who know how to use them.",
       "certs.instructor": "Splunk Certified Instructor", "certs.note": "· Power User Fast Start, authorized by Splunk",
+      "creds.master": "Master's in Data Science", "creds.cloud": "Cloud: AWS, Azure and Google Cloud",
       "hero.cv": "Download CV", "hero.cvAlt": "CV en español",
       "contact.email": "Email", "contact.copy": "Copy", "contact.copied": "Copied", "contact.where": "Based in", "contact.whereV": "Buenos Aires, Argentina · remote",
-      "ask.label": "Ask about my professional experience", "ask.placeholder": "Type your question…", "ask.send": "Ask",
-      "answer.empty": "Answers only from my documented experience, with sources. Each answer lights up, in the map below, the sections it read and the ones it cites.",
-      "map.title": "Source map", "map.read": "read for the answer", "map.cited": "cited",
+      "aud.title": "Who this site is for",
+      "aud.tech": "I'm technical", "aud.biz": "I'm in sales", "aud.people": "I'm in People",
+      "aud.techText": "Ask about SIEM architectures, MITRE ATT&CK detections, SOAR or AI applied to security. Every answer cites the exact section of my documents, and you can connect this same CV to your Claude or ChatGPT through MCP.",
+      "aud.bizText": "If you are evaluating a consultant for a SIEM, detection or Splunk training project, ask about services, rates, availability and case studies. Answers come from my documents and the CV downloads in one click.",
+      "aud.peopleText": "If you are screening candidates or preparing an interview, ask about my track record, how I work, team leadership and project references. I answer in the first person, with the source next to it.",
+      "aud.note": "I answer in the first person, but the one replying is an AI assistant that uses only my documents and cites the source. If something is not documented, it says so.",
+      "ask.label": "Ask me about my professional experience", "ask.placeholder": "Type your question…", "ask.send": "Ask",
+      "answer.empty": "Answers come only from my documented experience, with sources. Each one marks, further down, the roles, studies, skills and topics it read and the ones it cites.",
+      "exp.title": "Professional experience", "exp.sub": "You can ask about any role. After each answer, the ones I read and the ones I cited are marked.",
+      "exp.ask": "Ask about this role",
+      "exp.meli.when": "Apr 2025 – present",
+      "exp.meli.b1": "I drive the architecture of Observability Security: AI ecosystems for cybersecurity and unified telemetry in a Security Data Lake.",
+      "exp.meli.b2": "Migration of several legacy SIEMs into a SOCless platform on Elasticsearch over AWS, with the lifecycle of petabytes of events; infrastructure with Terraform and 200+ sources normalized in ECS.",
+      "exp.meli.b3": "AI-assisted detection engineering through MCP: 2,000+ rules migrated with quality control and measured MITRE ATT&CK and ATLAS coverage; evidence for PCI DSS, ISO 27001 and BCRA audits.",
+      "exp.meli.ask": "Tell me about your current role at Mercado Libre.",
+      "exp.splunk.when": "Jan 2025 – present",
+      "exp.splunk.b1": "I deliver the official Power User Fast Start track for Splunk Education, in Spanish and English, to students from any company.",
+      "exp.splunk.b2": "Four cohorts delivered: every student completed the course and many earned the Splunk Core Certified Power User certification.",
+      "exp.splunk.ask": "Tell me about your work as a Splunk Certified Instructor.",
+      "exp.cyber.when": "Jul 2020 – Mar 2025",
+      "exp.cyber.b1": "Splunk projects for 15 clients in banking, consumer finance, energy, gas, travel assistance and media, the largest at 500 GB per day; I led a technical team of 2 to 4 engineers.",
+      "exp.cyber.b2": "Enterprise Security with MITRE ATT&CK detections, SOAR playbooks and UBA: 50+ correlation searches and playbooks per client, with fewer false positives and less triage time.",
+      "exp.cyber.b3": "Migrations from other SIEMs, multi-site clusters, CIM normalization, custom integrations and audit evidence.",
+      "exp.cyber.ask": "Tell me about your time as SIEM Architect at CyberStone.",
+      "exp.metrogas.when": "Jan 2019 – Jul 2020",
+      "exp.metrogas.b1": "Dashboards and reports with Python, Splunk and Power BI from Jira, SAP Solution Manager and MS Project for the SAP implementation programme.",
+      "exp.metrogas.b2": "Status, issue and risk tracking with PMI methodology, on daily, weekly and monthly cycles.",
+      "exp.metrogas.ask": "What did you do at MetroGAS?",
+      "exp.pfa.when": "Feb 2011 – Jan 2019",
+      "exp.pfa.b1": "Eight years across development, QA and business analysis on critical systems: Interpol liaison, weapons registry, case files and payroll.",
+      "exp.pfa.b2": "PHP applications, Oracle and PL/SQL; requirements with key users and leadership of assigned projects in a high-security environment.",
+      "exp.pfa.ask": "What did you do at the Argentine Federal Police?",
+      "exp.presu.when": "2026 – present", "exp.presu.org": "· my own product",
+      "exp.presu.b1": "A SaaS in beta, not yet officially launched, for creating and sending professional quotes: Next.js, PostgreSQL, Google Cloud Run, PDF, client signature and the ARCA API.",
+      "exp.presu.ask": "What is PresupuestAR?",
+      "edu.title": "Education",
+      "edu.caece.t": "Master's in Data Science and Business Innovation", "edu.caece.n": "Grade average 9.15/10. Thesis: predicting musical success on streaming platforms with NLP and machine learning.",
+      "edu.palermo.t": "Bachelor's in Information Technology", "edu.palermo.n": "Final project: a SaaS platform for tele-diagnosis of diabetic retinopathy with machine learning.",
+      "edu.esba.t": "Advanced Technician in Systems Analysis",
+      "edu.iupfa.t": "Advanced Technician in Telecommunications", "edu.iupfa.n": "Grade average 8.66/10.",
+      "edu.cema.t": "Applied Artificial Intelligence", "edu.cema.n": "Model training in Python.",
+      "edu.langs": "Languages: native Spanish · English, full professional proficiency.",
+      "sk.title": "Skills",
+      "sk.1.t": "SIEM platforms", "sk.1.d": "Elastic (Elasticsearch, Kibana, Fleet, ECS) and Splunk (multi-site clusters, Splunk Cloud, SmartStore, Enterprise Security, SOAR, UBA, CIM).",
+      "sk.2.t": "Data and normalization", "sk.2.d": "Source onboarding (Universal Forwarder, HEC, syslog, DB Connect, REST), CIM and ECS, hot-warm-cold-frozen lifecycle, data quality.",
+      "sk.3.t": "Detection and response", "sk.3.d": "MITRE ATT&CK and ATLAS, detection engineering, UEBA, SOAR playbooks, threat hunting, triage and investigation, false-positive reduction.",
+      "sk.4.t": "AI for security", "sk.4.d": "LLM agents, RAG, custom MCP servers, output evaluation and guardrails; Python, TypeScript, SQL.",
+      "sk.5.t": "Cloud and infrastructure", "sk.5.d": "AWS, Azure and Google Cloud (Cloud Run), Terraform, Linux and Windows Server, networking.",
+      "sk.6.t": "Data science and reporting", "sk.6.d": "Machine learning and NLP, pandas, applied statistics, Power BI, Splunk and Kibana dashboards, ETL.",
+      "sk.7.t": "Compliance and audit", "sk.7.d": "PCI DSS, ISO 27001 and BCRA; technical evidence and change management in regulated environments.",
+      "sk.8.t": "Leadership and training", "sk.8.d": "Technical teams of 2 to 4 engineers, PMO and PMI methodology, official Splunk instructor in Spanish and English, knowledge transfer.",
+      "topics.title": "What you can ask about", "topics.sub": "Everything in my documents, by topic. Tap a topic to see its sections and a section to ask about it.",
+      "map.read": "read for the answer", "map.cited": "cited",
       "map.count": "{n} documented sections", "map.active": "{r} read · {k} cited", "map.sections": "{n} sections",
       "map.case": "Case study", "map.ask": "Tell me about “{t}” ({d})",
-      "facts.title": "In numbers", "facts.it": "years in IT", "facts.siem": "years in SIEM and detection",
-      "facts.rules": "detection rules migrated with AI agents", "facts.sources": "data sources in one security data lake",
+      "proj.title": "Projects",
+      "proj.aiT": "Agentic AI for cybersecurity",
+      "proj.ai": "In my current role: Python pipelines with AI agents that migrated 2,000+ detection rules between SIEMs, with quality control and MITRE ATT&CK mapping; a tool that measures ATT&CK and ATLAS coverage, and assistants connected to Splunk, Elastic and Jira through MCP.",
+      "proj.aiAlt": "Detection coverage heat map by MITRE ATT&CK technique",
+      "proj.presu": "My own product, built for the pleasure of building: a web SaaS in beta, not yet officially launched, for creating and sending professional quotes. Next.js, PostgreSQL, Google Cloud Run and the ARCA API.",
+      "proj.presuAlt": "Presu, the PresupuestAR mascot, in a frame of the showreel",
+      "proj.siteT": "This CV",
+      "proj.site": "Open source: a chat that answers only from my documents and cites every source, plus an MCP server on the same base. It is the sample of how I work with AI.",
+      "proj.siteAlt": "Topics of this site with read and cited sections marked",
+      "facts.title": "In numbers", "facts.it": "years in IT", "facts.clients": "SIEM clients in banking, energy and media",
+      "facts.rules": "detection rules migrated with AI agents", "facts.rulesN": "2,000+", "facts.sources": "data sources in one security data lake",
       "err.generic": "Something went wrong. Try again.", "err.rate": "Too many questions in a short time. Wait a minute.",
       "err.daily": "The daily question limit for this demo was reached. Come back tomorrow or write to Leandro.",
       "mcp.title": "Ask it from your own AI too", "mcp.howto": "How to connect it", "mcp.tools": "Six read-only tools:",
@@ -24,27 +86,43 @@
       "mcp.desktop": "Settings, Connectors, Add custom connector, then paste the URL. Or add it to claude_desktop_config.json:",
       "mcp.chatgpt": "Settings, Connectors, Advanced, Developer mode, Create. Paste the URL as the MCP server URL, with no authentication.",
       "how.title": "How it works",
-      "how.s1t": "Curated documents", "how.s1": "Eleven documents in Spanish and English. Each tile of the source map is one section of them, and nothing else is used.",
+      "how.s1t": "Curated documents", "how.s1": "Twelve documents in Spanish and English. Every section you see marked on this page is one section of them, and nothing else is used.",
       "how.s2t": "Search first, then the model", "how.s2": "Each question selects the relevant sections. The model answers only from them and cites them; with nothing relevant, the server declines without calling it.",
-      "how.s3t": "Sources you can see", "how.s3": "Read sections turn pale green and cited ones dark green. Case study figures are synthetic; method and deliverables are real.",
+      "how.s3t": "Sources you can see", "how.s3": "Read sections turn dark blue and cited ones light blue. Case study figures are synthetic; method and deliverables are real.",
       "how.s4t": "Limits, honestly", "how.s4": "The wording can still be imperfect, so every answer shows its sources and the CV is one click away. It does not replace a conversation.",
-      "foot.synthetic": "Case study figures are synthetic; method and deliverables are real.",
-      "honest": "Answers only from my documented experience, with sources."
+      "foot.synthetic": "Case study figures are synthetic; method and deliverables are real."
     },
     es: {
-      "nav.skip": "Ir a la caja de preguntas", "nav.map": "Mapa de fuentes", "nav.mcp": "MCP", "nav.how": "Cómo funciona",
+      "nav.skip": "Ir a la caja de preguntas", "nav.exp": "Experiencia", "nav.projects": "Proyectos", "nav.mcp": "MCP",
       "hero.alt": "Retrato de Leandro F. Juárez",
-      "hero.statement": "Consultor de SIEM, SOAR e ingeniería de detección, e instructor de Splunk. Este CV responde tus preguntas, con fuentes.",
+      "hero.role": "Ingeniero de ciberseguridad y arquitecto de SIEM",
+      "hero.roleSub": "Ingeniería de detección · IA aplicada a operaciones de seguridad · Elastic y Splunk · Consultoría y formación",
+      "hero.statement": "Ayudo a equipos de seguridad a aprovechar al máximo su SIEM: plataformas que escalan, detecciones que disparan con amenazas reales y gente que sabe usarlas.",
       "certs.instructor": "Splunk Certified Instructor", "certs.note": "· Power User Fast Start, habilitado por Splunk",
+      "creds.master": "Magíster en Ciencia de Datos", "creds.cloud": "Cloud: AWS, Azure y Google Cloud",
       "hero.cv": "Descargar CV", "hero.cvAlt": "CV in English",
       "contact.email": "Email", "contact.copy": "Copiar", "contact.copied": "Copiado", "contact.where": "Ubicación", "contact.whereV": "Buenos Aires, Argentina · remoto",
-      "ask.label": "Preguntale a mi experiencia profesional", "ask.placeholder": "Escribí tu pregunta…", "ask.send": "Preguntar",
-      "answer.empty": "Respuestas solo a partir de mi experiencia documentada, con fuentes. Cada respuesta enciende, en el mapa de abajo, las secciones que leyó y las que cita.",
-      "map.title": "Mapa de fuentes", "map.read": "leída para la respuesta", "map.cited": "citada",
+      "aud.title": "Para quién es este sitio",
+      "aud.tech": "Soy técnico", "aud.biz": "Soy comercial", "aud.people": "Soy de People",
+      "aud.techText": "Preguntá por arquitecturas de SIEM, detecciones MITRE ATT&CK, SOAR o IA aplicada a seguridad. Cada respuesta cita la sección exacta de mis documentos, y podés conectar este mismo CV a tu Claude o ChatGPT por MCP.",
+      "aud.bizText": "Si evaluás un consultor para un proyecto de SIEM, detección o formación Splunk, preguntá por servicios, tarifas, disponibilidad y casos de estudio. Las respuestas salen de mis documentos y el CV se descarga en un clic.",
+      "aud.peopleText": "Si estás evaluando candidatos o preparando una entrevista, preguntá por trayectoria, forma de trabajar, liderazgo de equipo y referencias de proyectos. Respondo en primera persona, con la fuente al lado.",
+      "aud.note": "Respondo en primera persona, pero quien contesta es un asistente de IA que usa solo mis documentos y cita la fuente. Si algo no está documentado, lo dice.",
+      "ask.label": "Preguntame sobre mi experiencia profesional", "ask.placeholder": "Escribí tu pregunta…", "ask.send": "Preguntar",
+      "answer.empty": "Las respuestas salen solo de mi experiencia documentada, con fuentes. Cada una marca más abajo las etapas, estudios, competencias y temas que leyó y los que cita.",
+      "exp.ask": "Preguntar por esta etapa",
+      "exp.meli.ask": "Contame sobre tu rol actual en Mercado Libre.",
+      "exp.splunk.ask": "Contame sobre tu trabajo como instructor certificado de Splunk.",
+      "exp.cyber.ask": "Contame sobre tu etapa como SIEM Architect en CyberStone.",
+      "exp.metrogas.ask": "¿Qué hiciste en MetroGAS?",
+      "exp.pfa.ask": "¿Qué hiciste en la Policía Federal Argentina?",
+      "exp.presu.ask": "¿Qué es PresupuestAR?",
+      "topics.title": "Sobre qué podés preguntar", "topics.sub": "Todo lo que está en mis documentos, por tema. Tocá un tema para ver sus secciones y una sección para preguntar por ella.",
+      "map.read": "leída para la respuesta", "map.cited": "citada",
       "map.count": "{n} secciones documentadas", "map.active": "{r} leídas · {k} citadas", "map.sections": "{n} secciones",
       "map.case": "Caso de estudio", "map.ask": "Contame sobre «{t}» ({d})",
-      "facts.title": "En números", "facts.it": "años en IT", "facts.siem": "años en SIEM y detección",
-      "facts.rules": "reglas de detección migradas con agentes de IA", "facts.sources": "fuentes de datos en un data lake de seguridad",
+      "facts.title": "En números", "facts.it": "años en IT", "facts.clients": "clientes de SIEM en banca, energía y medios",
+      "facts.rules": "reglas de detección migradas con agentes de IA", "facts.rulesN": "2.000+", "facts.sources": "fuentes de datos en un data lake de seguridad",
       "err.generic": "Algo salió mal. Probá de nuevo.", "err.rate": "Demasiadas preguntas en poco tiempo. Esperá un minuto.",
       "err.daily": "Se alcanzó el límite diario de preguntas de esta demo. Volvé mañana o escribile a Leandro.",
       "mcp.title": "Preguntale también desde tu propia IA", "mcp.howto": "Cómo conectarlo", "mcp.tools": "Seis herramientas de solo lectura:",
@@ -53,41 +131,62 @@
       "mcp.desktop": "Configuración, Conectores, Agregar conector personalizado, y pegá la URL. O agregalo a claude_desktop_config.json:",
       "mcp.chatgpt": "Configuración, Conectores, Avanzado, Modo desarrollador, Crear. Pegá la URL como URL del servidor MCP, sin autenticación.",
       "how.title": "Cómo funciona",
-      "how.s1t": "Documentos curados", "how.s1": "Once documentos en español e inglés. Cada etiqueta del mapa de fuentes es una sección de ellos, y no se usa nada más.",
+      "how.s1t": "Documentos curados", "how.s1": "Doce documentos en español e inglés. Cada sección que ves marcada en esta página es una sección de ellos, y no se usa nada más.",
       "how.s2t": "Primero búsqueda, después el modelo", "how.s2": "Cada pregunta elige las secciones relevantes. El modelo responde solo con ellas y las cita; si no hay nada relevante, el servidor declina sin llamarlo.",
-      "how.s3t": "Fuentes a la vista", "how.s3": "Las secciones leídas se pintan verde claro y las citadas verde oscuro. Las cifras de los casos de estudio son sintéticas; el método y los entregables son reales.",
+      "how.s3t": "Fuentes a la vista", "how.s3": "Las secciones leídas se pintan azul oscuro y las citadas azul claro. Las cifras de los casos de estudio son sintéticas; el método y los entregables son reales.",
       "how.s4t": "Límites, con honestidad", "how.s4": "La redacción todavía puede ser imperfecta; por eso cada respuesta muestra sus fuentes y el CV está a un clic. No reemplaza una conversación.",
-      "foot.synthetic": "Las cifras de los casos de estudio son sintéticas; el método y los entregables son reales.",
-      "honest": "Respuestas solo a partir de mi experiencia documentada, con fuentes."
+      "foot.synthetic": "Las cifras de los casos de estudio son sintéticas; el método y los entregables son reales."
     }
   };
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const state = { lang: "en", history: [], busy: false, tiles: new Map(), total: 0, firstLoad: true };
+  const state = { lang: "es", aud: "tech", history: [], busy: false, tiles: new Map(), topics: [], topic: null, total: 0 };
+  const ORIG = new Map(); // Spanish text written in the HTML, for keys the dictionary does not carry
   const t = (k, vars) => {
-    let s = (I18N[state.lang] && I18N[state.lang][k]) || I18N.en[k] || k;
+    let s = (I18N[state.lang] && I18N[state.lang][k]) || I18N.es[k] || k;
     if (vars) for (const [a, b] of Object.entries(vars)) s = s.replace(`{${a}}`, b);
     return s;
   };
 
   function applyLanguage(lang) {
-    state.lang = lang === "es" ? "es" : "en";
+    state.lang = lang === "en" ? "en" : "es";
     document.documentElement.lang = state.lang;
     try { localStorage.setItem("lang", state.lang); } catch (_) {}
-    $$("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
-    $$("[data-i18n-placeholder]").forEach((el) => { el.placeholder = t(el.dataset.i18nPlaceholder); });
-    $$("[data-i18n-alt]").forEach((el) => { el.alt = t(el.dataset.i18nAlt); });
+    $$("[data-i18n]").forEach((el) => {
+      const k = el.dataset.i18n;
+      const v = I18N[state.lang][k];
+      if (v !== undefined) el.textContent = v;
+      else if (ORIG.has(el)) el.textContent = ORIG.get(el);
+    });
+    $$("[data-i18n-placeholder]").forEach((el) => {
+      const v = I18N[state.lang][el.dataset.i18nPlaceholder];
+      el.placeholder = v !== undefined ? v : el.dataset.origPlaceholder || el.placeholder;
+    });
+    $$("[data-i18n-alt]").forEach((el) => {
+      const v = I18N[state.lang][el.dataset.i18nAlt];
+      el.alt = v !== undefined ? v : el.dataset.origAlt || el.alt;
+    });
     $$(".lang button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === state.lang)));
     const main = state.lang === "es" ? "ES" : "EN", alt = state.lang === "es" ? "EN" : "ES";
     $("#cv-link").href = `/cv/Leandro_Juarez_CV_${main}.pdf`;
     $("#cv-alt").href = `/cv/Leandro_Juarez_CV_${alt}.pdf`;
+    setAudience(state.aud, false);
     state.history = [];
     $("#answer-full").hidden = true;
     $("#answer-empty").hidden = false;
+    resetLights();
     loadMap();
     loadChips();
+  }
+
+  function setAudience(aud, animate) {
+    state.aud = aud;
+    $$(".aud-tabs [role=tab]").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.aud === aud)));
+    const p = $("#aud-text");
+    p.textContent = t(`aud.${aud}Text`);
+    if (animate && !reduced) { p.classList.remove("swap"); void p.offsetWidth; p.classList.add("swap"); }
   }
 
   async function loadChips() {
@@ -106,17 +205,12 @@
     return b;
   }
 
-  function makeRow(name, sub, cells, startIndex) {
-    const row = document.createElement("div");
-    row.className = "row";
-    const h = document.createElement("h3");
-    h.className = "row-name";
-    h.textContent = name;
-    const s = document.createElement("span");
-    s.textContent = sub;
-    h.appendChild(s);
+  /* Topics: one button per area (and per case study); its sections open in a panel below. */
+  function makePanel(cells, startIndex) {
+    const panel = document.createElement("div");
+    panel.className = "row"; panel.hidden = true;
     const tiles = document.createElement("div");
-    tiles.className = "tiles";
+    tiles.className = "tiles"; tiles.setAttribute("role", "list");
     cells.forEach((cell, i) => {
       const b = document.createElement("button");
       b.type = "button"; b.className = "tile"; b.setAttribute("role", "listitem");
@@ -131,47 +225,61 @@
       state.tiles.set(cell.id, b);
       tiles.appendChild(b);
     });
-    row.append(h, tiles);
-    return row;
+    panel.appendChild(tiles);
+    return panel;
   }
 
   async function loadMap() {
-    const box = $("#map-rows");
+    const tabs = $("#topic-tabs"), box = $("#map-rows");
     let data;
     try { data = await (await fetch(`/api/matrix?lang=${state.lang}`)).json(); } catch (_) { return; }
-    box.innerHTML = "";
-    box.classList.remove("dimmed");
-    state.tiles.clear();
-    let n = 0;
+    tabs.innerHTML = ""; box.innerHTML = "";
+    state.tiles.clear(); state.topics = []; state.topic = null;
+    const groups = [];
     const cols = data.columns;
     cols.forEach((col, ci) => {
-      const isCases = ci === cols.length - 1;
-      if (isCases) {
-        const groups = [];
+      if (ci === cols.length - 1) {
         col.cells.forEach((c) => {
           let g = groups.find((x) => x.name === c.group);
           if (!g) { g = { name: c.group, cells: [] }; groups.push(g); }
           g.cells.push(c);
         });
-        groups.forEach((g) => { box.appendChild(makeRow(g.name, t("map.case"), g.cells, n)); n += g.cells.length; });
-      } else {
-        box.appendChild(makeRow(col.label, t("map.sections", { n: col.cells.length }), col.cells, n));
-        n += col.cells.length;
-      }
+      } else groups.push({ name: col.label, cells: col.cells });
+    });
+    let n = 0;
+    groups.forEach((g, gi) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "topic"; b.setAttribute("role", "tab"); b.setAttribute("aria-selected", "false");
+      const name = document.createElement("span"); name.className = "topic-name"; name.textContent = g.name;
+      const count = document.createElement("span"); count.className = "topic-n"; count.textContent = String(g.cells.length);
+      b.append(name, count);
+      b.addEventListener("click", () => openTopic(state.topic === gi ? null : gi));
+      const panel = makePanel(g.cells, n);
+      n += g.cells.length;
+      state.topics.push({ btn: b, panel, cells: g.cells });
+      tabs.appendChild(b); box.appendChild(panel);
     });
     state.total = n;
     updateCount();
-    if (state.firstLoad && !reduced) {
-      const io = new IntersectionObserver((entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          box.classList.add("scan");
-          setTimeout(() => box.classList.remove("scan"), 2600);
-          io.disconnect();
-        }
-      }, { threshold: 0.2 });
-      io.observe(box);
-    }
-    state.firstLoad = false;
+  }
+
+  function openTopic(i) {
+    state.topic = i;
+    state.topics.forEach((tp, k) => {
+      tp.btn.setAttribute("aria-selected", String(k === i));
+      tp.panel.hidden = k !== i;
+      if (k === i && !reduced) { tp.panel.classList.remove("open"); void tp.panel.offsetWidth; tp.panel.classList.add("open"); }
+    });
+  }
+
+  function updateTopicBadges() {
+    state.topics.forEach((tp) => {
+      const read = tp.panel.querySelectorAll(".tile.read, .tile.cited").length;
+      const cited = tp.panel.querySelectorAll(".tile.cited").length;
+      tp.btn.classList.toggle("has-read", read > 0 && cited === 0);
+      tp.btn.classList.toggle("has-cited", cited > 0);
+      tp.btn.querySelector(".topic-n").textContent = String(cited || read || tp.cells.length);
+    });
   }
 
   function updateCount() {
@@ -181,9 +289,24 @@
       : t("map.count", { n: state.total });
   }
 
-  function resetMap() {
+  /* CV blocks carry data-keys="doc#fragment …" and light up with the sections they come from. */
+  function lightCv(id, cls, n) {
+    $$("[data-keys]").forEach((el) => {
+      const hit = el.dataset.keys.split(/\s+/).some((k) => {
+        const [doc, frag] = k.split("#");
+        return id.startsWith(`${doc}#`) && id.includes(frag);
+      });
+      if (!hit) return;
+      el.classList.add(cls);
+      if (cls === "cited") { el.classList.remove("read"); if (!el.dataset.n) el.dataset.n = n; }
+    });
+  }
+
+  function resetLights() {
     $("#map-rows").classList.remove("dimmed");
     $$(".tile").forEach((x) => { x.classList.remove("read", "cited", "pop", "hot"); delete x.dataset.n; });
+    $$("[data-keys]").forEach((x) => { x.classList.remove("read", "cited"); delete x.dataset.n; });
+    updateTopicBadges();
     updateCount();
   }
 
@@ -216,7 +339,7 @@
   function setBusy(flag) {
     state.busy = flag;
     $("#send").setAttribute("aria-busy", String(flag));
-    $$(".chip").forEach((c) => { c.disabled = flag; });
+    $$(".chip, .ask-about").forEach((c) => { c.disabled = flag; });
   }
 
   async function ask(question) {
@@ -225,7 +348,7 @@
     $("#question").value = "";
     const messages = [...state.history, { role: "user", content: q }].slice(-12);
     setBusy(true);
-    resetMap();
+    resetLights();
     const full = $("#answer-full"), body = $("#answer-body"), src = $("#answer-src"), follow = $("#follow");
     const card = $("#answer");
     card.style.minHeight = `${card.offsetHeight}px`;
@@ -278,7 +401,7 @@
 
     if (error) {
       body.innerHTML = `<p class="err">${escapeHtml(error)}</p>`;
-      resetMap();
+      resetLights();
       return;
     }
     state.history = messages.concat([{ role: "assistant", content: text }]).slice(-12);
@@ -294,7 +417,12 @@
     $("#map-rows").classList.add("dimmed");
     ids.forEach((id, i) => {
       const tile = state.tiles.get(id);
-      if (tile) setTimeout(() => { tile.classList.add("read"); updateCount(); }, reduced ? 0 : 45 * i);
+      setTimeout(() => {
+        if (tile) tile.classList.add("read");
+        lightCv(id, "read");
+        updateTopicBadges();
+        updateCount();
+      }, reduced ? 0 : 45 * i);
     });
   }
 
@@ -303,11 +431,15 @@
     $("#map-rows").classList.add("dimmed");
     sources.forEach((s, i) => {
       const tile = state.tiles.get(s.id);
-      if (!tile) return;
       setTimeout(() => {
-        tile.dataset.n = s.n;
-        tile.classList.add("cited", "pop");
+        if (tile) { tile.dataset.n = s.n; tile.classList.add("cited", "pop"); }
+        lightCv(s.id, "cited", s.n);
+        updateTopicBadges();
         updateCount();
+        if (i === 0 && tile) {
+          const k = state.topics.findIndex((tp) => tp.panel.contains(tile));
+          if (k >= 0) openTopic(k);
+        }
       }, reduced ? 0 : 200 * i + 150);
     });
   }
@@ -336,7 +468,7 @@
   function hot(n) {
     $$(".hot").forEach((e) => e.classList.remove("hot"));
     if (n == null) return;
-    $$(`.tile[data-n="${n}"], .cite[data-n="${n}"], .src[data-n="${n}"]`).forEach((e) => e.classList.add("hot"));
+    $$(`.tile[data-n="${n}"], .cite[data-n="${n}"], .src[data-n="${n}"], [data-keys][data-n="${n}"]`).forEach((e) => e.classList.add("hot"));
   }
 
   function wireCites(root) {
@@ -347,10 +479,17 @@
       b.addEventListener("blur", () => hot(null));
       b.addEventListener("click", () => {
         hot(b.dataset.n);
-        const tile = $(`.tile[data-n="${b.dataset.n}"]`);
-        if (tile) tile.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
+        const target = $(`[data-keys][data-n="${b.dataset.n}"]`) || $(`.tile[data-n="${b.dataset.n}"]`);
+        if (target) target.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
       });
     });
+  }
+
+  function setupCv() {
+    $$(".ask-about").forEach((btn) => btn.addEventListener("click", () => {
+      $("#answer").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+      ask(t(btn.dataset.ask));
+    }));
   }
 
   function setupCopy() {
@@ -375,6 +514,23 @@
     }));
   }
 
+  function setupHeat() {
+    // A quiet detection-coverage heat map behind the hero: cells that brighten and dim on their own clocks.
+    const heat = $("#heat");
+    if (!heat) return;
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < 162; i++) {
+      const cell = document.createElement("i");
+      const hot = Math.random() < 0.12;
+      cell.style.setProperty("--o", (0.03 + Math.random() * 0.07).toFixed(3));
+      cell.style.setProperty("--o2", (hot ? 0.38 + Math.random() * 0.2 : 0.12 + Math.random() * 0.2).toFixed(3));
+      cell.style.setProperty("--dur", `${(4 + Math.random() * 6).toFixed(2)}s`);
+      cell.style.setProperty("--delay", `-${(Math.random() * 10).toFixed(2)}s`);
+      frag.appendChild(cell);
+    }
+    heat.appendChild(frag);
+  }
+
   function placeContact() {
     // On phones the question box comes first; the contact card follows the answer.
     const reach = $(".reach"), hero = $(".hero"), answer = $("#answer");
@@ -388,29 +544,34 @@
   }
 
   function setupMotion() {
-    $$(".in").forEach((el, i) => el.style.setProperty("--d", `${i * 70}ms`));
-    const bar = $(".bar");
-    addEventListener("scroll", () => bar.classList.toggle("scrolled", scrollY > 8), { passive: true });
-    if (reduced || !("IntersectionObserver" in window)) return;
-    const groups = [".mcp-band", ".map-head", ".facts-band h2", ".facts div", ".how h2", ".how-grid > div", ".foot-name"];
+    // Entrances only play on a visible page; a hidden tab (or reduced motion) gets everything at rest.
+    if (reduced || document.hidden || !("IntersectionObserver" in window)) return;
+    document.documentElement.classList.add("motion");
+    $$(".in").forEach((el, i) => el.style.setProperty("--d", `${i * 60}ms`));
+    const groups = [".cv-head", ".exp-item", ".cv-col", ".projects h2", ".proj", ".map-head", ".topics-sub", ".topics", ".mcp-band", ".facts-band h2", ".facts div", ".how h2", ".how-grid > div", ".foot-name"];
     const els = [];
-    groups.forEach((sel) => $$(sel).forEach((el, i) => { el.classList.add("reveal"); el.style.setProperty("--d", `${i * 80}ms`); els.push(el); }));
+    groups.forEach((sel) => $$(sel).forEach((el, i) => { el.classList.add("reveal"); el.style.setProperty("--d", `${Math.min(i, 5) * 70}ms`); els.push(el); }));
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("seen"); io.unobserve(e.target); } });
-    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
     els.forEach((el) => io.observe(el));
   }
 
   function init() {
+    $$("[data-i18n]").forEach((el) => ORIG.set(el, el.textContent));
+    $$("[data-i18n-alt]").forEach((el) => { el.dataset.origAlt = el.alt; });
+    $$("[data-i18n-placeholder]").forEach((el) => { el.dataset.origPlaceholder = el.placeholder; });
     const param = new URLSearchParams(location.search).get("lang");
     let saved = null;
     try { saved = localStorage.getItem("lang"); } catch (_) {}
-    const browser = (navigator.language || "en").toLowerCase().startsWith("es") ? "es" : "en";
     placeContact();
+    setupHeat();
     setupMotion();
-    applyLanguage(param || saved || browser);
+    applyLanguage(param || saved || "es");
     $$(".lang button").forEach((b) => b.addEventListener("click", () => { if (b.dataset.lang !== state.lang) applyLanguage(b.dataset.lang); }));
+    $$(".aud-tabs [role=tab]").forEach((b) => b.addEventListener("click", () => setAudience(b.dataset.aud, true)));
     $("#ask").addEventListener("submit", (e) => { e.preventDefault(); ask($("#question").value); });
+    setupCv();
     setupMcp();
     setupCopy();
   }

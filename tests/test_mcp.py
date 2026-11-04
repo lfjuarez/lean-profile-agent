@@ -52,7 +52,7 @@ async def test_profile_summary_is_ordered_and_bilingual(server) -> None:
         "Splunk Certified Instructor",
     ]
     assert "Splunk Core Certified Consultant" in en["summary"]
-    assert "Maestría" in es["summary"]
+    assert "Magíster" in es["summary"]
     assert en["contact"]["email"] == "l.federico.juarez@gmail.com"
     assert en["source"] == "profile"
 

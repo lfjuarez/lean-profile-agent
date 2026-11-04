@@ -31,6 +31,7 @@ MATRIX_COLUMNS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ("Experiencia", "Experience", ("experience",)),
     ("Competencias", "Skills", ("skills",)),
     ("Cómo trabajo", "How I work", ("ways-of-working",)),
+    ("Proyectos", "Projects", ("projects",)),
     ("Servicios", "Services", ("services",)),
     ("Contratación", "Hiring", ("rates", "contact")),
     (
@@ -47,12 +48,12 @@ CASE_SHORT = {
     "contact": ("Contacto", "Contact"),
 }
 STARTER_DOCS = (
-    "profile",
+    "projects",
     "case-soar-triage",
     "ways-of-working",
-    "experience",
+    "profile",
     "certifications",
-    "skills",
+    "experience",
 )
 
 

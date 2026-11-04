@@ -85,6 +85,7 @@ def test_declines_without_calling_model_when_nothing_matches(indexes) -> None:
     assert backend.calls == []
     text = "".join(e.data for e in events if e.type == "text")
     assert "documented experience" in text
+    assert "my " in text  # first-person voice
     assert events[-1].data["grounded"] is False
     followups = next(e for e in events if e.type == "followups").data
     assert any("contact" in f.lower() for f in followups)
@@ -182,7 +183,7 @@ def test_dominant_document_is_sent_whole(indexes) -> None:
     collect(chat, "Which companies have you worked for?", lang="en")
     user_turn = backend.calls[0]["messages"][-1]["content"]
     assert "Mercado Libre" in user_turn
-    assert "Target Minds" in user_turn and "MetroGAS" in user_turn
+    assert "CyberStone" in user_turn and "MetroGAS" in user_turn
 
 
 def test_profile_question_includes_the_summary(indexes) -> None:
@@ -243,6 +244,7 @@ def test_system_prompt_covers_interview_and_personal_questions() -> None:
 
     low = SYSTEM_PROMPT.lower()
     assert "anecdote" in low and "personal" in low and "rank" in low
+    assert "first person" in low and "ai assistant" in low
 
 
 def test_openai_compat_retries_busy_responses(indexes, monkeypatch) -> None:

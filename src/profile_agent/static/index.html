@@ -1,77 +1,95 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Leandro F. Juárez · Professional experience</title>
-  <meta name="description" content="Leandro F. Juárez, Splunk Core Certified Consultant, Splunk Enterprise Certified Architect and Splunk Certified Instructor. A CV you can question: answers come only from his documented experience, with sources. Also available as an MCP server." />
-  <meta property="og:title" content="Leandro F. Juárez · Professional experience" />
+  <title>Leandro F. Juárez · Ingeniero de ciberseguridad y arquitecto de SIEM</title>
+  <meta name="description" content="Leandro F. Juárez, ingeniero de ciberseguridad y arquitecto de SIEM: ingeniería de detección, IA aplicada a operaciones de seguridad, Elastic y Splunk, consultoría y formación. Un CV al que se le puede preguntar: responde solo a partir de mi experiencia documentada, con fuentes. También disponible como servidor MCP." />
+  <meta property="og:title" content="Leandro F. Juárez · Ingeniero de ciberseguridad y arquitecto de SIEM" />
   <meta property="og:image" content="/static/img/lean.jpg" />
+  <meta name="theme-color" content="#0e1829" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/styles.css?v=0.4.1" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e1714'/%3E%3Crect x='7' y='9' width='8' height='6' rx='1.5' fill='%23dcefe8'/%3E%3Crect x='17' y='9' width='8' height='6' rx='1.5' fill='%230d6b55'/%3E%3Crect x='7' y='17' width='8' height='6' rx='1.5' fill='%230d6b55'/%3E%3Crect x='17' y='17' width='8' height='6' rx='1.5' fill='%23dcefe8'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/static/styles.css?v=0.6.1" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e1829'/%3E%3Crect x='7' y='9' width='8' height='6' rx='1.5' fill='%232b4a7a'/%3E%3Crect x='17' y='9' width='8' height='6' rx='1.5' fill='%237fb0ec'/%3E%3Crect x='7' y='17' width='8' height='6' rx='1.5' fill='%237fb0ec'/%3E%3Crect x='17' y='17' width='8' height='6' rx='1.5' fill='%232b4a7a'/%3E%3C/svg%3E" />
 </head>
 <body>
   <script>document.documentElement.className = "js";</script>
-  <a class="skip" href="#question" data-i18n="nav.skip">Skip to the question box</a>
+  <a class="skip" href="#question" data-i18n="nav.skip">Ir a la caja de preguntas</a>
 
   <header class="bar">
     <a class="bar-name" href="/">Leandro F. Juárez</a>
     <nav class="bar-nav" aria-label="Site">
-      <a href="#map" data-i18n="nav.map">Source map</a>
+      <a href="#experience" data-i18n="nav.exp">Experiencia</a>
+      <a href="#projects" data-i18n="nav.projects">Proyectos</a>
       <a href="#mcp" data-i18n="nav.mcp">MCP</a>
-      <a href="#how" data-i18n="nav.how">How it works</a>
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-lang="es" aria-pressed="false">ES</button>
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <div class="lang" role="group" aria-label="Idioma">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
     </nav>
   </header>
 
   <main>
     <section class="hero" aria-labelledby="name">
+      <div class="heat" id="heat" aria-hidden="true"></div>
       <figure class="portrait in">
-        <img src="/static/img/lean.jpg" width="800" height="800" alt="Portrait of Leandro F. Juárez" data-i18n-alt="hero.alt" fetchpriority="high" />
+        <img src="/static/img/lean.jpg" width="800" height="800" alt="Retrato de Leandro F. Juárez" data-i18n-alt="hero.alt" fetchpriority="high" />
       </figure>
 
       <div class="who">
         <h1 id="name" class="in">Leandro F. Juárez</h1>
-        <p class="statement in" data-i18n="hero.statement">SIEM, SOAR and detection engineering consultant, and Splunk instructor. This CV answers your questions, with sources.</p>
-        <ul class="certs in" aria-label="Certifications">
+        <p class="role in" data-i18n="hero.role">Ingeniero de ciberseguridad y arquitecto de SIEM</p>
+        <p class="role-sub in" data-i18n="hero.roleSub">Ingeniería de detección · IA aplicada a operaciones de seguridad · Elastic y Splunk · Consultoría y formación</p>
+        <p class="statement in" data-i18n="hero.statement">Ayudo a equipos de seguridad a aprovechar al máximo su SIEM: plataformas que escalan, detecciones que disparan con amenazas reales y gente que sabe usarlas.</p>
+        <ul class="creds in" aria-label="Credenciales">
           <li>Splunk Core Certified Consultant</li>
           <li>Splunk Enterprise Certified Architect</li>
-          <li><span data-i18n="certs.instructor">Splunk Certified Instructor</span> <span class="certs-note" data-i18n="certs.note">· Power User Fast Start, authorized by Splunk</span></li>
+          <li><span data-i18n="certs.instructor">Splunk Certified Instructor</span> <span class="creds-note" data-i18n="certs.note">· Power User Fast Start, habilitado por Splunk</span></li>
+          <li data-i18n="creds.master">Magíster en Ciencia de Datos</li>
+          <li data-i18n="creds.cloud">Cloud: AWS, Azure y Google Cloud</li>
         </ul>
       </div>
 
-      <aside class="reach in" aria-label="Contact">
-        <a class="btn btn-solid" id="cv-link" href="/cv/Leandro_Juarez_CV_EN.pdf" download>
-          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2.5v9m0 0L5.5 8M9 11.5 12.5 8M3 15h12" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span data-i18n="hero.cv">Download CV</span>
+      <aside class="reach in" aria-label="Contacto">
+        <a class="btn btn-solid" id="cv-link" href="/cv/Leandro_Juarez_CV_ES.pdf" download>
+          <svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2.5v9m0 0L5.5 8M9 11.5 12.5 8M3 15h12" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-i18n="hero.cv">Descargar CV</span>
         </a>
-        <a class="cv-alt" id="cv-alt" href="/cv/Leandro_Juarez_CV_ES.pdf" download data-i18n="hero.cvAlt">CV en español</a>
+        <a class="cv-alt" id="cv-alt" href="/cv/Leandro_Juarez_CV_EN.pdf" download data-i18n="hero.cvAlt">CV in English</a>
         <dl class="contact">
-          <div><dt data-i18n="contact.email">Email</dt><dd><a href="mailto:l.federico.juarez@gmail.com" id="email">l.federico.juarez@gmail.com</a> <button type="button" class="mini" data-copy="#email" data-i18n="contact.copy">Copy</button></dd></div>
+          <div><dt data-i18n="contact.email">Email</dt><dd><a href="mailto:l.federico.juarez@gmail.com" id="email">l.federico.juarez@gmail.com</a> <button type="button" class="mini" data-copy="#email" data-i18n="contact.copy">Copiar</button></dd></div>
           <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/leandrofjuarez" rel="me noopener" target="_blank">linkedin.com/in/leandrofjuarez</a></dd></div>
-          <div><dt data-i18n="contact.where">Based in</dt><dd data-i18n="contact.whereV">Buenos Aires, Argentina · remote</dd></div>
+          <div><dt>GitHub</dt><dd><a href="https://github.com/lfjuarez" rel="me noopener" target="_blank">github.com/lfjuarez</a></dd></div>
+          <div><dt data-i18n="contact.where">Ubicación</dt><dd data-i18n="contact.whereV">Buenos Aires, Argentina · remoto</dd></div>
         </dl>
       </aside>
     </section>
 
+    <section class="audience in" aria-labelledby="audience-title">
+      <h2 id="audience-title" class="sr-only" data-i18n="aud.title">Para quién es este sitio</h2>
+      <div class="aud-tabs" role="tablist" aria-label="Para quién es este sitio">
+        <button type="button" role="tab" aria-selected="true" data-aud="tech" data-i18n="aud.tech">Soy técnico</button>
+        <button type="button" role="tab" aria-selected="false" data-aud="biz" data-i18n="aud.biz">Soy comercial</button>
+        <button type="button" role="tab" aria-selected="false" data-aud="people" data-i18n="aud.people">Soy de People</button>
+      </div>
+      <p class="aud-text" id="aud-text" role="tabpanel">Preguntá por arquitecturas de SIEM, detecciones MITRE ATT&amp;CK, SOAR o IA aplicada a seguridad. Cada respuesta cita la sección exacta de mis documentos, y podés conectar este mismo CV a tu Claude o ChatGPT por MCP.</p>
+      <p class="aud-note" data-i18n="aud.note">Respondo en primera persona, pero quien contesta es un asistente de IA que usa solo mis documentos y cita la fuente. Si algo no está documentado, lo dice.</p>
+    </section>
+
     <section class="ask-zone" aria-labelledby="ask-label">
       <form class="ask in" id="ask" autocomplete="off">
-        <label id="ask-label" for="question" data-i18n="ask.label">Ask about my professional experience</label>
+        <label id="ask-label" for="question" data-i18n="ask.label">Preguntame sobre mi experiencia profesional</label>
         <div class="ask-row">
           <input id="question" type="text" maxlength="1000" placeholder="" data-i18n-placeholder="ask.placeholder" />
-          <button type="submit" id="send" data-i18n="ask.send">Ask</button>
+          <button type="submit" id="send" data-i18n="ask.send">Preguntar</button>
         </div>
       </form>
-      <div class="chips in" id="chips" aria-label="Suggested questions"></div>
+      <div class="chips in" id="chips" aria-label="Preguntas sugeridas"></div>
 
       <div class="answer" id="answer" aria-live="polite" tabindex="-1">
-        <p class="answer-empty" id="answer-empty" data-i18n="answer.empty">Answers only from my documented experience, with sources. Each answer lights up, in the map below, the sections it read and the ones it cites.</p>
+        <p class="answer-empty" id="answer-empty" data-i18n="answer.empty">Las respuestas salen solo de mi experiencia documentada, con fuentes. Cada una marca más abajo las etapas, estudios, competencias y temas que leyó y los que cita.</p>
         <div class="answer-full" id="answer-full" hidden>
           <p class="answer-q" id="answer-q"></p>
           <div class="answer-body" id="answer-body"></div>
@@ -81,75 +99,203 @@
       </div>
     </section>
 
+    <section class="cv" id="experience" aria-labelledby="exp-title">
+      <div class="cv-head">
+        <h2 id="exp-title" data-i18n="exp.title">Experiencia profesional</h2>
+        <p class="cv-sub" data-i18n="exp.sub">Cada etapa se puede preguntar. Después de cada respuesta se marcan las que leí y las que cité.</p>
+      </div>
+      <ol class="exp">
+        <li class="exp-item" data-keys="experience#mercado-libre">
+          <p class="exp-when" data-i18n="exp.meli.when">abr. 2025 – actualidad</p>
+          <div class="exp-body">
+            <h3><span class="exp-role">Senior Cloud Cybersecurity Engineer</span> <span class="exp-org">· Mercado Libre</span></h3>
+            <ul>
+              <li data-i18n="exp.meli.b1">Lidero la arquitectura de Observability Security: ecosistemas de IA para ciberseguridad y telemetría unificada en un Security Data Lake.</li>
+              <li data-i18n="exp.meli.b2">Migración de varios SIEM legacy a una plataforma SOCless en Elasticsearch sobre AWS, con el ciclo de vida de petabytes de eventos; infraestructura con Terraform y más de 200 fuentes normalizadas en ECS.</li>
+              <li data-i18n="exp.meli.b3">Ingeniería de detección asistida por IA con MCP: más de 2.000 reglas migradas con control de calidad y cobertura MITRE ATT&amp;CK y ATLAS medida; evidencia para auditorías PCI DSS, ISO 27001 y BCRA.</li>
+            </ul>
+            <button type="button" class="ask-about" data-ask="exp.meli.ask" data-i18n="exp.ask">Preguntar por esta etapa</button>
+          </div>
+        </li>
+        <li class="exp-item" data-keys="experience#instructor">
+          <p class="exp-when" data-i18n="exp.splunk.when">ene. 2025 – actualidad</p>
+          <div class="exp-body">
+            <h3><span class="exp-role">Splunk Certified Instructor</span> <span class="exp-org">· Splunk</span></h3>
+            <ul>
+              <li data-i18n="exp.splunk.b1">Dicto el track oficial Power User Fast Start para Splunk Education, en español e inglés, con alumnos de cualquier empresa.</li>
+              <li data-i18n="exp.splunk.b2">Cuatro cohortes dictadas: todos los alumnos completaron el curso y muchos obtuvieron la certificación Splunk Core Certified Power User.</li>
+            </ul>
+            <button type="button" class="ask-about" data-ask="exp.splunk.ask" data-i18n="exp.ask">Preguntar por esta etapa</button>
+          </div>
+        </li>
+        <li class="exp-item" data-keys="experience#cyberstone">
+          <p class="exp-when" data-i18n="exp.cyber.when">jul. 2020 – mar. 2025</p>
+          <div class="exp-body">
+            <h3><span class="exp-role">SIEM Architect</span> <span class="exp-org">· CyberStone</span></h3>
+            <ul>
+              <li data-i18n="exp.cyber.b1">Proyectos Splunk para 15 clientes de banca, consumo, energía, gas, asistencia al viajero y medios, el mayor de 500 GB por día; lideré un equipo técnico de 2 a 4 ingenieros.</li>
+              <li data-i18n="exp.cyber.b2">Enterprise Security con detecciones MITRE ATT&amp;CK, playbooks de SOAR y UBA: más de 50 correlation searches y playbooks por cliente, con menos falsos positivos y menos tiempo de triage.</li>
+              <li data-i18n="exp.cyber.b3">Migraciones desde otros SIEM, clusters multi-site, normalización CIM, integraciones a medida y evidencia para auditorías.</li>
+            </ul>
+            <button type="button" class="ask-about" data-ask="exp.cyber.ask" data-i18n="exp.ask">Preguntar por esta etapa</button>
+          </div>
+        </li>
+        <li class="exp-item" data-keys="experience#metrogas">
+          <p class="exp-when" data-i18n="exp.metrogas.when">ene. 2019 – jul. 2020</p>
+          <div class="exp-body">
+            <h3><span class="exp-role">Project Management Officer</span> <span class="exp-org">· MetroGAS</span></h3>
+            <ul>
+              <li data-i18n="exp.metrogas.b1">Tableros y reportes con Python, Splunk y Power BI a partir de Jira, SAP Solution Manager y MS Project para el programa de implementación de SAP.</li>
+              <li data-i18n="exp.metrogas.b2">Seguimiento de estado, problemas y riesgos con metodología PMI, en ciclos diarios, semanales y mensuales.</li>
+            </ul>
+            <button type="button" class="ask-about" data-ask="exp.metrogas.ask" data-i18n="exp.ask">Preguntar por esta etapa</button>
+          </div>
+        </li>
+        <li class="exp-item" data-keys="experience#policia-federal">
+          <p class="exp-when" data-i18n="exp.pfa.when">feb. 2011 – ene. 2019</p>
+          <div class="exp-body">
+            <h3><span class="exp-role">Senior Business Analyst</span> <span class="exp-org">· Policía Federal Argentina</span></h3>
+            <ul>
+              <li data-i18n="exp.pfa.b1">Ocho años entre desarrollo, QA y análisis de negocio en sistemas críticos: enlace con Interpol, registro de armas, expedientes y liquidación de haberes.</li>
+              <li data-i18n="exp.pfa.b2">Aplicaciones PHP, Oracle y PL/SQL; relevamiento con usuarios clave y liderazgo de los proyectos asignados en un entorno de alta seguridad.</li>
+            </ul>
+            <button type="button" class="ask-about" data-ask="exp.pfa.ask" data-i18n="exp.ask">Preguntar por esta etapa</button>
+          </div>
+        </li>
+        <li class="exp-item" data-keys="experience#presupuestar">
+          <p class="exp-when" data-i18n="exp.presu.when">2026 – actualidad</p>
+          <div class="exp-body">
+            <h3><span class="exp-role">PresupuestAR</span> <span class="exp-org" data-i18n="exp.presu.org">· producto propio</span></h3>
+            <ul>
+              <li data-i18n="exp.presu.b1">SaaS en beta, aún sin lanzamiento oficial, para crear y enviar presupuestos profesionales: Next.js, PostgreSQL, Google Cloud Run, PDF, firma del cliente e integración con la API de ARCA.</li>
+            </ul>
+            <button type="button" class="ask-about" data-ask="exp.presu.ask" data-i18n="exp.ask">Preguntar por esta etapa</button>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="cv cv-two" aria-label="Formación y competencias">
+      <div class="cv-col" id="education" data-keys="profile#formacion profile#education">
+        <h2 data-i18n="edu.title">Formación</h2>
+        <ol class="edu">
+          <li><p class="edu-when">2020 – 2024</p><div><h3 data-i18n="edu.caece.t">Magíster en Ciencia de Datos e Innovación Empresarial</h3><p class="edu-org">Universidad CAECE</p><p class="edu-note" data-i18n="edu.caece.n">Promedio 9,15/10. Tesis: predicción del éxito musical en plataformas de streaming con NLP y machine learning.</p></div></li>
+          <li><p class="edu-when">2018 – 2019</p><div><h3 data-i18n="edu.palermo.t">Licenciatura en Tecnología de la Información</h3><p class="edu-org">Universidad de Palermo</p><p class="edu-note" data-i18n="edu.palermo.n">Proyecto final: plataforma SaaS de telediagnóstico de retinopatía diabética con machine learning.</p></div></li>
+          <li><p class="edu-when">2015 – 2017</p><div><h3 data-i18n="edu.esba.t">Técnico Superior en Análisis de Sistemas</h3><p class="edu-org">Estudios Superiores de Buenos Aires (ESBA)</p></div></li>
+          <li><p class="edu-when">2011 – 2013</p><div><h3 data-i18n="edu.iupfa.t">Técnico Superior en Telecomunicaciones</h3><p class="edu-org">Instituto Universitario de la Policía Federal Argentina</p><p class="edu-note" data-i18n="edu.iupfa.n">Promedio 8,66/10.</p></div></li>
+          <li><p class="edu-when">2023</p><div><h3 data-i18n="edu.cema.t">Inteligencia Artificial Aplicada</h3><p class="edu-org">Universidad del CEMA</p><p class="edu-note" data-i18n="edu.cema.n">Entrenamiento de modelos en Python.</p></div></li>
+        </ol>
+        <p class="edu-langs" data-i18n="edu.langs">Idiomas: español nativo · inglés, competencia profesional completa.</p>
+      </div>
+      <div class="cv-col" id="skills">
+        <h2 data-i18n="sk.title">Competencias</h2>
+        <dl class="skills">
+          <div data-keys="skills#splunk skills#elastic"><dt data-i18n="sk.1.t">Plataformas SIEM</dt><dd data-i18n="sk.1.d">Elastic (Elasticsearch, Kibana, Fleet, ECS) y Splunk (clusters multi-site, Splunk Cloud, SmartStore, Enterprise Security, SOAR, UBA, CIM).</dd></div>
+          <div data-keys="skills#onboarding"><dt data-i18n="sk.2.t">Datos y normalización</dt><dd data-i18n="sk.2.d">Onboarding de fuentes (Universal Forwarder, HEC, syslog, DB Connect, REST), CIM y ECS, ciclo de vida hot-warm-cold-frozen, calidad de datos.</dd></div>
+          <div data-keys="skills#deteccion skills#detection"><dt data-i18n="sk.3.t">Detección y respuesta</dt><dd data-i18n="sk.3.d">MITRE ATT&amp;CK y ATLAS, ingeniería de detección, UEBA, playbooks de SOAR, threat hunting, triage e investigación, reducción de falsos positivos.</dd></div>
+          <div data-keys="skills#automatizacion skills#automation"><dt data-i18n="sk.4.t">IA aplicada a seguridad</dt><dd data-i18n="sk.4.d">Agentes LLM, RAG, servidores MCP a medida, evaluación de salidas y guardrails; Python, TypeScript, SQL.</dd></div>
+          <div data-keys="skills#infraestructura skills#infrastructure"><dt data-i18n="sk.5.t">Cloud e infraestructura</dt><dd data-i18n="sk.5.d">AWS, Azure y Google Cloud (Cloud Run), Terraform, Linux y Windows Server, redes.</dd></div>
+          <div data-keys="skills#datos-y-reportes skills#data-and-reporting"><dt data-i18n="sk.6.t">Ciencia de datos y reportes</dt><dd data-i18n="sk.6.d">Machine learning y NLP, pandas, estadística aplicada, Power BI, dashboards de Splunk y Kibana, ETL.</dd></div>
+          <div data-keys="skills#cumplimiento skills#compliance"><dt data-i18n="sk.7.t">Cumplimiento y auditoría</dt><dd data-i18n="sk.7.d">PCI DSS, ISO 27001 y BCRA; evidencia técnica y gestión de cambios en entornos regulados.</dd></div>
+          <div data-keys="ways-of-working#liderazgo ways-of-working#leadership ways-of-working#mentoria ways-of-working#mentoring experience#instructor"><dt data-i18n="sk.8.t">Liderazgo y formación</dt><dd data-i18n="sk.8.d">Equipos técnicos de 2 a 4 ingenieros, PMO y metodología PMI, instructor oficial de Splunk en español e inglés, transferencia de conocimiento.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" data-i18n="proj.title">Proyectos</h2>
+      <div class="proj-grid">
+        <article class="proj">
+          <div class="proj-img"><img src="/static/img/proj-ai.jpg" width="1200" height="675" loading="lazy" alt="Mapa de calor de cobertura de detección por técnica MITRE ATT&amp;CK" data-i18n-alt="proj.aiAlt" /></div>
+          <h3 data-i18n="proj.aiT">IA agéntica para ciberseguridad</h3>
+          <p data-i18n="proj.ai">En mi rol actual: pipelines en Python con agentes de IA que migraron más de 2.000 reglas de detección entre SIEM, con control de calidad y mapeo a MITRE ATT&amp;CK; una herramienta que mide cobertura ATT&amp;CK y ATLAS, y asistentes conectados a Splunk, Elastic y Jira por MCP.</p>
+          <p class="proj-links"><a href="https://github.com/lfjuarez/mitre-coverage-kit" target="_blank" rel="noopener">mitre-coverage-kit</a> · <a href="https://github.com/lfjuarez/splunk-mcp-readonly" target="_blank" rel="noopener">splunk-mcp-readonly</a></p>
+        </article>
+        <article class="proj">
+          <div class="proj-img"><img src="/static/img/proj-presupuestar.jpg" width="1200" height="675" loading="lazy" alt="Presu, la mascota de PresupuestAR, en un fotograma del showreel" data-i18n-alt="proj.presuAlt" /></div>
+          <h3>PresupuestAR</h3>
+          <p data-i18n="proj.presu">Mi producto propio, que desarrollo por gusto: un SaaS web en beta, aún sin lanzamiento oficial, para crear y enviar presupuestos profesionales. Next.js, PostgreSQL, Google Cloud Run e integración con la API de ARCA.</p>
+        </article>
+        <article class="proj">
+          <div class="proj-img"><img src="/static/img/proj-site.jpg" width="1200" height="675" loading="lazy" alt="Temas de consulta de este sitio con secciones leídas y citadas" data-i18n-alt="proj.siteAlt" /></div>
+          <h3 data-i18n="proj.siteT">Este CV</h3>
+          <p data-i18n="proj.site">Código abierto: un chat que responde solo con mis documentos y cita cada fuente, más un servidor MCP con la misma base. Es la muestra de cómo trabajo con IA.</p>
+          <p class="proj-links"><a href="https://github.com/lfjuarez/lean-profile-agent" target="_blank" rel="noopener">lean-profile-agent</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="topics-zone" id="topics" aria-labelledby="topics-title">
+      <div class="map-head">
+        <h2 id="topics-title" data-i18n="topics.title">Sobre qué podés preguntar</h2>
+        <p class="map-key">
+          <span class="key"><i class="sw sw-read" aria-hidden="true"></i><span data-i18n="map.read">leída para la respuesta</span></span>
+          <span class="key"><i class="sw sw-cited" aria-hidden="true"></i><span data-i18n="map.cited">citada</span></span>
+          <span class="map-count" id="map-count"></span>
+        </p>
+      </div>
+      <p class="topics-sub" data-i18n="topics.sub">Todo lo que está en mis documentos, por tema. Tocá un tema para ver sus secciones y una sección para preguntar por ella.</p>
+      <div class="topics" id="topic-tabs" role="tablist" aria-label="Temas"></div>
+      <div class="topic-panels" id="map-rows"></div>
+    </section>
+
     <section class="mcp-band" id="mcp" aria-labelledby="mcp-title">
       <div class="mcp-lead">
-        <h2 id="mcp-title" data-i18n="mcp.title">Ask it from your own AI too</h2>
-        <p data-i18n="mcp.intro">This CV is also a read-only MCP server. Add the URL to Claude, ChatGPT or any MCP client and question it from your own assistant, with the same sources.</p>
+        <h2 id="mcp-title" data-i18n="mcp.title">Preguntale también desde tu propia IA</h2>
+        <p data-i18n="mcp.intro">Este CV también es un servidor MCP de solo lectura. Sumá la URL a Claude, ChatGPT o cualquier cliente MCP y preguntale desde tu propio asistente, con las mismas fuentes.</p>
       </div>
       <div class="mcp-act">
         <div class="endpoint">
           <code id="mcp-url">/mcp</code>
-          <button type="button" class="btn btn-solid copy" data-copy="#mcp-url" data-i18n="mcp.copy">Copy URL</button>
+          <button type="button" class="btn btn-solid copy" data-copy="#mcp-url" data-i18n="mcp.copy">Copiar URL</button>
         </div>
         <details class="mcp-more">
-          <summary data-i18n="mcp.howto">How to connect it</summary>
-          <div class="tabs" role="tablist" aria-label="MCP clients">
+          <summary data-i18n="mcp.howto">Cómo conectarlo</summary>
+          <div class="tabs" role="tablist" aria-label="Clientes MCP">
             <button type="button" role="tab" aria-selected="true" data-tab="claude-code">Claude Code</button>
             <button type="button" role="tab" aria-selected="false" data-tab="claude-desktop">Claude Desktop</button>
             <button type="button" role="tab" aria-selected="false" data-tab="chatgpt">ChatGPT</button>
           </div>
           <div class="tabpanel" data-panel="claude-code"><pre><code id="snippet-claude-code">claude mcp add --transport http lean-profile /mcp</code></pre></div>
           <div class="tabpanel" data-panel="claude-desktop" hidden>
-            <p data-i18n="mcp.desktop">Settings, Connectors, Add custom connector, then paste the URL. Or add it to claude_desktop_config.json:</p>
+            <p data-i18n="mcp.desktop">Configuración, Conectores, Agregar conector personalizado, y pegá la URL. O agregalo a claude_desktop_config.json:</p>
             <pre><code id="snippet-claude-desktop">{}</code></pre>
           </div>
           <div class="tabpanel" data-panel="chatgpt" hidden>
-            <p data-i18n="mcp.chatgpt">Settings, Connectors, Advanced, Developer mode, Create. Paste the URL as the MCP server URL, with no authentication.</p>
+            <p data-i18n="mcp.chatgpt">Configuración, Conectores, Avanzado, Modo desarrollador, Crear. Pegá la URL como URL del servidor MCP, sin autenticación.</p>
           </div>
-          <p class="tools-line"><span data-i18n="mcp.tools">Six read-only tools:</span> <code>profile_summary</code> <code>search_experience</code> <code>list_case_studies</code> <code>get_case_study</code> <code>availability_and_rates</code> <code>contact</code></p>
+          <p class="tools-line"><span data-i18n="mcp.tools">Seis herramientas de solo lectura:</span> <code>profile_summary</code> <code>search_experience</code> <code>list_case_studies</code> <code>get_case_study</code> <code>availability_and_rates</code> <code>contact</code></p>
         </details>
       </div>
     </section>
 
-    <section class="map-zone" id="map" aria-labelledby="map-title">
-      <div class="map-head">
-        <h2 id="map-title" data-i18n="map.title">Source map</h2>
-        <p class="map-key">
-          <span class="key"><i class="sw sw-read" aria-hidden="true"></i><span data-i18n="map.read">read for the answer</span></span>
-          <span class="key"><i class="sw sw-cited" aria-hidden="true"></i><span data-i18n="map.cited">cited</span></span>
-          <span class="map-count" id="map-count"></span>
-        </p>
-      </div>
-      <div class="map" id="map-rows" role="list" aria-label="Documented sections"></div>
-    </section>
-
     <section class="facts-band" aria-labelledby="facts-title">
-      <h2 id="facts-title" data-i18n="facts.title">In numbers</h2>
+      <h2 id="facts-title" data-i18n="facts.title">En números</h2>
       <dl class="facts">
-        <div><dt data-i18n="facts.it">years in IT</dt><dd>12+</dd></div>
-        <div><dt data-i18n="facts.siem">years in SIEM and detection</dt><dd>6</dd></div>
-        <div><dt data-i18n="facts.rules">detection rules migrated with AI agents</dt><dd>2,000+</dd></div>
-        <div><dt data-i18n="facts.sources">data sources in one security data lake</dt><dd>200+</dd></div>
+        <div><dt data-i18n="facts.it">años en IT</dt><dd>12+</dd></div>
+        <div><dt data-i18n="facts.clients">clientes de SIEM en banca, energía y medios</dt><dd>15</dd></div>
+        <div><dt data-i18n="facts.rules">reglas de detección migradas con agentes de IA</dt><dd data-i18n="facts.rulesN">2.000+</dd></div>
+        <div><dt data-i18n="facts.sources">fuentes de datos en un data lake de seguridad</dt><dd>200+</dd></div>
       </dl>
     </section>
 
     <section class="how" id="how" aria-labelledby="how-title">
-      <h2 id="how-title" data-i18n="how.title">How it works</h2>
+      <h2 id="how-title" data-i18n="how.title">Cómo funciona</h2>
       <div class="how-grid">
-        <div><h3 data-i18n="how.s1t">Curated documents</h3><p data-i18n="how.s1">Eleven documents in Spanish and English. Each tile of the source map is one section of them, and nothing else is used.</p></div>
-        <div><h3 data-i18n="how.s2t">Search first, then the model</h3><p data-i18n="how.s2">Each question selects the relevant sections. The model answers only from them and cites them; with nothing relevant, the server declines without calling it.</p></div>
-        <div><h3 data-i18n="how.s3t">Sources you can see</h3><p data-i18n="how.s3">Read sections turn pale green and cited ones dark green. Case study figures are synthetic; method and deliverables are real.</p></div>
-        <div><h3 data-i18n="how.s4t">Limits, honestly</h3><p data-i18n="how.s4">The wording can still be imperfect, so every answer shows its sources and the CV is one click away. It does not replace a conversation.</p></div>
+        <div><h3 data-i18n="how.s1t">Documentos curados</h3><p data-i18n="how.s1">Doce documentos en español e inglés. Cada sección que ves marcada en esta página es una sección de ellos, y no se usa nada más.</p></div>
+        <div><h3 data-i18n="how.s2t">Primero búsqueda, después el modelo</h3><p data-i18n="how.s2">Cada pregunta elige las secciones relevantes. El modelo responde solo con ellas y las cita; si no hay nada relevante, el servidor declina sin llamarlo.</p></div>
+        <div><h3 data-i18n="how.s3t">Fuentes a la vista</h3><p data-i18n="how.s3">Las secciones leídas se pintan azul oscuro y las citadas azul claro. Las cifras de los casos de estudio son sintéticas; el método y los entregables son reales.</p></div>
+        <div><h3 data-i18n="how.s4t">Límites, con honestidad</h3><p data-i18n="how.s4">La redacción todavía puede ser imperfecta; por eso cada respuesta muestra sus fuentes y el CV está a un clic. No reemplaza una conversación.</p></div>
       </div>
     </section>
   </main>
 
   <footer class="foot">
     <p class="foot-name">Leandro F. Juárez</p>
-    <p class="foot-line">Splunk Core Certified Consultant · Splunk Enterprise Certified Architect · Splunk Certified Instructor</p>
-    <p class="foot-line"><a href="mailto:l.federico.juarez@gmail.com">l.federico.juarez@gmail.com</a> · <a href="https://www.linkedin.com/in/leandrofjuarez" rel="me noopener" target="_blank">LinkedIn</a> · <span data-i18n="foot.synthetic">Case study figures are synthetic; method and deliverables are real.</span></p>
+    <p class="foot-line">Splunk Core Certified Consultant · Splunk Enterprise Certified Architect · Splunk Certified Instructor · <span data-i18n="creds.master">Magíster en Ciencia de Datos</span></p>
+    <p class="foot-line"><a href="mailto:l.federico.juarez@gmail.com">l.federico.juarez@gmail.com</a> · <a href="https://www.linkedin.com/in/leandrofjuarez" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/lfjuarez" rel="me noopener" target="_blank">GitHub</a> · <span data-i18n="foot.synthetic">Las cifras de los casos de estudio son sintéticas; el método y los entregables son reales.</span></p>
   </footer>
 
-  <script src="/static/app.js?v=0.4.1" defer></script>
+  <script src="/static/app.js?v=0.6.1" defer></script>
 </body>
 </html>
