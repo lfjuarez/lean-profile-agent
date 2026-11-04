@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "lean-profile": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://YOUR-SERVICE-URL/mcp"]
+    }
+  }
+}

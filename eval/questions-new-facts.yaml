@@ -1,0 +1,6 @@
+- {cat: new, lang: es, q: "¿Cuántas personas tenía tu equipo?", expect: answer, must: ["2 a 4|2-4"]}
+- {cat: new, lang: en, q: "How big was the team you led?", expect: answer, must: ["2 to 4|2-4|two to four"]}
+- {cat: new, lang: es, q: "¿Cuándo podrías empezar?", expect: answer, must: ["inmediato"]}
+- {cat: new, lang: en, q: "Are you open to full-time employment?", expect: answer, must: ["freelance|contract"]}
+- {cat: new, lang: es, q: "¿De qué proyecto estás más orgulloso?", expect: answer, must: ["2.000|2,000"]}
+- {cat: new, lang: en, q: "Would you relocate to Spain?", expect: any, never: ["yes, he would"]}

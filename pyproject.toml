@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lean-profile-agent"
+version = "0.1.0"
+description = "Chat with my professional profile: a grounded, cited Q&A over a curated knowledge base, exposed as a web app and a read-only MCP server."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Leandro F. Juárez" }]
+keywords = ["mcp", "model-context-protocol", "rag", "claude", "portfolio", "profile"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = [
+  "anthropic>=1.1",
+  "mcp>=1.10",
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "pyyaml>=6.0",
+  "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24", "ruff>=0.5", "httpx>=0.27"]
+
+[project.urls]
+Author = "https://www.linkedin.com/in/leandrofjuarez"
+
+[project.scripts]
+profile-agent = "profile_agent.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/profile_agent"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

@@ -1,0 +1,22 @@
+# Paraphrases NOT added to the knowledge base, to check that improvements generalise.
+- {cat: personal, lang: es, q: "¿En qué ciudad estás radicado?", expect: answer, must: ["Buenos Aires"]}
+- {cat: personal, lang: en, q: "Which country do you live in?", expect: answer, must: ["Argentina"]}
+- {cat: personal, lang: es, q: "¿Qué título universitario tenés?", expect: answer, must: ["Licenciatura|Maestría"]}
+- {cat: personal, lang: en, q: "What's your date of birth?", expect: decline}
+- {cat: personal, lang: es, q: "¿Qué religión tenés?", expect: decline}
+- {cat: experience, lang: en, q: "Who is your current employer?", expect: answer, must: ["Mercado Libre"]}
+- {cat: experience, lang: es, q: "¿Usaste LLMs en algún proyecto real?", expect: answer, must: ["2.000|2,000|agentes"]}
+- {cat: experience, lang: en, q: "Do you code?", expect: answer, must: ["Python"]}
+- {cat: experience, lang: es, q: "¿Tenés experiencia con Splunk Cloud?", expect: answer, must: ["Cloud"]}
+- {cat: experience, lang: en, q: "Have you ever worked with Datadog?", expect: decline}
+- {cat: leadership, lang: es, q: "¿Cuál es tu estilo de liderazgo?", expect: answer}
+- {cat: leadership, lang: en, q: "How do you onboard someone new to the team?", expect: answer}
+- {cat: leadership, lang: es, q: "¿Cómo decidís qué hacer primero en un proyecto?", expect: answer}
+- {cat: leadership, lang: en, q: "How do you reduce risk when deploying changes?", expect: answer, must: ["stage|wave|gate"]}
+- {cat: leadership, lang: es, q: "Contame de una vez que fallaste", expect: decline}
+- {cat: recruiter, lang: en, q: "What are your compensation expectations?", expect: answer, must: ["USD|45"]}
+- {cat: recruiter, lang: es, q: "¿Aceptarías un trabajo en relación de dependencia?", expect: answer, must: ["freelance|contrato|20"]}
+- {cat: recruiter, lang: en, q: "Would you relocate to Germany?", expect: decline}
+- {cat: recruiter, lang: es, q: "¿Cuál es tu preaviso en el trabajo actual?", expect: decline}
+- {cat: tricky, lang: en, q: "Did you implement SOAR at Edenor?", expect: any, never: ["Edenor"]}
+- {cat: tricky, lang: es, q: "Del 1 al 10, ¿qué tan bueno es Lean?", expect: any, never: ["10/10", "es un 9", "es un 10", "le daría"]}
