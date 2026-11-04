@@ -3,7 +3,10 @@
 
   const I18N = {
     en: {
-      "nav.skip": "Skip to the question box", "nav.exp": "Experience", "nav.projects": "Projects", "nav.mcp": "MCP",
+      "nav.skip": "Skip to the question box", "nav.profile": "Profile", "nav.ask": "Ask", "nav.exp": "Experience", "nav.edu": "Education", "nav.skills": "Skills", "nav.projects": "Projects", "nav.mcp": "MCP",
+      "topics.more": "More topics", "topics.less": "Fewer topics", "fab.ask": "Ask",
+      "more.exp": "Show the 3 earlier roles", "less.exp": "Show fewer roles", "more.edu": "Show 3 more degrees", "less.edu": "Show fewer degrees",
+      "more.skills": "Show 4 more areas", "less.skills": "Show fewer areas", "more.proj": "Show 3 more projects", "less.proj": "Show fewer projects",
       "hero.alt": "Portrait of Leandro F. Juárez",
       "hero.role": "Cybersecurity engineer and SIEM architect",
       "hero.roleSub": "Detection engineering · AI for security operations · Elastic and Splunk · Consulting and training",
@@ -63,10 +66,6 @@
       "sk.6.t": "Data science and reporting", "sk.6.d": "Machine learning and NLP, pandas, applied statistics, Power BI, Splunk and Kibana dashboards, ETL.",
       "sk.7.t": "Compliance and audit", "sk.7.d": "PCI DSS, ISO 27001 and BCRA; technical evidence and change management in regulated environments.",
       "sk.8.t": "Leadership and training", "sk.8.d": "Technical teams of 2 to 4 engineers, Scrum and Jira, PMO and PMI methodology, official Splunk instructor in Spanish and English, knowledge transfer.",
-      "topics.title": "What you can ask about", "topics.sub": "Everything in my documents, by topic. Tap a topic to see its sections and a section to ask about it.",
-      "map.read": "read for the answer", "map.cited": "cited",
-      "map.count": "{n} documented sections", "map.active": "{r} read · {k} cited", "map.sections": "{n} sections",
-      "map.case": "Case study", "map.ask": "Tell me about “{t}” ({d})",
       "proj.title": "Projects",
       "proj.aiT": "Agentic AI for cybersecurity",
       "proj.ai": "In my current role: Python pipelines with AI agents that migrated 2,000+ detection rules between SIEMs, with quality control and MITRE ATT&CK mapping; a tool that measures ATT&CK and ATLAS coverage, and assistants connected to Splunk, Elastic and Jira through MCP.",
@@ -82,7 +81,7 @@
       "proj.presuAlt": "Presu, the PresupuestAR mascot, in a frame of the showreel",
       "proj.siteT": "This CV",
       "proj.site": "Open source: a chat that answers only from my documents and cites every source, plus an MCP server on the same base. It is the sample of how I work with AI.",
-      "proj.siteAlt": "Topics of this site with read and cited sections marked",
+      "proj.siteAlt": "Screenshot of this site: the question box and an answer with its sources",
       "facts.title": "In numbers", "facts.it": "years in IT", "facts.clients": "SIEM clients in banking, energy and media",
       "facts.rules": "detection rules migrated with AI agents", "facts.rulesN": "2,000+", "facts.sources": "data sources in one security data lake",
       "err.generic": "Something went wrong. Try again.", "err.rate": "Too many questions in a short time. Wait a minute.",
@@ -100,7 +99,10 @@
       "foot.synthetic": "Case study figures are synthetic; method and deliverables are real."
     },
     es: {
-      "nav.skip": "Ir a la caja de preguntas", "nav.exp": "Experiencia", "nav.projects": "Proyectos", "nav.mcp": "MCP",
+      "nav.skip": "Ir a la caja de preguntas", "nav.profile": "Perfil", "nav.ask": "Preguntar", "nav.exp": "Experiencia", "nav.edu": "Formación", "nav.skills": "Competencias", "nav.projects": "Proyectos", "nav.mcp": "MCP",
+      "topics.more": "Más temas", "topics.less": "Menos temas", "fab.ask": "Preguntar",
+      "more.exp": "Ver las 3 etapas anteriores", "less.exp": "Ver menos etapas", "more.edu": "Ver 3 títulos más", "less.edu": "Ver menos títulos",
+      "more.skills": "Ver 4 áreas más", "less.skills": "Ver menos áreas", "more.proj": "Ver 3 proyectos más", "less.proj": "Ver menos proyectos",
       "hero.alt": "Retrato de Leandro F. Juárez",
       "hero.role": "Ingeniero de ciberseguridad y arquitecto de SIEM",
       "hero.roleSub": "Ingeniería de detección · IA aplicada a operaciones de seguridad · Elastic y Splunk · Consultoría y formación",
@@ -124,10 +126,6 @@
       "exp.metrogas.ask": "¿Qué hiciste en MetroGAS?",
       "exp.pfa.ask": "¿Qué hiciste en la Policía Federal Argentina?",
       "exp.presu.ask": "¿Qué es PresupuestAR?",
-      "topics.title": "Sobre qué podés preguntar", "topics.sub": "Todo lo que está en mis documentos, por tema. Tocá un tema para ver sus secciones y una sección para preguntar por ella.",
-      "map.read": "leída para la respuesta", "map.cited": "citada",
-      "map.count": "{n} secciones documentadas", "map.active": "{r} leídas · {k} citadas", "map.sections": "{n} secciones",
-      "map.case": "Caso de estudio", "map.ask": "Contame sobre «{t}» ({d})",
       "facts.title": "En números", "facts.it": "años en IT", "facts.clients": "clientes de SIEM en banca, energía y medios",
       "facts.rules": "reglas de detección migradas con agentes de IA", "facts.rulesN": "2.000+", "facts.sources": "fuentes de datos en un data lake de seguridad",
       "err.generic": "Algo salió mal. Probá de nuevo.", "err.rate": "Demasiadas preguntas en poco tiempo. Esperá un minuto.",
@@ -149,7 +147,7 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const state = { lang: "es", aud: "tech", history: [], busy: false, tiles: new Map(), topics: [], topic: null, total: 0 };
+  const state = { lang: "es", aud: "tech", history: [], busy: false, topics: [], topic: null };
   const ORIG = new Map(); // Spanish text written in the HTML, for keys the dictionary does not carry
   const t = (k, vars) => {
     let s = (I18N[state.lang] && I18N[state.lang][k]) || I18N.es[k] || k;
@@ -176,6 +174,8 @@
       el.alt = v !== undefined ? v : el.dataset.origAlt || el.alt;
     });
     $$(".lang button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === state.lang)));
+    const activeLink = $(".bar-nav a.active") || $(".bar-nav a");
+    if (activeLink) $("#nav-current").textContent = activeLink.textContent;
     const main = state.lang === "es" ? "ES" : "EN", alt = state.lang === "es" ? "EN" : "ES";
     $("#cv-link").href = `/cv/Leandro_Juarez_CV_${main}.pdf`;
     $("#cv-alt").href = `/cv/Leandro_Juarez_CV_${alt}.pdf`;
@@ -184,7 +184,8 @@
     $("#answer-full").hidden = true;
     $("#answer-empty").hidden = false;
     resetLights();
-    loadMap();
+    $$("[data-list]").forEach((l) => openList(l, false));
+    loadTopics();
     loadChips();
   }
 
@@ -200,6 +201,8 @@
   async function loadChips() {
     const box = $("#chips");
     box.innerHTML = "";
+    state.topic = null;
+    state.topics.forEach((tp) => tp.btn.setAttribute("aria-pressed", "false"));
     try {
       const r = await fetch(`/api/suggestions?lang=${state.lang}&audience=${state.aud}`);
       (await r.json()).questions.slice(0, 3).forEach((q) => box.appendChild(chip(q)));
@@ -213,88 +216,42 @@
     return b;
   }
 
-  /* Topics: one button per area (and per case study); its sections open in a panel below. */
-  function makePanel(cells, startIndex) {
-    const panel = document.createElement("div");
-    panel.className = "row"; panel.hidden = true;
-    const tiles = document.createElement("div");
-    tiles.className = "tiles"; tiles.setAttribute("role", "list");
-    cells.forEach((cell, i) => {
-      const b = document.createElement("button");
-      b.type = "button"; b.className = "tile"; b.setAttribute("role", "listitem");
-      b.textContent = cell.title.replace(/\s*\([^)]*\)\s*$/, "");
-      b.title = `${cell.group || cell.doc_title} › ${cell.title}`;
-      b.dataset.id = cell.id;
-      b.style.setProperty("--i", startIndex + i);
-      b.addEventListener("click", () => {
-        $("#answer").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
-        ask(t("map.ask", { t: cell.title, d: cell.group || cell.doc_title }));
-      });
-      state.tiles.set(cell.id, b);
-      tiles.appendChild(b);
-    });
-    panel.appendChild(tiles);
-    return panel;
-  }
-
-  async function loadMap() {
-    const tabs = $("#topic-tabs"), box = $("#map-rows");
+  /* Topics: a quiet row under the suggestions; picking one swaps the suggestions for its questions. */
+  async function loadTopics() {
+    const row = $("#topic-row"), toggle = $("#topics-toggle");
+    row.innerHTML = ""; row.hidden = true;
+    toggle.setAttribute("aria-expanded", "false"); toggle.textContent = t("topics.more");
+    state.topics = []; state.topic = null;
     let data;
-    try { data = await (await fetch(`/api/matrix?lang=${state.lang}`)).json(); } catch (_) { return; }
-    tabs.innerHTML = ""; box.innerHTML = "";
-    state.tiles.clear(); state.topics = []; state.topic = null;
-    const groups = [];
-    const cols = data.columns;
-    cols.forEach((col, ci) => {
-      if (ci === cols.length - 1) {
-        col.cells.forEach((c) => {
-          let g = groups.find((x) => x.name === c.group);
-          if (!g) { g = { name: c.group, cells: [] }; groups.push(g); }
-          g.cells.push(c);
-        });
-      } else groups.push({ name: col.label, cells: col.cells });
-    });
-    let n = 0;
-    groups.forEach((g, gi) => {
+    try { data = await (await fetch(`/api/topics?lang=${state.lang}`)).json(); } catch (_) { return; }
+    data.topics.forEach((tp, i) => {
       const b = document.createElement("button");
-      b.type = "button"; b.className = "topic"; b.setAttribute("role", "tab"); b.setAttribute("aria-selected", "false");
-      const name = document.createElement("span"); name.className = "topic-name"; name.textContent = g.name;
-      const count = document.createElement("span"); count.className = "topic-n"; count.textContent = String(g.cells.length);
-      b.append(name, count);
-      b.addEventListener("click", () => openTopic(state.topic === gi ? null : gi));
-      const panel = makePanel(g.cells, n);
-      n += g.cells.length;
-      state.topics.push({ btn: b, panel, cells: g.cells });
-      tabs.appendChild(b); box.appendChild(panel);
+      b.type = "button"; b.className = "topic"; b.textContent = tp.label; b.setAttribute("aria-pressed", "false");
+      b.addEventListener("click", () => setTopic(state.topic === i ? null : i));
+      state.topics.push({ btn: b, questions: tp.questions });
+      row.appendChild(b);
     });
-    state.total = n;
-    updateCount();
   }
 
-  function openTopic(i) {
+  function setTopic(i) {
+    if (i === null) { loadChips(); return; }
     state.topic = i;
-    state.topics.forEach((tp, k) => {
-      tp.btn.setAttribute("aria-selected", String(k === i));
-      tp.panel.hidden = k !== i;
-      if (k === i && !reduced) { tp.panel.classList.remove("open"); void tp.panel.offsetWidth; tp.panel.classList.add("open"); }
-    });
+    state.topics.forEach((tp, k) => tp.btn.setAttribute("aria-pressed", String(k === i)));
+    const box = $("#chips");
+    box.innerHTML = "";
+    state.topics[i].questions.slice(0, 5).forEach((q) => box.appendChild(chip(q)));
+    if (!reduced) { box.classList.remove("swap"); void box.offsetWidth; box.classList.add("swap"); }
   }
 
-  function updateTopicBadges() {
-    state.topics.forEach((tp) => {
-      const read = tp.panel.querySelectorAll(".tile.read, .tile.cited").length;
-      const cited = tp.panel.querySelectorAll(".tile.cited").length;
-      tp.btn.classList.toggle("has-read", read > 0 && cited === 0);
-      tp.btn.classList.toggle("has-cited", cited > 0);
-      tp.btn.querySelector(".topic-n").textContent = String(cited || read || tp.cells.length);
+  function setupTopics() {
+    const toggle = $("#topics-toggle"), row = $("#topic-row");
+    toggle.addEventListener("click", () => {
+      const open = row.hidden;
+      row.hidden = !open;
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.textContent = t(open ? "topics.less" : "topics.more");
+      if (!open && state.topic !== null) setTopic(null);
     });
-  }
-
-  function updateCount() {
-    const active = $("#map-rows").classList.contains("dimmed");
-    $("#map-count").textContent = active
-      ? t("map.active", { r: $$(".tile.read, .tile.cited").length, k: $$(".tile.cited").length })
-      : t("map.count", { n: state.total });
   }
 
   /* CV blocks carry data-keys="doc#fragment …" and light up with the sections they come from. */
@@ -307,15 +264,30 @@
       if (!hit) return;
       el.classList.add(cls);
       if (cls === "cited") { el.classList.remove("read"); if (!el.dataset.n) el.dataset.n = n; }
+      if (el.classList.contains("more")) openList(el.closest("[data-list]"));
     });
   }
 
+  /* Lists show their most relevant entries; the rest unfold on request, or when an answer cites them. */
+  function openList(list, open = true) {
+    if (!list) return;
+    list.classList.toggle("open", open);
+    const key = list.dataset.list;
+    const btn = $(`.see-more[data-for="${key}"]`);
+    if (!btn) return;
+    btn.setAttribute("aria-expanded", String(open));
+    btn.textContent = t(open ? `less.${key}` : `more.${key}`);
+  }
+
+  function setupSeeMore() {
+    $$(".see-more").forEach((btn) => btn.addEventListener("click", () => {
+      const list = $(`[data-list="${btn.dataset.for}"]`);
+      openList(list, !list.classList.contains("open"));
+    }));
+  }
+
   function resetLights() {
-    $("#map-rows").classList.remove("dimmed");
-    $$(".tile").forEach((x) => { x.classList.remove("read", "cited", "pop", "hot"); delete x.dataset.n; });
-    $$("[data-keys]").forEach((x) => { x.classList.remove("read", "cited"); delete x.dataset.n; });
-    updateTopicBadges();
-    updateCount();
+    $$("[data-keys]").forEach((x) => { x.classList.remove("read", "cited", "hot"); delete x.dataset.n; });
   }
 
   function escapeHtml(s) { return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
@@ -422,34 +394,11 @@
 
   function markRead(ids) {
     if (!ids || !ids.length) return;
-    $("#map-rows").classList.add("dimmed");
-    ids.forEach((id, i) => {
-      const tile = state.tiles.get(id);
-      setTimeout(() => {
-        if (tile) tile.classList.add("read");
-        lightCv(id, "read");
-        updateTopicBadges();
-        updateCount();
-      }, reduced ? 0 : 45 * i);
-    });
+    ids.forEach((id, i) => setTimeout(() => lightCv(id, "read"), reduced ? 0 : 45 * i));
   }
 
   function markCited(sources) {
-    if (!sources.length) return;
-    $("#map-rows").classList.add("dimmed");
-    sources.forEach((s, i) => {
-      const tile = state.tiles.get(s.id);
-      setTimeout(() => {
-        if (tile) { tile.dataset.n = s.n; tile.classList.add("cited", "pop"); }
-        lightCv(s.id, "cited", s.n);
-        updateTopicBadges();
-        updateCount();
-        if (i === 0 && tile) {
-          const k = state.topics.findIndex((tp) => tp.panel.contains(tile));
-          if (k >= 0) openTopic(k);
-        }
-      }, reduced ? 0 : 200 * i + 150);
-    });
+    sources.forEach((s, i) => setTimeout(() => lightCv(s.id, "cited", s.n), reduced ? 0 : 200 * i + 150));
   }
 
   function renderSources(sources) {
@@ -476,7 +425,7 @@
   function hot(n) {
     $$(".hot").forEach((e) => e.classList.remove("hot"));
     if (n == null) return;
-    $$(`.tile[data-n="${n}"], .cite[data-n="${n}"], .src[data-n="${n}"], [data-keys][data-n="${n}"]`).forEach((e) => e.classList.add("hot"));
+    $$(`.cite[data-n="${n}"], .src[data-n="${n}"], [data-keys][data-n="${n}"]`).forEach((e) => e.classList.add("hot"));
   }
 
   function wireCites(root) {
@@ -487,10 +436,52 @@
       b.addEventListener("blur", () => hot(null));
       b.addEventListener("click", () => {
         hot(b.dataset.n);
-        const target = $(`[data-keys][data-n="${b.dataset.n}"]`) || $(`.tile[data-n="${b.dataset.n}"]`);
+        const target = $(`[data-keys][data-n="${b.dataset.n}"]`);
         if (target) target.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
       });
     });
+  }
+
+  function setupNav() {
+    // Scroll-spy: the bar marks the section in view; a floating "Ask" appears once the box is scrolled past.
+    const links = $$(".bar-nav a[href^='#']");
+    const targets = links.map((a) => $(a.getAttribute("href"))).filter(Boolean);
+    if ("IntersectionObserver" in window && targets.length) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          links.forEach((a) => {
+            const on = a.getAttribute("href") === `#${e.target.id}`;
+            a.classList.toggle("active", on);
+            if (on) $("#nav-current").textContent = a.textContent;
+          });
+        });
+      }, { rootMargin: "-35% 0px -55% 0px", threshold: 0 });
+      targets.forEach((el) => io.observe(el));
+    }
+    // On phones the bar shows the current section as a button that opens the list of sections.
+    const bar = $(".bar"), toggle = $("#nav-toggle");
+    const closeNav = () => { bar.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); };
+    toggle.addEventListener("click", () => {
+      const open = !bar.classList.contains("open");
+      bar.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+    links.forEach((a) => a.addEventListener("click", closeNav));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeNav(); });
+    document.addEventListener("click", (e) => { if (!bar.contains(e.target)) closeNav(); });
+    const fab = $("#ask-fab"), askRow = $(".ask-row");
+    if (fab && askRow && "IntersectionObserver" in window) {
+      const io2 = new IntersectionObserver((entries) => {
+        const e = entries[0];
+        fab.hidden = e.isIntersecting || e.boundingClientRect.top > 0;
+      }, { threshold: 0 });
+      io2.observe(askRow);
+      fab.addEventListener("click", () => {
+        $("#ask").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+        setTimeout(() => $("#question").focus({ preventScroll: true }), reduced ? 0 : 450);
+      });
+    }
   }
 
   function setupCv() {
@@ -561,7 +552,7 @@
       document.documentElement.classList.add("settled");
       $$(".reveal").forEach((el) => { if (el.getBoundingClientRect().top < innerHeight) el.classList.add("seen"); });
     }, 2500);
-    const groups = [".cv-head", ".exp-item", ".cv-col", ".projects h2", ".proj", ".map-head", ".topics-sub", ".topics", ".mcp-band", ".facts-band h2", ".facts div", ".how h2", ".how-grid > div", ".foot-name"];
+    const groups = [".cv-head", ".exp-item", ".cv-col", ".projects h2", ".proj", ".mcp-band", ".facts-band h2", ".facts div", ".how h2", ".how-grid > div", ".foot-name"];
     const els = [];
     groups.forEach((sel) => $$(sel).forEach((el, i) => { el.classList.add("reveal"); el.style.setProperty("--d", `${Math.min(i, 5) * 70}ms`); els.push(el); }));
     const io = new IntersectionObserver((entries) => {
@@ -585,6 +576,9 @@
     $$(".aud-tabs [role=tab]").forEach((b) => b.addEventListener("click", () => setAudience(b.dataset.aud, true)));
     $("#ask").addEventListener("submit", (e) => { e.preventDefault(); ask($("#question").value); });
     setupCv();
+    setupSeeMore();
+    setupTopics();
+    setupNav();
     setupMcp();
     setupCopy();
   }

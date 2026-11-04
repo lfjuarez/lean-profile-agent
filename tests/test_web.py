@@ -64,6 +64,13 @@ def test_home_page_is_bilingual_and_honest(client: TestClient) -> None:
     assert "/mcp" in html
 
 
+def test_topics_follow_the_matrix_columns(client: TestClient) -> None:
+    data = client.get("/api/topics?lang=es").json()
+    labels = [tp["label"] for tp in data["topics"]]
+    assert labels[:2] == ["Perfil", "Certificaciones"] and "Triage con SOAR" in labels
+    assert all(tp["questions"] for tp in data["topics"])
+
+
 def test_healthz(client: TestClient) -> None:
     assert client.get("/healthz").json() == {"status": "ok"}
     assert client.get("/health").json() == {"status": "ok"}

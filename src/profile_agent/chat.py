@@ -85,9 +85,10 @@ SYSTEM_PROMPT = (
     "documented tools and artefacts (PMI practices, Jira, dashboards and status cycles, RFCs, "
     "roadmaps, runbooks, verdict matrices, hand-off sessions).\n"
     "15. Project questions (this site, mitre-coverage-kit, splunk-mcp-readonly, PresupuestAR, the "
-    "AI-agent rule migration, the multi-site reference architecture, the case studies): cover "
-    "the problem it solves, what Lean built, the stack, the result or status and the link, as "
-    "far as the sources give them.\n"
+    "AI-agent rule migration, the multi-site reference architecture, the case studies): open by "
+    "saying that I developed it myself (and whether it is open source) and the objective I built "
+    "it for, then the problem it solves, what it does, the stack, the result or status and the "
+    "link, as far as the sources give them.\n"
     "16. The audience guidance after these rules says who is asking; follow it for emphasis and "
     "shape, never to change facts or citation rules.\n"
 )

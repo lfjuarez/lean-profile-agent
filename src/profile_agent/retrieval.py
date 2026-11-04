@@ -256,6 +256,10 @@ SYNONYMS.update(
                 "built",
             )
         },
+        **{
+            w: ("ia", "ai", "agente", "agent", "agentes", "llm", "mcp")
+            for w in ("inteligencia", "artificial", "intelligence")
+        },
     }
 )
 

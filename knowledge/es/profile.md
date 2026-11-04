@@ -6,6 +6,7 @@ questions:
   - ¿Qué te diferencia de otros consultores Splunk?
   - ¿Dónde estás y qué husos horarios cubrís?
   - ¿Cuál es tu formación?
+  - ¿Cuántos años de experiencia tenés?
   - ¿Por qué deberíamos contratarte?
   - ¿Dónde vivís y de qué país sos?
 ---
@@ -13,6 +14,10 @@ questions:
 ## Resumen
 
 Ayudo a equipos de seguridad a aprovechar al máximo su SIEM: plataformas que escalan, detecciones que disparan con amenazas reales y gente que sabe usarlas. Soy Splunk Core Certified Consultant, Splunk Enterprise Certified Architect y Splunk Certified Instructor (habilitado por Splunk para el track Power User Fast Start), con más de 12 años en IT y 6 dedicados a SIEM, detección de amenazas y operaciones de seguridad. Diseño, implemento y optimizo plataformas Splunk y Elastic distribuidas y en cluster (Cloud, on-premise e híbridas) para banca, seguros y energía; construyo detecciones en Splunk Enterprise Security mapeadas a MITRE ATT&CK, playbooks de SOAR y casos de uso de UEBA; y automatizo la ingeniería de detección con agentes de IA (más de 2.000 reglas de detección migradas y validadas). Tengo un Magíster en Ciencia de Datos. Trabajo de forma remota desde Argentina en horario de Latinoamérica y España, con solapamiento con Estados Unidos y Europa.
+
+## Años de experiencia
+
+Más de 12 años en IT, desde 2011, y seis dedicados a SIEM, ingeniería de detección y operaciones de seguridad, desde 2020: cinco años como SIEM Architect para 15 clientes y, desde 2025, como Senior Cloud Cybersecurity Engineer en una plataforma de escala masiva. Instructor certificado de Splunk desde 2025.
 
 ## Qué hago
 

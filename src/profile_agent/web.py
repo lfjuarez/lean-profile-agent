@@ -198,6 +198,24 @@ def create_app(
             columns.append({"label": label_es if lang == "es" else label_en, "cells": cells})
         return {"lang": lang, "columns": columns}
 
+    @app.get("/api/topics")
+    async def topics(lang: str = "en") -> dict[str, Any]:
+        """One topic per area, one per case study; each with the questions its documents suggest."""
+        lang = lang if lang in kbs else "en"
+        kb = kbs[lang]
+        out = []
+        for label_es, label_en, doc_ids in MATRIX_COLUMNS:
+            if all(d.startswith("case-") for d in doc_ids):
+                for doc_id in doc_ids:
+                    label = CASE_SHORT[doc_id][0 if lang == "es" else 1]
+                    out.append({"label": label, "questions": list(kb.get(doc_id).questions)})
+            else:
+                questions = [q for doc_id in doc_ids for q in kb.get(doc_id).questions]
+                out.append(
+                    {"label": label_es if lang == "es" else label_en, "questions": questions}
+                )
+        return {"lang": lang, "topics": out}
+
     @app.post("/api/chat")
     async def chat_endpoint(body: ChatRequest) -> StreamingResponse:
         messages = [m.model_dump() for m in body.messages]
