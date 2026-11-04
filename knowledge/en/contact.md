@@ -15,7 +15,7 @@ questions:
 
 ## CV
 
-The CV is available as a PDF in English and in Spanish from the download buttons on this page.
+The CV lives at leandrojuarez.info/cv, in Spanish (with photo) and in English, as a web page that can be downloaded as PDF, printed or shared by link; it is generated from the same documents this assistant answers from.
 
 ## Verifying certifications
 

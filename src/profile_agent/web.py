@@ -11,14 +11,16 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from mcp.server.transport_security import TransportSecuritySettings
 from pydantic import BaseModel, Field
 
 from .chat import Backend, ProfileChat, validate_messages
+from .cv import render_cv
 from .kb import LANGS, load_kb
 from .mcp_server import CV_PATHS, build_server
+from .projects import render_projects
 from .ratelimit import DailyCap, TokenBucket
 from .retrieval import Index
 
@@ -237,6 +239,22 @@ def create_app(
             media_type="text/event-stream",
             headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
         )
+
+    @app.get("/cv")
+    async def cv_page(lang: str = "es", photo: str | None = None) -> HTMLResponse:
+        """The CV as a page of its own; print styles make it the PDF. The photo is on by
+        default in both languages (Lean's choice); ``?photo=0`` gives the version without it."""
+        lang = lang if lang in kbs else "es"
+        with_photo = True if photo is None else photo not in ("0", "false", "no")
+        return HTMLResponse(
+            render_cv(kbs[lang], lang, with_photo), headers={"Cache-Control": "no-cache"}
+        )
+
+    @app.get("/projects")
+    @app.get("/proyectos")
+    async def projects_page(lang: str = "es") -> HTMLResponse:
+        lang = lang if lang in kbs else "es"
+        return HTMLResponse(render_projects(kbs[lang], lang), headers={"Cache-Control": "no-cache"})
 
     @app.get("/cv/{name}")
     async def cv(name: str) -> FileResponse:

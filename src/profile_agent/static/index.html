@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/styles.css?v=0.7.3" />
+  <link rel="stylesheet" href="/static/styles.css?v=0.8.0" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e1829'/%3E%3Crect x='7' y='9' width='8' height='6' rx='1.5' fill='%232b4a7a'/%3E%3Crect x='17' y='9' width='8' height='6' rx='1.5' fill='%237fb0ec'/%3E%3Crect x='7' y='17' width='8' height='6' rx='1.5' fill='%237fb0ec'/%3E%3Crect x='17' y='17' width='8' height='6' rx='1.5' fill='%232b4a7a'/%3E%3C/svg%3E" />
 </head>
 <body>
@@ -58,11 +58,11 @@
       </div>
 
       <aside class="reach in" aria-label="Contacto">
-        <a class="btn btn-solid" id="cv-link" href="/cv/Leandro_Juarez_CV_ES.pdf" download>
-          <svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2.5v9m0 0L5.5 8M9 11.5 12.5 8M3 15h12" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span data-i18n="hero.cv">Descargar CV</span>
+        <a class="btn btn-solid" id="cv-link" href="/cv?lang=es" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 3.5h11v11h-11zM3.5 7h11M6.5 3.5v11" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg>
+          <span data-i18n="hero.cv">Ver mi CV</span>
         </a>
-        <a class="cv-alt" id="cv-alt" href="/cv/Leandro_Juarez_CV_EN.pdf" download data-i18n="hero.cvAlt">CV in English</a>
+        <a class="cv-alt" id="cv-alt" href="/cv?lang=en" target="_blank" rel="noopener" data-i18n="hero.cvAlt">CV in English</a>
         <dl class="contact">
           <div><dt data-i18n="contact.email">Email</dt><dd><a href="mailto:l.federico.juarez@gmail.com" id="email">l.federico.juarez@gmail.com</a> <button type="button" class="mini" data-copy="#email" data-i18n="contact.copy">Copiar</button></dd></div>
           <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/leandrofjuarez" rel="me noopener" target="_blank">linkedin.com/in/leandrofjuarez</a></dd></div>
@@ -171,18 +171,8 @@
             <button type="button" class="ask-about" data-ask="exp.pfa.ask" data-i18n="exp.ask">Preguntar por esta etapa</button>
           </div>
         </li>
-        <li class="exp-item more" data-keys="experience#presupuestar">
-          <p class="exp-when" data-i18n="exp.presu.when">2026 – actualidad</p>
-          <div class="exp-body">
-            <h3><span class="exp-role">PresupuestAR</span> <span class="exp-org" data-i18n="exp.presu.org">· producto propio</span></h3>
-            <ul>
-              <li data-i18n="exp.presu.b1">SaaS en beta, aún sin lanzamiento oficial, para crear y enviar presupuestos profesionales: Next.js, PostgreSQL, Google Cloud Run, PDF, firma del cliente e integración con la API de ARCA.</li>
-            </ul>
-            <button type="button" class="ask-about" data-ask="exp.presu.ask" data-i18n="exp.ask">Preguntar por esta etapa</button>
-          </div>
-        </li>
       </ol>
-      <button type="button" class="see-more" data-for="exp" aria-expanded="false" data-i18n="more.exp">Ver las 3 etapas anteriores</button>
+      <button type="button" class="see-more" data-for="exp" aria-expanded="false" data-i18n="more.exp">Ver las 2 etapas anteriores</button>
     </section>
 
     <section class="cv cv-two" aria-label="Formación y competencias">
@@ -221,34 +211,40 @@
           <div class="proj-img"><img src="/static/img/proj-ai.jpg" width="1200" height="675" loading="lazy" alt="Reglas de detección en Elastic Security" data-i18n-alt="proj.aiAlt" /></div>
           <h3 data-i18n="proj.aiT">IA agéntica para ciberseguridad</h3>
           <p data-i18n="proj.ai">En mi rol actual: pipelines en Python con agentes de IA que migraron más de 2.000 reglas de detección entre SIEM, con control de calidad y mapeo a MITRE ATT&amp;CK; una herramienta que mide cobertura ATT&amp;CK y ATLAS, y asistentes conectados a Splunk, Elastic y Jira por MCP.</p>
+                  <p class="proj-links proj-more"><a class="proj-detail" data-anchor="ia-agentica" href="/projects?lang=es#ia-agentica" data-i18n="proj.detail">Ver detalles y enlaces</a></p>
         </article>
         <article class="proj">
           <div class="proj-img"><img src="/static/img/proj-coverage.jpg" width="1200" height="675" loading="lazy" alt="Matriz MITRE ATT&amp;CK de mitre-coverage-kit con el semáforo de cobertura" data-i18n-alt="proj.covAlt" /></div>
           <h3>mitre-coverage-kit</h3>
           <p data-i18n="proj.cov">Código abierto: convierte la cobertura de detección en una medición. Lee las reglas de Splunk ES, Elastic Security, Wazuh, Sentinel o Sigma, puntúa cada técnica de MITRE ATT&amp;CK y ATLAS, lista las reglas muertas y sugiere reglas públicas (SigmaHQ) para los huecos. Aplicación web con matrices, panel por técnica, historial y exportación a PDF, Excel y Navigator. Algo similar, a escala masiva, lo implementé en empresas muy grandes con SIEM de distintos proveedores y entornos. MIT, con tests y CI.</p>
           <p class="proj-links"><a href="https://github.com/lfjuarez/mitre-coverage-kit" target="_blank" rel="noopener">github.com/lfjuarez/mitre-coverage-kit</a></p>
+                  <p class="proj-links proj-more"><a class="proj-detail" data-anchor="mitre-coverage-kit" href="/projects?lang=es#mitre-coverage-kit" data-i18n="proj.detail">Ver detalles y enlaces</a></p>
         </article>
         <article class="proj">
           <div class="proj-img"><img src="/static/img/proj-mcp.jpg" width="1200" height="675" loading="lazy" alt="Las siete herramientas de solo lectura de splunk-mcp-readonly y su guarda de SPL" data-i18n-alt="proj.mcpAlt" /></div>
           <h3>splunk-mcp-readonly</h3>
           <p data-i18n="proj.mcp">Código abierto: servidor MCP independiente y de solo lectura para consultar Splunk desde Claude o cualquier cliente MCP con solo un token. Siete herramientas detrás de una guarda de SPL (comandos bloqueados, tope de filas, índices permitidos) y un registro de auditoría de cada llamada. 83 tests, MIT.</p>
           <p class="proj-links"><a href="https://github.com/lfjuarez/splunk-mcp-readonly" target="_blank" rel="noopener">github.com/lfjuarez/splunk-mcp-readonly</a></p>
+                  <p class="proj-links proj-more"><a class="proj-detail" data-anchor="splunk-mcp-readonly" href="/projects?lang=es#splunk-mcp-readonly" data-i18n="proj.detail">Ver detalles y enlaces</a></p>
         </article>
         <article class="proj more">
           <div class="proj-img"><img src="/static/img/proj-arch.jpg" width="1200" height="675" loading="lazy" alt="Diagrama de la arquitectura Splunk multi-site de referencia" data-i18n-alt="proj.archAlt" /></div>
           <h3 data-i18n="proj.archT">Arquitectura Splunk multi-site</h3>
           <p data-i18n="proj.arch">Diseño de referencia para una plataforma Splunk Enterprise de dos sitios con alta disponibilidad y recuperación ante desastres, según Splunk Validated Architectures: clusters de indexers y search heads multi-site, Enterprise Security dedicado, SmartStore con réplica entre regiones y un runbook de failover ensayado.</p>
+                  <p class="proj-links proj-more"><a class="proj-detail" data-anchor="arquitectura" href="/projects?lang=es#arquitectura" data-i18n="proj.detail">Ver detalles y enlaces</a></p>
         </article>
-        <article class="proj more">
+        <article class="proj more" data-keys="experience#presupuestar projects#presupuestar">
           <div class="proj-img"><img src="/static/img/proj-presupuestar.jpg" width="1200" height="675" loading="lazy" alt="Presu, la mascota de PresupuestAR, en un fotograma del showreel" data-i18n-alt="proj.presuAlt" /></div>
           <h3>PresupuestAR</h3>
           <p data-i18n="proj.presu">Mi producto propio, que desarrollo por gusto: un SaaS web en beta, aún sin lanzamiento oficial, para crear y enviar presupuestos profesionales. Next.js, PostgreSQL, Google Cloud Run e integración con la API de ARCA.</p>
+                  <p class="proj-links proj-more"><a class="proj-detail" data-anchor="presupuestar" href="/projects?lang=es#presupuestar" data-i18n="proj.detail">Ver detalles y enlaces</a></p>
         </article>
         <article class="proj more">
           <div class="proj-img"><img src="/static/img/proj-site.jpg" width="1200" height="675" loading="lazy" alt="Captura de este sitio: la caja de preguntas y una respuesta con sus fuentes" data-i18n-alt="proj.siteAlt" /></div>
           <h3 data-i18n="proj.siteT">Este CV</h3>
           <p data-i18n="proj.site">Código abierto: un chat que responde solo con mis documentos y cita cada fuente, más un servidor MCP con la misma base. Es la muestra de cómo trabajo con IA.</p>
           <p class="proj-links"><a href="https://github.com/lfjuarez/lean-profile-agent" target="_blank" rel="noopener">lean-profile-agent</a></p>
+                  <p class="proj-links proj-more"><a class="proj-detail" data-anchor="este-sitio" href="/projects?lang=es#este-sitio" data-i18n="proj.detail">Ver detalles y enlaces</a></p>
         </article>
       </div>
       <button type="button" class="see-more" data-for="proj" aria-expanded="false" data-i18n="more.proj">Ver 3 proyectos más</button>
@@ -316,6 +312,6 @@
     <p class="foot-line"><a href="mailto:l.federico.juarez@gmail.com">l.federico.juarez@gmail.com</a> · <a href="https://www.linkedin.com/in/leandrofjuarez" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://github.com/lfjuarez" rel="me noopener" target="_blank">GitHub</a> · <span data-i18n="foot.synthetic">Las cifras de los casos de estudio son sintéticas; el método y los entregables son reales.</span></p>
   </footer>
 
-  <script src="/static/app.js?v=0.7.3" defer></script>
+  <script src="/static/app.js?v=0.8.0" defer></script>
 </body>
 </html>

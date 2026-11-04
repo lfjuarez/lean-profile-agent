@@ -60,7 +60,7 @@ def test_home_page_is_bilingual_and_honest(client: TestClient) -> None:
     assert "experiencia documentada" in js and "documented experience" in js
     assert "zero hallucinations" not in js.lower()
     assert 'data-lang="es"' in html and 'data-lang="en"' in html
-    assert "/cv/Leandro_Juarez_CV_EN.pdf" in html and "/cv/Leandro_Juarez_CV_ES.pdf" in html
+    assert "/cv?lang=es" in html and "/cv?lang=en" in html
     assert "/mcp" in html
 
 
@@ -69,6 +69,33 @@ def test_topics_follow_the_matrix_columns(client: TestClient) -> None:
     labels = [tp["label"] for tp in data["topics"]]
     assert labels[:2] == ["Perfil", "Certificaciones"] and "Triage con SOAR" in labels
     assert all(tp["questions"] for tp in data["topics"])
+
+
+def test_cv_page_per_language(client: TestClient) -> None:
+    es = client.get("/cv?lang=es").text
+    en = client.get("/cv?lang=en").text
+    assert "Mercado Libre" in es and "Mercado Libre" in en
+    assert 'class="photo"' in es and 'class="photo"' in en  # photo in both, unless asked off
+    assert 'class="photo"' not in client.get("/cv?lang=en&photo=0").text
+    assert "Leandro_Juarez_CV_ES.pdf" in es
+    assert "Azure Fundamentals" not in es and "Azure Fundamentals" not in en
+    # every project links to its public code or site, in both languages
+    for page in (es, en):
+        assert 'href="https://github.com/lfjuarez/mitre-coverage-kit"' in page
+        assert 'href="https://github.com/lfjuarez/splunk-mcp-readonly"' in page
+        assert 'href="https://presupuestarapp.com"' in page
+
+
+def test_projects_page_lists_every_project(client: TestClient) -> None:
+    html = client.get("/projects?lang=es").text
+    for anchor in ("mitre-coverage-kit", "splunk-mcp-readonly", "presupuestar"):
+        assert f'id="{anchor}' in html
+    assert "/?lang=es&amp;q=" in html
+    assert 'href="https://github.com/lfjuarez/splunk-mcp-readonly"' in html
+    assert "Código: splunk-mcp-readonly" in html
+    assert 'href="https://presupuestarapp.com"' in html
+    assert "Sitio: presupuestarapp.com" in html
+    assert "Site: presupuestarapp.com" in client.get("/projects?lang=en").text
 
 
 def test_healthz(client: TestClient) -> None:

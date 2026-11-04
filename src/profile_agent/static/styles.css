@@ -250,7 +250,10 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--margin); }
 .proj:hover .proj-img img { transform: scale(1.04); }
 .proj h3 { font-size: 20px; letter-spacing: -.015em; margin: 18px 20px 0; }
 .proj p { margin: 8px 20px 0; color: var(--ink-2); font-size: 16px; line-height: 1.5; }
-.proj .proj-links { margin: 12px 20px 20px; font-size: 15px; }
+.proj .proj-links { margin: 12px 20px 0; font-size: 15px; }
+.proj .proj-more { margin: 8px 20px 20px; }
+.proj.clickable { cursor: pointer; transition: background .2s; }
+.proj.clickable:hover { background: var(--step); }
 .proj > p:last-child { margin-bottom: 20px; }
 
 /* mcp */

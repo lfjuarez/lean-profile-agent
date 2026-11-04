@@ -15,7 +15,7 @@ questions:
 
 ## CV
 
-El CV está disponible en PDF en inglés y en español desde los botones de descarga de esta página.
+El CV está en leandrojuarez.info/cv, en español (con foto) y en inglés, como página web que se puede descargar en PDF, imprimir o compartir por enlace; se genera desde los mismos documentos que responde este asistente.
 
 ## Verificación de certificaciones
 

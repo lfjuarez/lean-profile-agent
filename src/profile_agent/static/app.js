@@ -5,7 +5,7 @@
     en: {
       "nav.skip": "Skip to the question box", "nav.profile": "Profile", "nav.ask": "Ask", "nav.exp": "Experience", "nav.edu": "Education", "nav.skills": "Skills", "nav.projects": "Projects", "nav.mcp": "MCP",
       "topics.more": "More topics", "topics.less": "Fewer topics", "fab.ask": "Ask",
-      "more.exp": "Show the 3 earlier roles", "less.exp": "Show fewer roles", "more.edu": "Show 3 more degrees", "less.edu": "Show fewer degrees",
+      "more.exp": "Show the 2 earlier roles", "less.exp": "Show fewer roles", "more.edu": "Show 3 more degrees", "less.edu": "Show fewer degrees",
       "more.skills": "Show 4 more areas", "less.skills": "Show fewer areas", "more.proj": "Show 3 more projects", "less.proj": "Show fewer projects",
       "hero.alt": "Portrait of Leandro F. Juárez",
       "hero.role": "Cybersecurity engineer and SIEM architect",
@@ -13,7 +13,7 @@
       "hero.statement": "I help security teams get real value from their SIEM: platforms that scale, detections that fire on real threats, and people who know how to use them.",
       "certs.instructor": "Splunk Certified Instructor", "certs.note": "· Power User Fast Start, authorized by Splunk",
       "creds.master": "Master's in Data Science", "creds.cloud": "Cloud: AWS, Azure and Google Cloud",
-      "hero.cv": "Download CV", "hero.cvAlt": "CV en español",
+      "hero.cv": "View my CV", "hero.cvAlt": "CV en español", "proj.detail": "Details and links",
       "contact.email": "Email", "contact.copy": "Copy", "contact.copied": "Copied", "contact.where": "Based in", "contact.whereV": "Buenos Aires, Argentina · remote",
       "aud.title": "Pick your role so the answers fit you",
       "aud.tech": "Technical", "aud.biz": "Sales", "aud.people": "HR and People",
@@ -101,7 +101,7 @@
     es: {
       "nav.skip": "Ir a la caja de preguntas", "nav.profile": "Perfil", "nav.ask": "Preguntar", "nav.exp": "Experiencia", "nav.edu": "Formación", "nav.skills": "Competencias", "nav.projects": "Proyectos", "nav.mcp": "MCP",
       "topics.more": "Más temas", "topics.less": "Menos temas", "fab.ask": "Preguntar",
-      "more.exp": "Ver las 3 etapas anteriores", "less.exp": "Ver menos etapas", "more.edu": "Ver 3 títulos más", "less.edu": "Ver menos títulos",
+      "more.exp": "Ver las 2 etapas anteriores", "less.exp": "Ver menos etapas", "more.edu": "Ver 3 títulos más", "less.edu": "Ver menos títulos",
       "more.skills": "Ver 4 áreas más", "less.skills": "Ver menos áreas", "more.proj": "Ver 3 proyectos más", "less.proj": "Ver menos proyectos",
       "hero.alt": "Retrato de Leandro F. Juárez",
       "hero.role": "Ingeniero de ciberseguridad y arquitecto de SIEM",
@@ -109,7 +109,7 @@
       "hero.statement": "Ayudo a equipos de seguridad a aprovechar al máximo su SIEM: plataformas que escalan, detecciones que disparan con amenazas reales y gente que sabe usarlas.",
       "certs.instructor": "Splunk Certified Instructor", "certs.note": "· Power User Fast Start, habilitado por Splunk",
       "creds.master": "Magíster en Ciencia de Datos", "creds.cloud": "Cloud: AWS, Azure y Google Cloud",
-      "hero.cv": "Descargar CV", "hero.cvAlt": "CV in English",
+      "hero.cv": "Ver mi CV", "hero.cvAlt": "CV in English", "proj.detail": "Ver detalles y enlaces",
       "contact.email": "Email", "contact.copy": "Copiar", "contact.copied": "Copiado", "contact.where": "Ubicación", "contact.whereV": "Buenos Aires, Argentina · remoto",
       "aud.title": "Elegí tu perfil para que te responda mejor",
       "aud.tech": "Técnico", "aud.biz": "Comercial", "aud.people": "RR. HH. y People",
@@ -177,8 +177,9 @@
     const activeLink = $(".bar-nav a.active") || $(".bar-nav a");
     if (activeLink) $("#nav-current").textContent = activeLink.textContent;
     const main = state.lang === "es" ? "ES" : "EN", alt = state.lang === "es" ? "EN" : "ES";
-    $("#cv-link").href = `/cv/Leandro_Juarez_CV_${main}.pdf`;
-    $("#cv-alt").href = `/cv/Leandro_Juarez_CV_${alt}.pdf`;
+    $("#cv-link").href = `/cv?lang=${main.toLowerCase()}`;
+    $("#cv-alt").href = `/cv?lang=${alt.toLowerCase()}`;
+    $$(".proj-detail").forEach((a) => { a.href = `/projects?lang=${state.lang}#${a.dataset.anchor}`; });
     setAudience(state.aud, false);
     state.history = [];
     $("#answer-full").hidden = true;
@@ -484,6 +485,19 @@
     }
   }
 
+  function setupProjects() {
+    // The whole card opens its project page; links inside keep their own targets.
+    $$(".proj").forEach((card) => {
+      const detail = $(".proj-detail", card);
+      if (!detail) return;
+      card.classList.add("clickable");
+      card.addEventListener("click", (e) => {
+        if (e.target.closest("a")) return;
+        location.href = detail.href;
+      });
+    });
+  }
+
   function setupCv() {
     $$(".ask-about").forEach((btn) => btn.addEventListener("click", () => {
       $("#answer").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
@@ -572,10 +586,17 @@
     setupHeat();
     setupMotion();
     applyLanguage(param || saved || "es");
+    const preset = new URLSearchParams(location.search).get("q");
+    if (preset) {
+      history.replaceState(null, "", `/?lang=${state.lang}`);
+      $("#ask").scrollIntoView({ behavior: "auto", block: "start" });
+      setTimeout(() => ask(preset), 300);
+    }
     $$(".lang button").forEach((b) => b.addEventListener("click", () => { if (b.dataset.lang !== state.lang) applyLanguage(b.dataset.lang); }));
     $$(".aud-tabs [role=tab]").forEach((b) => b.addEventListener("click", () => setAudience(b.dataset.aud, true)));
     $("#ask").addEventListener("submit", (e) => { e.preventDefault(); ask($("#question").value); });
     setupCv();
+    setupProjects();
     setupSeeMore();
     setupTopics();
     setupNav();
