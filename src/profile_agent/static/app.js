@@ -295,30 +295,54 @@
   function inline(s) {
     return escapeHtml(s)
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/`([^`\n]+)`/g, "<code>$1</code>")
       .replace(/(^|[^*\w])\*([^*\n]+?)\*(?![*\w])/g, "$1<em>$2</em>")
       .replace(/\[(\d{1,2}(?:\s*,\s*\d{1,2})*)\]/g, (_, list) => list.split(",").map((x) => x.trim())
         .map((x) => `<button type="button" class="cite" data-n="${x}" aria-label="Source ${x}">${x}</button>`).join(""));
   }
+  // A source is cited once per paragraph or list, at its last mention, instead of after every sentence.
+  const CITES = /\s*\[(\d{1,2}(?:\s*,\s*\d{1,2})*)\]/g;
+  function thinCites(texts) {
+    const seen = new Set();
+    return texts.slice().reverse().map((s) => s.replace(CITES, (m, list) => {
+      const keep = list.split(",").map((x) => x.trim()).filter((x) => !seen.has(x));
+      keep.forEach((x) => seen.add(x));
+      return keep.length ? m.replace(/\[.*\]/, `[${keep.join(", ")}]`) : "";
+    })).reverse();
+  }
+  // Within one text, later mentions win: walk the matches from the end.
+  function thinOne(text) {
+    const parts = text.split(/(\s*\[\d{1,2}(?:\s*,\s*\d{1,2})*\])/);
+    return thinCites(parts).join("");
+  }
   function markdown(text) {
-    let html = "", list = null, para = [];
-    const flush = () => { if (para.length) { html += `<p>${inline(para.join(" "))}</p>`; para = []; } };
-    const close = () => { if (list) { html += `</${list}>`; list = null; } };
+    const blocks = [];
+    let list = null, para = [];
+    const flush = () => { if (para.length) { blocks.push({ kind: "p", items: [para.join(" ")] }); para = []; } };
+    const close = () => { list = null; };
     for (const raw of text.replace(/\r/g, "").split("\n")) {
       const line = raw.trim();
       const ul = /^[-*•]\s+(.*)$/.exec(line), ol = /^\d+[.)]\s+(.*)$/.exec(line);
       if (ul || ol) {
         flush();
         const kind = ul ? "ul" : "ol";
-        if (list !== kind) { close(); html += `<${kind}>`; list = kind; }
-        html += `<li>${inline((ul || ol)[1])}</li>`;
+        if (!list || list.kind !== kind) { list = { kind, items: [] }; blocks.push(list); }
+        list.items.push((ul || ol)[1]);
       } else if (!line) { flush(); close(); } else { close(); para.push(line); }
     }
-    flush(); close();
-    return html;
+    flush();
+    return blocks.map((b) => {
+      if (b.kind === "p") return `<p>${inline(thinOne(b.items[0]))}</p>`;
+      const items = thinCites(b.items);
+      return `<${b.kind}>${items.map((i) => `<li>${inline(i)}</li>`).join("")}</${b.kind}>`;
+    }).join("");
   }
 
   function setBusy(flag) {
     state.busy = flag;
+    // While an answer streams in, the browser must not "anchor" on the content below it and
+    // carry the reader down the page: the reader stays on the answer.
+    document.documentElement.classList.toggle("answering", flag);
     $("#send").setAttribute("aria-busy", String(flag));
     $$(".chip, .ask-about").forEach((c) => { c.disabled = flag; });
   }
@@ -341,6 +365,9 @@
     src.hidden = true; src.innerHTML = "";
     follow.hidden = true; follow.innerHTML = "";
     card.focus({ preventScroll: true });
+    // Keep the answer in sight: on small screens the question box can sit near the bottom.
+    const top = card.getBoundingClientRect().top;
+    if (top > window.innerHeight * 0.55 || top < 0) card.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
 
     let text = "", sources = [], followups = [], error = null;
     try {

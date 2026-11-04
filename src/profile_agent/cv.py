@@ -226,7 +226,7 @@ def render_cv(kb: KnowledgeBase, lang: str, photo: bool) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/static/cv.css?v=4" />
+<link rel="stylesheet" href="/static/cv.css?v=5" />
 </head>
 <body>
 <nav class="tools" aria-label="CV">

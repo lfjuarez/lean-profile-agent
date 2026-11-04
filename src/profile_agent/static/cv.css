@@ -100,3 +100,18 @@ h2 { font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: u
   a { color: var(--ink-2); }
   .projects a, .contact a { color: var(--accent); }
 }
+
+/* identity: the site's navy around the paper and as the header band */
+body { background: #0e1829; }
+.paper { overflow: hidden; }
+.head { margin: -44px -52px 0; padding: 32px 52px 28px; background: #1d3156; color: #eef3fb; border-bottom: 4px solid var(--accent); }
+.head .who h1 { color: #fff; }
+.head .role-line { color: #7fb0ec; }
+.head .sub, .head .contact, .head .contact a { color: #c3cfe0; }
+.head .photo { outline: 2px solid #3b5f96; }
+@media (max-width: 720px) { .head { margin: -28px -20px 0; padding: 24px 20px 22px; } }
+@media print {
+  body { background: #fff; }
+  .head { margin: 0 0 4pt; padding: 12pt 14pt; border-radius: 6pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .head .contact a { color: #c3cfe0; }
+}

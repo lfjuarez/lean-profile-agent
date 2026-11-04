@@ -20,7 +20,7 @@ from .chat import Backend, ProfileChat, validate_messages
 from .cv import render_cv
 from .kb import LANGS, load_kb
 from .mcp_server import CV_PATHS, build_server
-from .projects import render_projects
+from .projects import render_projects, render_sheet
 from .ratelimit import DailyCap, TokenBucket
 from .retrieval import Index
 
@@ -255,6 +255,14 @@ def create_app(
     async def projects_page(lang: str = "es") -> HTMLResponse:
         lang = lang if lang in kbs else "es"
         return HTMLResponse(render_projects(kbs[lang], lang), headers={"Cache-Control": "no-cache"})
+
+    @app.get("/projects/{key}/sheet")
+    async def project_sheet(key: str, lang: str = "es") -> HTMLResponse:
+        lang = lang if lang in kbs else "es"
+        page = render_sheet(kbs[lang], lang, key)
+        if page is None:
+            raise HTTPException(status_code=404)
+        return HTMLResponse(page, headers={"Cache-Control": "no-cache"})
 
     @app.get("/cv/{name}")
     async def cv(name: str) -> FileResponse:

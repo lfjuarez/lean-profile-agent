@@ -1,0 +1,19 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="diagram.css"></head><body>
+<h1 data-en="How an agent migrates a detection rule<small>Python pipelines based on AI agents · more than 2,000 rules migrated between SIEM platforms</small>">Cómo un agente migra una regla de detección<small>Pipelines en Python basados en agentes de IA · más de 2.000 reglas migradas entre plataformas SIEM</small></h1>
+<div class="row">
+  <div class="box"><b data-en="Source rule">Regla de origen</b><span data-en="from the SIEM being replaced">del SIEM que se reemplaza</span></div><div class="arrow">→</div>
+  <div class="box hi"><b data-en="Quality control">Control de calidad</b><span data-en="automatic, rule by rule">automático, regla por regla</span></div><div class="arrow">→</div>
+  <div class="box hi"><b data-en="Metadata">Metadatos</b><span data-en="enriched to the standard">enriquecidos según el estándar</span></div><div class="arrow">→</div>
+  <div class="box hi"><b>MITRE ATT&amp;CK</b><span data-en="technique mapping">mapeo de técnicas</span></div><div class="arrow">→</div>
+  <div class="box hi"><b data-en="Assessment">Evaluación</b><span data-en="coverage and obsolescence">cobertura y obsolescencia</span></div>
+</div>
+<div class="row" style="gap:24px">
+  <div class="box ok"><b data-en="Meets the standard → migrated">Cumple el estándar → se migra</b><span data-en="to the target platform, mapped and documented">a la plataforma destino, mapeada y documentada</span></div>
+  <div class="box warn"><b data-en="Does not → quarantine">No cumple → cuarentena</b><span data-en="instead of being migrated as is">en lugar de migrarse tal cual</span></div>
+</div>
+<div class="note">
+  <div class="box"><b data-en="Automatic tests via MCP">Tests automáticos vía MCP</b><span data-en="a battery that guarantees quality">una batería que garantiza la calidad</span></div>
+  <div class="box"><b data-en="Coverage tracking">Seguimiento de cobertura</b><span data-en="by metadata, against ATT&amp;CK and ATLAS">por metadatos, contra ATT&amp;CK y ATLAS</span></div>
+  <div class="box"><b data-en="A person reviews">Una persona revisa</b><span data-en="what matters">lo que importa</span></div>
+</div>
+<script src="i18n.js"></script></body></html>

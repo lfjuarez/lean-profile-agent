@@ -1,0 +1,30 @@
+/* Project fact sheet: A4, white paper with the site's navy band, printed by deploy/build-project-docs.sh. */
+@page { size: A4; margin: 12mm 13mm; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; color: #0e1829; font: 400 10pt/1.45 "Source Sans 3", "Helvetica Neue", Arial, sans-serif; }
+h1, h2, h3 { font-family: "Lexend", "Helvetica Neue", Arial, sans-serif; margin: 0; letter-spacing: -.01em; }
+a { color: #2f6bc0; text-decoration: none; }
+.band { padding: 14pt 16pt; border-radius: 6pt; background: #1d3156; color: #eef3fb; border-bottom: 3pt solid #2f6bc0; }
+.who { margin: 0 0 4pt; color: #c3cfe0; font-size: 9pt; }
+h1 { font-size: 20pt; line-height: 1.1; color: #fff; }
+.lead { margin: 6pt 0 0; font-size: 11pt; color: #e4edf9; }
+.hero { margin: 10pt 0 0; }
+.hero img { display: block; width: 100%; border-radius: 5pt; }
+.links { margin-top: 10pt; }
+h2 { font-size: 8.5pt; text-transform: uppercase; letter-spacing: .06em; color: #2f6bc0; margin-bottom: 3pt; }
+.links ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 2pt 16pt; font-weight: 600; }
+.parts { margin-top: 6pt; }
+.part { margin-top: 8pt; break-inside: avoid; }
+.part h3 { font-size: 11pt; color: #1d3156; margin-bottom: 2pt; }
+.part p { margin: 0 0 4pt; color: #3a4760; }
+.chips { margin: 2pt 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 4pt; }
+.chips li { padding: 2pt 7pt; border-radius: 99pt; background: #e4edf9; color: #0e1829; font-size: 9pt; }
+code { font: 8.8pt ui-monospace, Menlo, monospace; background: #eef1f6; padding: 0 3pt; border-radius: 3pt; }
+.shots { margin-top: 10pt; display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; break-inside: avoid; }
+.shots figure { margin: 0; break-inside: avoid; }
+.shots img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; border-radius: 4pt; border: 0.5pt solid #d5dbe6; }
+figcaption { margin-top: 2pt; font-size: 8.5pt; color: #6b7890; }
+footer { margin-top: 12pt; padding-top: 6pt; border-top: 0.5pt solid #d5dbe6; font-size: 9pt; color: #6b7890; }
+.hero img { max-height: 80mm; object-fit: contain; object-position: left top; background: #0e1829; }
+.shots { grid-template-columns: repeat(3, 1fr); }

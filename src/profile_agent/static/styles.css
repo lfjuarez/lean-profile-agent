@@ -385,3 +385,10 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 var(--margin); }
   .facts { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; }
   .foot { margin-top: 88px; }
 }
+
+/* Before the first question the answer card is only a quiet note under the box, so the
+   suggestions stay close; once asked, the answer appears right below the question. */
+.answer:has(> .answer-empty:not([hidden])) { background: none; padding: 0 2px; min-height: 0; margin-top: 12px; }
+.answer-empty { font-size: 15px; color: var(--ink-3); }
+.answering, .answering * { overflow-anchor: none; }
+.answer-body code { font: .9em ui-monospace, Menlo, monospace; background: var(--step); padding: 1px 6px; border-radius: 6px; }

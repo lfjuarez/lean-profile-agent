@@ -1,0 +1,14 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="diagram.css"></head><body>
+<h1 data-en="Read-only by design, twice<small>splunk-mcp-readonly: seven read-only tools between an AI assistant and Splunk</small>">Solo lectura por diseño, dos veces<small>splunk-mcp-readonly: siete herramientas de solo lectura entre un asistente de IA y Splunk</small></h1>
+<div class="row">
+  <div class="box"><b data-en="AI assistant">Asistente de IA</b><span data-en="Claude Desktop, Claude Code or any MCP client">Claude Desktop, Claude Code o cualquier cliente MCP</span></div><div class="arrow">→</div>
+  <div class="box hi" style="flex:1.6"><b data-en="splunk-mcp-readonly · guard 1">splunk-mcp-readonly · guarda 1</b><span data-en="rejects any command that could write, delete, export or run · row cap · default time range · allowed indexes">rechaza cualquier comando que pueda escribir, borrar, exportar o ejecutar · tope de filas · rango de tiempo por defecto · índices permitidos</span></div><div class="arrow">→</div>
+  <div class="box hi"><b data-en="Splunk role · guard 2">Rol de Splunk · guarda 2</b><span data-en="least-privilege role behind the token">mínimos privilegios detrás del token</span></div><div class="arrow">→</div>
+  <div class="box"><b>Splunk</b><span data-en="Enterprise or Cloud, management port only">Enterprise o Cloud, solo el puerto de administración</span></div>
+</div>
+<div class="note">
+  <div class="box"><b data-en="Seven tools">Siete herramientas</b><span data-en="search, SPL validation without running it, indexes, saved searches, server info, health, ES notables">búsqueda, validación de SPL sin ejecutarla, índices, saved searches, información del servidor, salud, notables de ES</span></div>
+  <div class="box"><b data-en="Audit log">Registro de auditoría</b><span data-en="every call in JSON Lines">cada llamada en JSON Lines</span></div>
+  <div class="box"><b data-en="Nothing installed">Nada instalado</b><span data-en="runs on the consultant's side · about 800 lines · 83 offline tests · MIT">corre del lado del consultor · unas 800 líneas · 83 tests sin conexión · MIT</span></div>
+</div>
+<script src="i18n.js"></script></body></html>

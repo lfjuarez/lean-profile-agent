@@ -92,10 +92,19 @@ def test_projects_page_lists_every_project(client: TestClient) -> None:
         assert f'id="{anchor}' in html
     assert "/?lang=es&amp;q=" in html
     assert 'href="https://github.com/lfjuarez/splunk-mcp-readonly"' in html
-    assert "Código: splunk-mcp-readonly" in html
+    assert ">github.com/lfjuarez/splunk-mcp-readonly<" in html  # the full address is visible
     assert 'href="https://presupuestarapp.com"' in html
-    assert "Sitio: presupuestarapp.com" in html
-    assert "Site: presupuestarapp.com" in client.get("/projects?lang=en").text
+    assert ">presupuestarapp.com<" in html
+    # pictures, documents and the video are offered and actually served
+    for path in (
+        "/static/img/gallery/coverage-matrix.jpg",
+        "/static/docs/mitre-coverage-kit-informe-ejemplo.pdf",
+        "/static/docs/presupuestar-ejemplo-moderno.pdf",
+    ):
+        assert path in html
+        assert client.get(path).status_code == 200
+    assert "youtube.com/watch?v=HcGEmoTAqLw" in html
+    assert "Sample quote, Modern design" in client.get("/projects?lang=en").text
 
 
 def test_healthz(client: TestClient) -> None:
@@ -255,3 +264,11 @@ def test_chat_emits_retrieved_before_text(client: TestClient) -> None:
     assert kinds[0] == "retrieved"
     retrieved = dict(parse_sse(r.text))["retrieved"]
     assert retrieved and all("#" in i for i in retrieved)
+
+
+def test_project_sheet_per_language(client: TestClient) -> None:
+    es = client.get("/projects/splunk-mcp-readonly/sheet?lang=es")
+    assert es.status_code == 200
+    assert "splunk-mcp-readonly" in es.text and "github.com/lfjuarez/splunk-mcp-readonly" in es.text
+    assert "diagram-mcp-en.jpg" in client.get("/projects/splunk-mcp-readonly/sheet?lang=en").text
+    assert client.get("/projects/nothing/sheet").status_code == 404

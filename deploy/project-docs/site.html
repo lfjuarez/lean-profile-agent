@@ -1,0 +1,18 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="diagram.css"></head><body>
+<h1 data-en="How this site answers<small>Only from my curated documents, with a citation for every answer</small>">Cómo responde este sitio<small>Solo con mis documentos curados, citando cada respuesta</small></h1>
+<div class="row">
+  <div class="box"><b data-en="Question">Pregunta</b><span data-en="in Spanish or English">en español o en inglés</span></div><div class="arrow">→</div>
+  <div class="box hi"><b data-en="Lexical search (BM25)">Búsqueda léxica (BM25)</b><span data-en="picks the relevant sections of the documents">elige las secciones relevantes de los documentos</span></div><div class="arrow">→</div>
+  <div class="box hi" style="flex:1.3"><b data-en="Language model">Modelo de lenguaje</b><span data-en="answers only from those sections and cites them (Gemini or Claude)">responde solo con esas secciones y las cita (Gemini o Claude)</span></div><div class="arrow">→</div>
+  <div class="box ok"><b data-en="Streamed answer">Respuesta por streaming</b><span data-en="the page marks the sections read and cited">la página marca las secciones leídas y citadas</span></div>
+</div>
+<div class="row" style="gap:24px">
+  <div class="box warn"><b data-en="No relevant section → the server declines">Ninguna sección relevante → el servidor declina</b><span data-en="without calling the model">sin llamar al modelo</span></div>
+  <div class="box"><b data-en="MCP server at /mcp">Servidor MCP en /mcp</b><span data-en="six read-only tools over the same knowledge base">seis herramientas de solo lectura sobre la misma base</span></div>
+</div>
+<div class="note">
+  <div class="box"><b>Python + FastAPI</b><span data-en="custom retrieval, tests and continuous integration">retrieval propio, tests e integración continua</span></div>
+  <div class="box"><b data-en="Limits">Límites</b><span data-en="per-IP rate limits and a daily cap">por IP y un tope diario</span></div>
+  <div class="box"><b>Google Cloud Run</b><span data-en="under leandrojuarez.info">bajo leandrojuarez.info</span></div>
+</div>
+<script src="i18n.js"></script></body></html>
