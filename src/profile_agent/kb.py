@@ -155,6 +155,7 @@ _ORDER = [
     "experience",
     "skills",
     "ways-of-working",
+    "interview",
     "projects",
     "services",
     "rates",

@@ -62,7 +62,7 @@
       "sk.5.t": "Cloud and infrastructure", "sk.5.d": "AWS, Azure and Google Cloud (Cloud Run), Terraform, Linux and Windows Server, networking.",
       "sk.6.t": "Data science and reporting", "sk.6.d": "Machine learning and NLP, pandas, applied statistics, Power BI, Splunk and Kibana dashboards, ETL.",
       "sk.7.t": "Compliance and audit", "sk.7.d": "PCI DSS, ISO 27001 and BCRA; technical evidence and change management in regulated environments.",
-      "sk.8.t": "Leadership and training", "sk.8.d": "Technical teams of 2 to 4 engineers, PMO and PMI methodology, official Splunk instructor in Spanish and English, knowledge transfer.",
+      "sk.8.t": "Leadership and training", "sk.8.d": "Technical teams of 2 to 4 engineers, Scrum and Jira, PMO and PMI methodology, official Splunk instructor in Spanish and English, knowledge transfer.",
       "topics.title": "What you can ask about", "topics.sub": "Everything in my documents, by topic. Tap a topic to see its sections and a section to ask about it.",
       "map.read": "read for the answer", "map.cited": "cited",
       "map.count": "{n} documented sections", "map.active": "{r} read · {k} cited", "map.sections": "{n} sections",
@@ -187,13 +187,14 @@
     const p = $("#aud-text");
     p.textContent = t(`aud.${aud}Text`);
     if (animate && !reduced) { p.classList.remove("swap"); void p.offsetWidth; p.classList.add("swap"); }
+    if (animate) loadChips();
   }
 
   async function loadChips() {
     const box = $("#chips");
     box.innerHTML = "";
     try {
-      const r = await fetch(`/api/suggestions?lang=${state.lang}`);
+      const r = await fetch(`/api/suggestions?lang=${state.lang}&audience=${state.aud}`);
       (await r.json()).questions.slice(0, 3).forEach((q) => box.appendChild(chip(q)));
     } catch (_) {}
   }
@@ -365,7 +366,7 @@
     try {
       const res = await fetch("/api/chat", {
         method: "POST", headers: { "content-type": "application/json" },
-        body: JSON.stringify({ messages, lang: state.lang }),
+        body: JSON.stringify({ messages, lang: state.lang, audience: state.aud }),
       });
       if (res.status === 429) throw new Error("err.rate");
       if (res.status === 503) throw new Error("err.daily");

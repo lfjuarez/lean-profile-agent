@@ -12,6 +12,7 @@ EXPECTED_DOC_IDS = {
     "experience",
     "skills",
     "ways-of-working",
+    "interview",
     "projects",
     "services",
     "rates",

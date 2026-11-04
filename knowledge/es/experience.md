@@ -36,6 +36,7 @@ Lideré proyectos Splunk para 15 clientes de banca, consumo, energía, distribuc
 - Operaciones de seguridad (SOC y SOCless): Splunk Enterprise Security con detecciones mapeadas a MITRE ATT&CK, playbooks de Splunk SOAR y Splunk UBA, con un promedio de más de 50 correlation searches y playbooks por cliente y reducciones medibles de falsos positivos y de tiempo de triage. Implementación de Splunk SOAR en una distribuidora eléctrica líder de Argentina.
 - Ingeniería de datos InfoSec: ingesta, normalización CIM, clasificación y enriquecimiento de fuentes complejas (incluido DB Connect); add-ons propios y extracciones avanzadas de campos con expresiones regulares para mantener los datos usables y el gasto de licencia bajo control.
 - Integración y desarrollo: Splunk con sistemas externos, plataformas cloud, bases de datos y herramientas de automatización; apps, dashboards y visualizaciones a medida, y add-ons propios en Python.
+- Soporte a demanda durante incidentes: threat hunting y análisis forense en la plataforma, y scripts y automatizaciones para acelerar el troubleshooting y las investigaciones.
 - Consultoría estratégica: reingeniería de procesos, traducción de requerimientos de negocio a soluciones Splunk y evidencia para auditorías internas y externas. Al cierre de cada proyecto, programas de transferencia de conocimiento con material propio, por nivel.
 
 ## Project Management Officer, MetroGAS (enero de 2019 – julio de 2020)

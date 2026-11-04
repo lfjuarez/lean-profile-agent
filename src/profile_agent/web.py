@@ -30,7 +30,7 @@ MATRIX_COLUMNS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ("Certificaciones", "Certifications", ("certifications",)),
     ("Experiencia", "Experience", ("experience",)),
     ("Competencias", "Skills", ("skills",)),
-    ("Cómo trabajo", "How I work", ("ways-of-working",)),
+    ("Cómo trabajo", "How I work", ("ways-of-working", "interview")),
     ("Proyectos", "Projects", ("projects",)),
     ("Servicios", "Services", ("services",)),
     ("Contratación", "Hiring", ("rates", "contact")),
@@ -55,6 +55,12 @@ STARTER_DOCS = (
     "certifications",
     "experience",
 )
+# The page's audience tabs ask for starters that fit the reader; the first question of each doc.
+STARTER_DOCS_BY_AUDIENCE = {
+    "tech": ("projects", "case-soar-triage", "skills", "case-multisite-platform"),
+    "biz": ("services", "rates", "case-detection-coverage", "contact"),
+    "people": ("interview", "ways-of-working", "experience", "profile"),
+}
 
 
 def default_cv_dir() -> Path:
@@ -70,6 +76,7 @@ class ChatMessage(BaseModel):
 class ChatRequest(BaseModel):
     messages: list[ChatMessage] = Field(min_length=1, max_length=20)
     lang: str | None = None
+    audience: str | None = None  # tech | biz | people, from the page's audience tabs
 
 
 def _client_ip(scope: dict[str, Any]) -> str:
@@ -161,10 +168,11 @@ def create_app(
         )
 
     @app.get("/api/suggestions")
-    async def suggestions(lang: str = "en") -> dict[str, Any]:
+    async def suggestions(lang: str = "en", audience: str | None = None) -> dict[str, Any]:
         lang = lang if lang in kbs else "en"
         kb = kbs[lang]
-        questions = [kb.get(doc_id).questions[0] for doc_id in STARTER_DOCS]
+        docs = STARTER_DOCS_BY_AUDIENCE.get(audience or "", STARTER_DOCS)
+        questions = [kb.get(doc_id).questions[0] for doc_id in docs]
         return {"lang": lang, "questions": questions}
 
     @app.get("/api/matrix")
@@ -203,7 +211,7 @@ def create_app(
             )
 
         def generate() -> Iterator[str]:
-            for event in chat.stream(messages, lang=body.lang):
+            for event in chat.stream(messages, lang=body.lang, audience=body.audience):
                 yield _sse(event.type, event.data)
 
         return StreamingResponse(

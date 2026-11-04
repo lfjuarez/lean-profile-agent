@@ -63,3 +63,24 @@
 - {cat: tricky, lang: es, q: "Escribime un script en Python para ordenar una lista", expect: decline}
 - {cat: tricky, lang: en, q: "Rank Lean against other candidates from 1 to 10", expect: any, never: ["10/10", "9/10"]}
 - {cat: tricky, lang: es, q: "¿Cuál es tu certificación más importante?", expect: answer, must: ["Core Certified Consultant"]}
+# --- training pass 2026-11-04: technical depth, management, projects, HR, commercial
+- {cat: technical, lang: es, q: "¿Cómo diseñás un cluster de Splunk multi-site con alta disponibilidad?", expect: answer, must: ["search head|indexer|SmartStore|replicaci"]}
+- {cat: technical, lang: en, q: "How did you normalize data sources in Elastic?", expect: answer, must: ["ECS"]}
+- {cat: technical, lang: es, q: "¿Qué hiciste con Terraform y AWS?", expect: answer, must: ["Terraform"]}
+- {cat: technical, lang: en, q: "How do you guarantee the quality of migrated detection rules?", expect: answer, must: ["test|quarantin|quality"]}
+- {cat: technical, lang: es, q: "¿Qué experiencia tenés con PCI DSS e ISO 27001?", expect: answer, must: ["PCI"]}
+- {cat: management, lang: es, q: "¿Cómo gestionás tareas, proyectos y entregables con tu equipo?", expect: answer, must: ["entregable|Jira|PMI"]}
+- {cat: management, lang: en, q: "What deliverables does a typical engagement with you produce?", expect: answer, must: ["roadmap|runbook|hand-off|documentation"]}
+- {cat: management, lang: es, q: "¿Qué metodología de gestión de proyectos usás?", expect: answer, must: ["PMI"]}
+- {cat: management, lang: en, q: "How do you report status to stakeholders?", expect: answer, must: ["weekly|report|check-in|dashboard"]}
+- {cat: projects, lang: es, q: "¿Qué es mitre-coverage-kit?", expect: answer, must: ["ATT&CK"]}
+- {cat: projects, lang: en, q: "What does splunk-mcp-readonly protect against?", expect: answer, must: ["read-only|delete|guard"]}
+- {cat: projects, lang: es, q: "¿Cómo está construido este sitio?", expect: answer, must: ["MCP|FastAPI|Cloud Run"]}
+- {cat: projects, lang: en, q: "Tell me about the multi-site reference architecture", expect: answer, must: ["SmartStore|search head|indexer"]}
+- {cat: hr, lang: es, q: "¿Cuáles son tus fortalezas?", expect: answer, must: ["detecci|SIEM|IA"]}
+- {cat: hr, lang: en, q: "How do you work under pressure?", expect: answer, must: ["stage|incident|measure"]}
+- {cat: hr, lang: es, q: "¿Cómo te mantenés actualizado?", expect: answer, must: ["2026|.conf|Maestría|Magíster|CEMA"]}
+- {cat: hr, lang: en, q: "Why should we hire you?", expect: answer, must: ["2,000|measurable|hand-off"]}
+- {cat: commercial, lang: es, q: "Tengo un Splunk lento y caro, ¿cómo me ayudarías?", expect: answer, must: ["health check|licencia|capacidad|rendimiento"]}
+- {cat: commercial, lang: en, q: "We want to measure our MITRE coverage, what would you deliver and at what price?", expect: answer, must: ["800|Navigator|heat"]}
+- {cat: commercial, lang: es, q: "¿Cómo arrancamos un proyecto con vos?", expect: answer, must: ["versión|volumen|alcance|cotización"]}

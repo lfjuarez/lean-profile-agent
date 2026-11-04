@@ -233,6 +233,33 @@ def fold(text: str) -> str:
     return unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
 
 
+# Plain-language complaints and "how is it built" phrasings map to the words the documents use.
+SYNONYMS.update(
+    {
+        **{
+            w: ("lenta", "rendimiento", "capacidad", "performance", "slow")
+            for w in ("lento", "lenta", "lentitud", "slow", "sluggish")
+        },
+        **{
+            w: ("licencia", "costo", "license", "cost", "spend")
+            for w in ("caro", "cara", "costoso", "costosa", "expensive", "pricey")
+        },
+        **{
+            w: ("stack", "fastapi", "funciona", "works", "built")
+            for w in (
+                "construido",
+                "construida",
+                "hecho",
+                "hecha",
+                "desarrollado",
+                "armado",
+                "built",
+            )
+        },
+    }
+)
+
+
 def _stem(token: str) -> str:
     if len(token) > 5 and token.endswith("es"):
         return token[:-2]
