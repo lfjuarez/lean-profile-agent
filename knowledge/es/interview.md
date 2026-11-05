@@ -17,7 +17,7 @@ Busco proyectos freelance o por contrato, en remoto, de 20 a 30 horas por semana
 
 ## Fortalezas
 
-Combino tres cosas que rara vez están en la misma persona: ingeniería de plataforma SIEM a gran escala (clusters multi-site, SmartStore, petabytes de eventos, más de 200 fuentes), ingeniería de detección (correlaciones mapeadas a MITRE ATT&CK, UEBA, playbooks de SOAR) e IA aplicada a operaciones de seguridad (agentes y servidores MCP que migraron y validaron más de 2.000 reglas). A eso le sumo la certificación más alta de Splunk, la habilitación como instructor oficial y una maestría en ciencia de datos, y la experiencia de haber trabajado con 15 clientes de sectores regulados con auditorías PCI DSS, ISO 27001 y BCRA. Explico lo técnico en lenguaje claro, por escrito y en vivo, en español e inglés.
+Combino tres cosas que rara vez están en la misma persona: ingeniería de plataforma SIEM a gran escala (clusters multi-site, SmartStore, petabytes de eventos, más de 300 fuentes), ingeniería de detección (correlaciones mapeadas a MITRE ATT&CK, UEBA, playbooks de SOAR) e IA aplicada a operaciones de seguridad (agentes y servidores MCP que migraron y validaron más de 2.000 reglas). A eso le sumo la certificación más alta de Splunk, la habilitación como instructor oficial y una maestría en ciencia de datos, y la experiencia de haber trabajado con 15 clientes de sectores regulados con auditorías PCI DSS, ISO 27001 y BCRA. Explico lo técnico en lenguaje claro, por escrito y en vivo, en español e inglés.
 
 ## Cómo trabajo bajo presión y durante incidentes
 

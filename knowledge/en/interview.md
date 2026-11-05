@@ -17,7 +17,7 @@ Freelance or contract projects, remote, 20 to 30 hours per week, where there is 
 
 ## Strengths
 
-I combine three things that are rarely found in one person: SIEM platform engineering at scale (multi-site clusters, SmartStore, petabytes of events, 200+ sources), detection engineering (correlation searches mapped to MITRE ATT&CK, UEBA, SOAR playbooks) and AI applied to security operations (agents and MCP servers that migrated and validated 2,000+ rules). On top of that, Splunk's highest certification, authorization as an official instructor and a Master's in Data Science, plus the experience of 15 clients in regulated sectors with PCI DSS, ISO 27001 and BCRA audits. I explain technical matters in plain language, in writing and live, in Spanish and English.
+I combine three things that are rarely found in one person: SIEM platform engineering at scale (multi-site clusters, SmartStore, petabytes of events, 300+ sources), detection engineering (correlation searches mapped to MITRE ATT&CK, UEBA, SOAR playbooks) and AI applied to security operations (agents and MCP servers that migrated and validated 2,000+ rules). On top of that, Splunk's highest certification, authorization as an official instructor and a Master's in Data Science, plus the experience of 15 clients in regulated sectors with PCI DSS, ISO 27001 and BCRA audits. I explain technical matters in plain language, in writing and live, in Spanish and English.
 
 ## How I work under pressure and during incidents
 

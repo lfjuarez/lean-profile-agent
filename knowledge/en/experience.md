@@ -15,7 +15,7 @@ questions:
 
 Full time, hybrid, Buenos Aires. I drive the architecture of Observability Security (ObSec): building AI ecosystems for cybersecurity and unifying telemetry across a massive Security Data Lake.
 
-- Migration of multiple legacy SIEMs (more than 200 data sources) into a unified, SOCless platform on Elasticsearch, optimizing the lifecycle of petabytes of events (hot, warm, cold and frozen tiers) on AWS for scalability with cost under control.
+- Migration of multiple legacy SIEMs (more than 300 data sources) into a unified, SOCless platform on Elasticsearch, optimizing the lifecycle of petabytes of events (hot, warm, cold and frozen tiers) on AWS for scalability with cost under control.
 - Design, maintenance and on-demand scaling of the ELK infrastructure, provisioned with Terraform (infrastructure as code) and managed through the global agent fleet for resilient telemetry collection (syslog, HTTP, REST API).
 - Integration of a massive and diverse set of data sources across cloud, identity, network and endpoint, spanning multiple origins, environments and formats, normalized under Elastic Common Schema (ECS) to guarantee interoperability and detection fidelity.
 - AI-assisted detection engineering at scale: Elastic's native MCP together with a proprietary Python MCP as a complementary layer for investigations, query validation and reusable skills that migrate and author detections under strict quality standards. Python pipelines based on AI agents that migrated more than 2,000 detection rules between SIEM platforms, with quality control, metadata enrichment and mapping to MITRE ATT&CK; rules that do not meet the standard are quarantined.

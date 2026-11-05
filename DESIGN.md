@@ -30,7 +30,7 @@ Lexend (500–600) for headings, the name, the role line, dates and topic button
 - Projects: six cards with real pictures (Elastic detection rules from the lab for the agentic-AI work, the mitre-coverage-kit terminal report, a rendered view of splunk-mcp-readonly's tools and guard, the multi-site Splunk architecture diagram, the PresupuestAR showreel frame, a screenshot of the topics block). Title, one paragraph, link; no tags above titles.
 - Topics live under the question box: a quiet "Más temas" toggle opens one row of topic links (areas and case studies); picking one swaps the three suggestion chips for that topic's questions without moving the page. The old source-map section is gone; what an answer read and cited shows in the answer's source list and in the CV blocks that light up.
 - MCP band on `--step`: heading and one sentence left; URL with "Copy URL" and a "How to connect it" disclosure (client tabs and the six tools) right.
-- Numbers band (12+ years in IT, 15 SIEM clients, 2,000+ rules, 200+ sources), How it works in two columns, footer with the name at full width.
+- Numbers band (12+ years in IT, 15 SIEM clients, 2,000+ rules, 300+ sources), How it works in two columns, footer with the name at full width.
 
 ## Motion
 

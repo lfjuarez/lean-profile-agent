@@ -260,6 +260,11 @@ SYNONYMS.update(
             w: ("ia", "ai", "agente", "agent", "agentes", "llm", "mcp")
             for w in ("inteligencia", "artificial", "intelligence")
         },
+        # "your current job" must reach the role dated "– actualidad / present"
+        **{
+            w: ("actualidad", "present", "rol", "role")
+            for w in ("actual", "actualmente", "current", "currently", "hoy", "today")
+        },
     }
 )
 

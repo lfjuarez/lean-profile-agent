@@ -34,7 +34,7 @@ More than 12 years in IT, since 2011, and six dedicated to SIEM, detection engin
 1. The highest Splunk certification (Core Certified Consultant), plus Enterprise Certified Architect, Enterprise Security Certified Admin and Cloud Certified Admin.
 2. Splunk Certified Instructor authorized by Splunk for the Power User Fast Start track, delivered in Spanish: very few instructors in Latin America have this.
 3. AI applied to detection at scale: more than 2,000 detection rules migrated and validated with AI agents, with MITRE ATT&CK and ATLAS coverage analysis.
-4. Real scale: petabytes of events, more than 200 data sources, multi-site clusters.
+4. Real scale: petabytes of events, more than 300 data sources, multi-site clusters.
 5. Regulated sectors: banking, insurance and energy, with PCI DSS, ISO 27001 and BCRA (Argentine central bank) audits.
 
 ## How I work

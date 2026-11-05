@@ -27,7 +27,7 @@
       "exp.ask": "Ask about this role",
       "exp.meli.when": "Apr 2025 – present",
       "exp.meli.b1": "I drive the architecture of Observability Security: AI ecosystems for cybersecurity and unified telemetry in a Security Data Lake.",
-      "exp.meli.b2": "Migration of several legacy SIEMs into a SOCless platform on Elasticsearch over AWS, with the lifecycle of petabytes of events; infrastructure with Terraform and 200+ sources normalized in ECS.",
+      "exp.meli.b2": "Migration of several legacy SIEMs into a SOCless platform on Elasticsearch over AWS, with the lifecycle of petabytes of events; infrastructure with Terraform and 300+ sources normalized in ECS.",
       "exp.meli.b3": "AI-assisted detection engineering through MCP: 2,000+ rules migrated with quality control and measured MITRE ATT&CK and ATLAS coverage; evidence for PCI DSS, ISO 27001 and BCRA audits.",
       "exp.meli.ask": "Tell me about your current role at Mercado Libre.",
       "exp.splunk.when": "Jan 2025 – present",
