@@ -72,3 +72,16 @@ def test_unknown_language_is_rejected() -> None:
 def test_unknown_doc_raises(kb_en: KnowledgeBase) -> None:
     with pytest.raises(KeyError):
         kb_en.get("nope")
+
+
+def test_no_rates_or_availability_are_published() -> None:
+    """Lean shares his projects as gifts; the site publishes no prices, rates or hours."""
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1]
+    texts = [p.read_text() for p in (root / "knowledge").rglob("*.md")]
+    texts += [(root / "src/profile_agent/static" / f).read_text() for f in ("index.html", "app.js")]
+    banned = re.compile(r"USD \d|EUR \d|por hora|per hour|20 a 30 horas|20 to 30 hours")
+    for text in texts:
+        assert not banned.search(text), banned.search(text).group(0)

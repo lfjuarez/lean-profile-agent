@@ -13,7 +13,7 @@ questions:
 
 ## Qué busco
 
-Busco proyectos freelance o por contrato, en remoto, de 20 a 30 horas por semana, donde haya una plataforma SIEM que escalar o migrar (Splunk o Elastic), detecciones que construir o medir contra MITRE ATT&CK y ATLAS, automatización con SOAR o con agentes de IA, o un equipo SOC que formar. Me interesan especialmente los entornos regulados (banca, seguros, energía) y los problemas donde se puede medir el antes y el después: cobertura de detección, falsos positivos, tiempo de triage, costo de la plataforma. Puedo empezar de inmediato.
+Me interesan los proyectos donde haya una plataforma SIEM que escalar o migrar (Splunk o Elastic), detecciones que construir o medir contra MITRE ATT&CK y ATLAS, automatización con SOAR o con agentes de IA, o un equipo SOC que formar. Me interesan especialmente los entornos regulados (banca, seguros, energía) y los problemas donde se puede medir el antes y el después: cobertura de detección, falsos positivos, tiempo de triage, costo de la plataforma.
 
 ## Fortalezas
 
@@ -37,8 +37,8 @@ Porque entrego resultados medibles en plataformas reales, no prototipos: migraci
 
 ## Qué estoy mejorando
 
-Las ventas y la negociación no son mi punto fuerte: soy ingeniero antes que comercial. Lo compenso con alcances, entregables y precios de referencia por escrito desde la primera conversación, para que la parte comercial sea concreta y corta, y con casos de estudio que muestran el método en lugar de prometer resultados.
+Las ventas y la negociación no son mi punto fuerte: soy ingeniero antes que comercial. Lo compenso con alcances y entregables por escrito desde la primera conversación, para que la parte comercial sea concreta y corta, y con casos de estudio que muestran el método en lugar de prometer resultados.
 
 ## Pretensión económica, disponibilidad y referencias
 
-Trabajo freelance y por contrato con una tarifa de referencia de USD 45 a 70 por hora (EUR 55 a 70 para Europa) y precios de partida por paquete; las tarifas finales se acuerdan por proyecto. Disponibilidad inmediata, de 20 a 30 horas por semana. Mis certificaciones se pueden verificar públicamente en Credly, el CV se descarga desde este sitio y el contacto es l.federico.juarez@gmail.com o LinkedIn.
+No publico tarifas, pretensión económica ni disponibilidad en este sitio; eso lo converso en privado. Mis certificaciones se pueden verificar públicamente en Credly, el CV se descarga desde este sitio y el contacto es l.federico.juarez@gmail.com o LinkedIn.

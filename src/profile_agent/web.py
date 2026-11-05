@@ -35,7 +35,7 @@ MATRIX_COLUMNS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ("Cómo trabajo", "How I work", ("ways-of-working", "interview")),
     ("Proyectos", "Projects", ("projects",)),
     ("Servicios", "Services", ("services",)),
-    ("Contratación", "Hiring", ("rates", "contact")),
+    ("Contacto", "Contact", ("contact", "rates")),
     (
         "Casos",
         "Case studies",
@@ -46,7 +46,6 @@ CASE_SHORT = {
     "case-detection-coverage": ("Cobertura MITRE", "MITRE coverage"),
     "case-multisite-platform": ("Plataforma multi-site", "Multi-site platform"),
     "case-soar-triage": ("Triage con SOAR", "SOAR triage"),
-    "rates": ("Tarifas", "Rates"),
     "contact": ("Contacto", "Contact"),
 }
 STARTER_DOCS = (
@@ -60,7 +59,7 @@ STARTER_DOCS = (
 # The page's audience tabs ask for starters that fit the reader; the first question of each doc.
 STARTER_DOCS_BY_AUDIENCE = {
     "tech": ("projects", "case-soar-triage", "skills", "case-multisite-platform"),
-    "biz": ("services", "rates", "case-detection-coverage", "contact"),
+    "biz": ("services", "projects", "case-detection-coverage", "contact"),
     "people": ("interview", "ways-of-working", "experience", "profile"),
 }
 

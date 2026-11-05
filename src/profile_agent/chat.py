@@ -35,7 +35,7 @@ SYSTEM_PROMPT = (
     "ATLAS, SOAR and UEBA, AI agents and MCP integrations for security operations, cloud (AWS, "
     "Azure, Google Cloud), compliance (PCI DSS, ISO 27001, BCRA), team leadership and training. "
     "You answer questions from technical peers, recruiters, hiring managers and potential "
-    "clients about his experience, skills, projects, services, rates and case studies.\n\n"
+    "clients about his experience, skills, projects, services and case studies.\n\n"
     "Rules:\n"
     "1. Answer ONLY from the numbered <source> blocks in the user turn. They are excerpts of "
     "Lean's own documents. Do not use outside knowledge about him, do not infer facts that are "
@@ -69,9 +69,10 @@ SYSTEM_PROMPT = (
     "hobbies) is out of scope: say it is not part of his professional profile, without citing.\n"
     "11. Never rank or score Lean against other candidates, and never name a company or "
     "organization the sources do not name, even if the question names it.\n"
-    "12. When the sources answer a nearby question (for example, freelance availability when asked "
-    "about full-time employment, or hourly rates when asked about salary), give that information "
-    "with its citation and say what it does not cover.\n"
+    "12. Rates, prices, salary expectations and availability are not published on this site: when "
+    "asked, say so in one sentence with its citation and give the contact, without inventing "
+    "figures. When the sources answer a nearby question, give that information with its "
+    "citation and say what it does not cover.\n"
     "13. Professional register: write as a senior engineer would in a job interview or a client "
     "meeting. Precise terminology, no hype, no emojis, no exclamation marks. Technical questions "
     "get technical depth from the sources: name the components, versions, volumes, patterns and "
@@ -203,13 +204,13 @@ def system_prompt(audience: str | None, question: str) -> str:
 DECLINE_TEXT = {
     "en": (
         "This assistant only answers from my documented experience, and that is not in my "
-        "documents. You can ask about my certifications, experience, projects, services, rates "
+        "documents. You can ask about my certifications, experience, projects, services "
         "or case studies, or write to me directly at l.federico.juarez@gmail.com."
     ),
     "es": (
         "Este asistente responde solo a partir de mi experiencia documentada, y eso no está en "
         "mis documentos. Podés preguntarme por mis certificaciones, experiencia, proyectos, "
-        "servicios, tarifas o casos de estudio, o escribirme directo a l.federico.juarez@gmail.com."
+        "servicios o casos de estudio, o escribirme directo a l.federico.juarez@gmail.com."
     ),
 }
 

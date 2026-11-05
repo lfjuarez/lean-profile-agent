@@ -13,7 +13,7 @@ questions:
 
 ## What I am looking for
 
-Freelance or contract projects, remote, 20 to 30 hours per week, where there is a SIEM platform to scale or migrate (Splunk or Elastic), detections to build or measure against MITRE ATT&CK and ATLAS, automation with SOAR or with AI agents, or a SOC team to train. I am especially interested in regulated environments (banking, insurance, energy) and in problems where the before and after can be measured: detection coverage, false positives, triage time, platform cost. I can start immediately.
+Projects where there is a SIEM platform to scale or migrate (Splunk or Elastic), detections to build or measure against MITRE ATT&CK and ATLAS, automation with SOAR or with AI agents, or a SOC team to train. I am especially interested in regulated environments (banking, insurance, energy) and in problems where the before and after can be measured: detection coverage, false positives, triage time, platform cost.
 
 ## Strengths
 
@@ -37,8 +37,8 @@ Because I deliver measurable results on real platforms, not prototypes: SIEM mig
 
 ## What I am improving
 
-Sales and negotiation are not my strong suit: I am an engineer before a salesperson. I compensate with written scopes, deliverables and reference prices from the first conversation, so the commercial part is concrete and short, and with case studies that show the method instead of promising results.
+Sales and negotiation are not my strong suit: I am an engineer before a salesperson. I compensate with written scopes and deliverables from the first conversation, so the commercial part is concrete and short, and with case studies that show the method instead of promising results.
 
 ## Compensation, availability and references
 
-I work freelance and on contract with a reference rate of USD 45 to 70 per hour (EUR 55 to 70 for Europe) and starting prices per package; final rates are agreed per project. Immediate availability, 20 to 30 hours per week. My certifications can be verified publicly on Credly, the CV can be downloaded from this site, and contact is l.federico.juarez@gmail.com or LinkedIn.
+I do not publish rates, salary expectations or availability on this site; I discuss them privately. My certifications can be verified publicly on Credly, the CV can be downloaded from this site, and contact is l.federico.juarez@gmail.com or LinkedIn.

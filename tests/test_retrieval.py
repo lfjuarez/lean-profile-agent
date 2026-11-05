@@ -42,7 +42,7 @@ def test_english_questions_hit_expected_document(idx_en: Index, question: str, d
     ("question", "doc_id"),
     [
         ("¿Qué certificaciones de Splunk tenés?", "certifications"),
-        ("¿Cuánto cuesta un health check de Splunk?", "rates"),
+        ("¿Cuánto cuesta un health check de Splunk?", "services"),
         ("¿Cómo automatizaste el triage con SOAR?", "case-soar-triage"),
         ("¿Cómo te contacto?", "contact"),
     ],

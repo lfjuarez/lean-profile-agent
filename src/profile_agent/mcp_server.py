@@ -75,7 +75,7 @@ def build_server(kbs: dict[str, KnowledgeBase] | None = None) -> MCPServer:
 
     @server.tool(annotations=READ_ONLY)
     def search_experience(query: str, lang: str = "", k: int = 5) -> dict[str, Any]:
-        """Search Leandro's documented experience, skills, services, rates and case studies.
+        """Search Leandro's documented experience, skills, services, projects and case studies.
 
         Args:
             query: Free text, in English or Spanish (language is detected when lang is empty).
@@ -151,25 +151,19 @@ def build_server(kbs: dict[str, KnowledgeBase] | None = None) -> MCPServer:
 
     @server.tool(annotations=READ_ONLY)
     def availability_and_rates(lang: str = "en") -> dict[str, Any]:
-        """Availability (hours per week, time zones, languages), reference hourly rate, package
-        starting prices and how an engagement starts.
+        """Whether rates and availability are published. They are not: the answer is a short
+        note with how to get in touch privately.
 
         Args:
             lang: 'en' (default) or 'es'.
-
-        Prices are reference starting points from his published services; the final quote follows
-        a short scoping conversation.
         """
         lang = _lang(lang)
         sec = _sections(kbs[lang], "rates")
-        keys = list(sec)
-        packages = [line[2:].strip() for line in sec[keys[2]].splitlines() if line.startswith("- ")]
         return {
             "lang": lang,
-            "availability": sec[keys[0]],
-            "hourly_rate": sec[keys[1]],
-            "packages": packages,
-            "how_to_start": sec[keys[3]],
+            "published": False,
+            "note": next(iter(sec.values())),
+            "contact": "l.federico.juarez@gmail.com",
             "source": "rates",
         }
 

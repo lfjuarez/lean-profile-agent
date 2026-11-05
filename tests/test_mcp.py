@@ -102,10 +102,11 @@ async def test_list_and_get_case_studies(server) -> None:
 
 async def test_availability_and_rates(server) -> None:
     out = await call(server, "availability_and_rates", {"lang": "en"})
-    assert "20 to 30 hours" in out["availability"]
-    assert "USD 45 to 70" in out["hourly_rate"]
-    assert isinstance(out["packages"], list) and len(out["packages"]) >= 8
-    assert out["packages"][0].startswith("Splunk health check")
+    # rates and availability are not published; the tool says so and gives the contact
+    assert out["published"] is False
+    assert "do not publish" in out["note"]
+    assert "USD" not in out["note"] and "hours" not in out["note"]
+    assert out["contact"] == "l.federico.juarez@gmail.com"
 
 
 async def test_contact_has_no_secrets_and_is_stable(server) -> None:
